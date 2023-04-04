@@ -29,8 +29,22 @@ const NavBar = () => {
             Sell
           </li>
             </Link>
+            <Link href={'/sell'}>
+          <li className={styles.navItem} >
+            Contact
+          </li>
+            </Link>
         </ul>
 
+      </div>
+      <div className={styles.wrapper}>
+      <ul className={styles.navItems}>
+            <Link href={'/'} >
+          <li className={styles.navItem} >
+            User
+          </li>
+            </Link>
+</ul>
       </div>
     </div>
   );

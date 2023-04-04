@@ -4,6 +4,9 @@
   top: 0px;
   background-image: linear-gradient(to bottom, var(--gradient-stops));
 
+  display: flex;
+  // justify-content: space-between;
+
   --gradient-from: var(--black);
   --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(0, 0, 0, 0));
   width: 100%;
@@ -15,19 +18,21 @@
   padding-right: 1rem ;
   display: flex;
   padding: 1.25rem ;
+  // margin-right: 2rem;
 }
 
 .navItem {
   margin-left: 2.5rem;
+  
   line-height: 7rem;
 }
 
 .navItems {
-
+  
   transition: .5s linear;
   display: flex;
   flex-direction: row;
-
+  
 }
 
 .navItem {
@@ -60,11 +65,17 @@
 
 
 @media (min-width: 768px) {
+  .container {
+  justify-content: space-between;
+
+  }
   .wrapper {
     padding-left: 4rem /* 64px */;
     padding-right: 4rem /* 64px */;
     flex-direction: row;
     align-items: center;
+  margin-right: 2rem;
+
   }
 
 
