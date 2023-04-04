@@ -1,14 +1,14 @@
 .container {
-  color: var(--white10);
+  // color: var(--white10);
   position: fixed;
   top: 0px;
-  background-image: linear-gradient(to bottom, var(--gradient-stops));
+  // background-image: linear-gradient(to bottom, var(--gradient-stops));
 
   display: flex;
-  // justify-content: space-between;
 
-  --gradient-from: var(--black);
-  --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(0, 0, 0, 0));
+
+  // --gradient-from: var(--black);
+  // --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(0, 0, 0, 0));
   width: 100%;
   z-index: 50;
 }
@@ -18,7 +18,7 @@
   padding-right: 1rem ;
   display: flex;
   padding: 1.25rem ;
-  // margin-right: 2rem;
+
 }
 
 .navItem {
@@ -87,4 +87,10 @@
   .navItem {
     margin-right: 1.25rem /* 20px */;
   }
+}
+
+
+.scroll {
+  
+  background-color: #17365a;
 }

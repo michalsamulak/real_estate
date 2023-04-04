@@ -1,15 +1,24 @@
 
+import { useEffect, useState } from "react";
 import styles from "./navbar.module.scss";
-
+const cln = require('classnames');
 
 import Link from "next/link";
 
 
+
 const NavBar = () => {
- 
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
+
 
   return (
-    <div className={styles.container}>
+      <div className={cln(styles.container, `${scroll ? styles.scroll : ''}`)}>
+   
       <div className={styles.wrapper}>
        
 
@@ -47,6 +56,7 @@ const NavBar = () => {
 </ul>
       </div>
     </div>
+       
   );
 };
 
