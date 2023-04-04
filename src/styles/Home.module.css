@@ -6,7 +6,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 90vh;
-
+font-size: 2rem;
 
   background-image:  linear-gradient(to bottom, rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)),
   url('../../public/home.jpg');
@@ -19,10 +19,20 @@
 
 }
 
+@media (min-width: 768px) {
+  .main {
+
+    font-size: 2.5rem;
+  }
+
+  }
+
 
 .h1 {
   
-  margin: 100px;
+  margin-top: 10rem;
   color: goldenrod;
+
+ 
 
 }
