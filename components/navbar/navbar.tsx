@@ -1,5 +1,5 @@
 
-import styles from "./navbar.module.css";
+import styles from "./navbar.module.scss";
 
 
 import Link from "next/link";
@@ -30,9 +30,7 @@ const NavBar = () => {
           </li>
             </Link>
         </ul>
-        <nav className={styles.navContainer}>
-          
-        </nav>
+
       </div>
     </div>
   );

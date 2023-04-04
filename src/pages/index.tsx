@@ -23,7 +23,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
+                <h1 className={styles.h1}>Find Your Dream Home</h1>
             </main>
+
         </>
     );
 }
