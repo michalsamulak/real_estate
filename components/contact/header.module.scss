@@ -1,0 +1,36 @@
+.section_header {
+  background-color: #f8f8f8;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.section_title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section_subtitle {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact_info_icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact_info_text {
+  font-size: 16px;
+}
