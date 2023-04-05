@@ -38,7 +38,7 @@ const NavBar = () => {
             Sell
           </li>
             </Link>
-            <Link href={'/sell'}>
+            <Link href={'/contact'}>
           <li className={styles.navItem} >
             Contact
           </li>
