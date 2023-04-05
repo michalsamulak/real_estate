@@ -55,8 +55,9 @@ a {
   }
 .contact--wrapper {
   display: flex;
-  justify-content: center;
+  justify-items: center;
   padding: 1rem;
   align-items: center;
+  justify-content: space-around;
 }
 }
