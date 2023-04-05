@@ -1,17 +1,17 @@
 .section_header {
   background-color: #f8f8f8;
-  padding: 30px 15px;
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .section_title {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 2.4rem; 
+  margin-bottom: 1rem;
 }
 
 .section_subtitle {
-  font-size: 24px;
-  margin-bottom: 30px;
+  font-size: 1.6rem; 
+  margin-bottom: 3rem;
 }
 
 .contact_info {
@@ -23,14 +23,42 @@
 .contact_info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .contact_info_icon {
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 2.4rem;
+  margin-right: 1rem;
 }
 
 .contact_info_text {
-  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section_title {
+    font-size: 3rem;
+  }
+  
+  .section_subtitle {
+    font-size: 2rem;
+  }
+  
+  .contact_info_text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .section_title {
+    font-size: 3.6rem;
+  }
+  
+  .section_subtitle {
+    font-size: 2.4rem;
+  }
+  
+  .contact_info_text {
+    font-size: 1.8rem;
+  }
 }
