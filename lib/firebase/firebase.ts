@@ -34,4 +34,4 @@ const db = getFirestore(app);
 
 const realDB = getDatabase(app);
 
-export default initFirebase;
+export { initFirebase, db, realDB };

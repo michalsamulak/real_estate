@@ -1,0 +1,441 @@
+[
+    {
+        "title": "Cozy and Charming Cottage with Ocean Views",
+        "description": "This charming cottage offers a peaceful retreat with stunning ocean views, a comfortable living area, and two cozy bedrooms. The kitchen is fully equipped for preparing meals, and the deck is perfect for watching the sunset. Perfect for a weekend getaway or a year-round residence.",
+        "localization": "123 Ocean Road, Seaside, USA",
+        "phone_number": "+1 (555) 123-4567",
+        "email": "info@seasiderealty.com",
+        "price": "$750,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Modern and Stylish Townhouse in the Heart of the City",
+        "description": "This modern and stylish townhouse boasts a bright and spacious open-concept living area, three comfortable bedrooms, and two modern bathrooms. The kitchen features top-of-the-line appliances and ample counter space, perfect for hosting dinner parties. Take advantage of the building's luxurious amenities, including a fitness center and rooftop terrace.",
+        "localization": "456 Main Street, Cityville, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@cityrealty.com",
+        "price": "$1,350,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+    {
+        "title": "Stunning and Spacious Family Home with Pool",
+        "description": "This stunning family home features an open-concept living area with high ceilings, a cozy fireplace, and a gourmet kitchen with high-end appliances. The master bedroom offers a luxurious ensuite bathroom and plenty of closet space. The beautifully landscaped backyard features a sparkling pool and is perfect for outdoor entertaining and relaxing.",
+        "localization": "789 Park Avenue, Suburbia, USA",
+        "phone_number": "+1 (555) 345-6789",
+        "email": "info@suburbanrealty.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Charming and Rustic Cabin in the Woods",
+        "description": "This charming cabin offers a peaceful retreat in the heart of the woods, with a cozy living area, well-equipped kitchen, and two comfortable bedrooms. Enjoy the beautiful views from the deck, or take a stroll through the forest for a hike or picnic. Perfect for a weekend getaway or a year-round residence.",
+        "localization": "123 Forest Road, Woodland, USA",
+        "phone_number": "+1 (555) 456-7890",
+        "email": "info@woodlandrealty.com",
+        "price": "$400,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+
+    {
+        "title": "Luxurious and Modern Apartment with City Views",
+        "description": "This luxurious and modern apartment boasts stunning city views from the floor-to-ceiling windows, a spacious and bright open-concept living area, and two comfortable bedrooms. The kitchen features high-end appliances and plenty of counter space. Take advantage of the building's amenities, including a fitness center and rooftop terrace.",
+        "localization": "1010 Downtown Street, Metropolis, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@metropolisrealty.com",
+        "price": "$2,000,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Charming and Quaint Colonial Home with Historical Charm",
+        "description": "This charming colonial home boasts plenty of historical charm, with original hardwood floors, crown moldings, and vintage fixtures. The cozy living room features a fireplace, perfect for relaxing on cold winter nights. The backyard is beautifully landscaped and perfect for outdoor entertaining and gardening.",
+        "localization": "321 Historical Lane, Old Town, USA",
+        "phone_number": "+1 (555) 678-9012",
+        "email": "info@oldtownrealty.com",
+        "price": "$950,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+    {
+        "title": "Stunning and Private Oceanfront Estate",
+        "description": "This stunning oceanfront estate offers complete privacy and tranquility, with breathtaking ocean views from every room. The open-concept living area features a cozy fireplace and plenty of natural light. The beautifully landscaped backyard features a pool and hot tub, perfect for outdoor entertaining and relaxing. A truly rare and unique opportunity.",
+        "localization": "567 Oceanfront Drive, Secluded Cove, USA",
+        "phone_number": "+1 (555) 789-0123",
+        "email": "info@secludedcoveland.com",
+        "price": "$5,000,000",
+        "num_bedrooms": 5,
+        "img": ""
+    },
+    {
+        "title": "Chic and Modern Loft with Industrial Flair",
+        "description": "This chic and modern loft boasts industrial flair, with exposed brick walls, high ceilings, and plenty of natural light. The open-concept living area features a gourmet kitchen and ample space for dining and entertaining. The bedroom offers a peaceful retreat, with a spa-like ensuite bathroom and plenty of closet space.",
+        "localization": "901 Industrial Street, Loftville, USA",
+        "phone_number": "+1 (555) 890-1234",
+        "email": "info@loftrealty.com",
+        "price": "$1,200,000",
+        "num_bedrooms": 1,
+        "img": ""
+    },
+
+    {
+        "title": "Spacious and Bright Family Home with Large Backyard",
+        "description": "This spacious and bright family home features an open-concept living area, perfect for entertaining and family gatherings. The kitchen features stainless steel appliances and plenty of counter space. The backyard is large and beautifully landscaped, with plenty of room for kids to play and for outdoor entertaining.",
+        "localization": "456 Family Lane, Suburbanville, USA",
+        "phone_number": "+1 (555) 012-3456",
+        "email": "info@suburbanrealty.com",
+        "price": "$800,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Cozy and Charming Cottage with Country Charm",
+        "description": "This cozy and charming cottage boasts plenty of country charm, with a welcoming front porch, hardwood floors, and vintage fixtures. The living room features a fireplace, perfect for relaxing on cold winter nights. The backyard is beautifully landscaped and perfect for outdoor entertaining and gardening.",
+        "localization": "789 Country Road, Countryside, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@countrysiderealty.com",
+        "price": "$500,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Spectacular and Luxurious Mountain Retreat",
+        "description": "This spectacular mountain retreat offers complete privacy and tranquility, with breathtaking mountain views from every room. The open-concept living area features a cozy fireplace and plenty of natural light. The beautifully landscaped backyard features a hot tub and fire pit, perfect for outdoor entertaining and relaxing. A truly rare and unique opportunity.",
+        "localization": "123 Mountain Road, Mountainville, USA",
+        "phone_number": "+1 (555) 345-6789",
+        "email": "info@mountainrealty.com",
+        "price": "$3,500,000",
+        "num_bedrooms": 6,
+        "img": ""
+    },
+    {
+        "title": "Elegant and Classic Townhouse with Modern Updates",
+        "description": "This elegant and classic townhouse boasts modern updates, including a gourmet kitchen with high-end appliances and a beautifully renovated bathroom. The spacious living room features a fireplace and plenty of natural light. The backyard is beautifully landscaped and perfect for outdoor entertaining and relaxing.",
+        "localization": "567 Main Street, Townsville, USA",
+        "phone_number": "+1 (555) 456-7890",
+        "email": "info@townhouserealty.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+    {
+        "title": "Modern and Spacious Loft in Trendy Neighborhood",
+        "description": "This modern and spacious loft boasts high ceilings, hardwood floors, and plenty of natural light. The open-concept living area is perfect for entertaining, with a gourmet kitchen and plenty of room for seating. The building amenities include a gym, rooftop deck, and 24-hour concierge service.",
+        "localization": "234 Hipster Boulevard, Trendytown, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@trendyrealty.com",
+        "price": "$1,200,000",
+        "num_bedrooms": 1,
+        "img": ""
+    },
+    {
+        "title": "Charming and Cozy Bungalow with Private Garden",
+        "description": "This charming and cozy bungalow features a private garden oasis, perfect for relaxing and enjoying nature. The living room features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A truly unique and special property.",
+        "localization": "345 Garden Lane, Gardenia, USA",
+        "phone_number": "+1 (555) 678-9012",
+        "email": "info@gardenrealty.com",
+        "price": "$600,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Luxurious and Elegant Penthouse with Panoramic Views",
+        "description": "This luxurious and elegant penthouse boasts panoramic views of the city skyline and waterfront. The open-concept living area features high-end finishes, including marble countertops and stainless steel appliances. The building amenities include a pool, gym, and 24-hour concierge service.",
+        "localization": "789 Skyline Drive, Cityville, USA",
+        "phone_number": "+1 (555) 890-1234",
+        "email": "info@cityrealty.com",
+        "price": "$5,000,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Stunning and Modern Villa with Infinity Pool",
+        "description": "This stunning and modern villa boasts an infinity pool with breathtaking ocean views. The open-concept living area features floor-to-ceiling windows and high-end finishes, including marble floors and custom lighting. The backyard is beautifully landscaped and perfect for outdoor entertaining and relaxing.",
+        "localization": "901 Ocean View Drive, Oceanville, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@oceanrealty.com",
+        "price": "$3,000,000",
+        "num_bedrooms": 5,
+        "img": ""
+    },
+    {
+        "title": "Cozy and Charming Cottage with Mountain Views",
+        "description": "This cozy and charming cottage boasts mountain views and a peaceful, serene setting. The living area features a wood-burning stove and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect retreat for nature lovers.",
+        "localization": "456 Mountain Road, Mountaintop, USA",
+        "phone_number": "+1 (555) 345-6789",
+        "email": "info@mountainrealty.com",
+        "price": "$800,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+    {
+        "title": "Modern and Sleek Condo in Vibrant Downtown",
+        "description": "This modern and sleek condo features floor-to-ceiling windows with views of the vibrant downtown area. The open-concept living area is perfect for entertaining, with a gourmet kitchen and plenty of room for seating. The building amenities include a pool, gym, and 24-hour concierge service.",
+        "localization": "567 Downtown Street, Cityville, USA",
+        "phone_number": "+1 (555) 456-7890",
+        "email": "info@cityrealty.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Elegant and Spacious Estate on Private Acres",
+        "description": "This elegant and spacious estate sits on several private acres, with beautifully landscaped grounds and a serene setting. The living area features a grand staircase and high ceilings, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A truly luxurious property.",
+        "localization": "678 Private Drive, Privatetown, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@privaterealty.com",
+        "price": "$7,500,000",
+        "num_bedrooms": 6,
+        "img": ""
+    },
+    {
+        "title": "Bright and Airy Townhome in Family-Friendly Neighborhood",
+        "description": "This bright and airy townhome is located in a family-friendly neighborhood, with plenty of green space and parks nearby. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect home for a growing family.",
+        "localization": "789 Family Lane, Familytown, USA",
+        "phone_number": "+1 (555) 678-9012",
+        "email": "info@familyrealty.com",
+        "price": "$950,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+
+    {
+        "title": "Rustic and Cozy Log Cabin on Wooded Lot",
+        "description": "This rustic and cozy log cabin sits on a wooded lot, with plenty of privacy and seclusion. The living area features a stone fireplace and exposed log beams, with a warm and inviting atmosphere. The kitchen has been updated with modern appliances and fixtures. A perfect retreat for nature lovers.",
+        "localization": "890 Woodland Road, Woodlandtown, USA",
+        "phone_number": "+1 (555) 789-0123",
+        "email": "info@woodlandrealty.com",
+        "price": "$600,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Charming and Historic Home in Quaint Village",
+        "description": "This charming and historic home is located in a quaint village, with a close-knit community and friendly neighbors. The living area features original hardwood floors and vintage details, with plenty of character. The kitchen has been updated with modern appliances and finishes. A perfect home for history buffs.",
+        "localization": "901 Village Lane, Villagetown, USA",
+        "phone_number": "+1 (555) 890-1234",
+        "email": "info@villagerealty.com",
+        "price": "$750,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Sleek and Stylish Loft in Trendy Urban Area",
+        "description": "This sleek and stylish loft is located in a trendy urban area, with plenty of restaurants and nightlife nearby. The living area features an open-concept design and industrial details, with a modern and edgy vibe. The building amenities include a rooftop terrace and fitness center.",
+        "localization": "123 Urban Street, Urbantown, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@urbanrealty.com",
+        "price": "$1,200,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Spacious and Modern Home in Quiet Suburb",
+        "description": "This spacious and modern home is located in a quiet suburb, with easy access to shopping and schools. The living area features an open-concept design and high ceilings, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for a growing family.",
+        "localization": "234 Suburb Lane, Suburbtown, USA",
+        "phone_number": "+1 (555) 345-6789",
+        "email": "info@suburbrealty.com",
+        "price": "$900,000",
+        "num_bedrooms": 5,
+        "img": ""
+    },
+    {
+        "title": "Coastal Cottage with Ocean Views and Breezes",
+        "description": "This charming coastal cottage boasts ocean views and breezes, with a relaxed and laid-back atmosphere. The living area features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect beach retreat.",
+        "localization": "456 Beach Road, Beachtown, USA",
+        "phone_number": "+1 (555) 456-7890",
+        "email": "info@beachrealty.com",
+        "price": "$950,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+    {
+        "title": "Elegant and Spacious Home with Pool and Garden",
+        "description": "This elegant and spacious home boasts a pool and garden, with a luxurious and refined atmosphere. The living area features a fireplace and marble floors, with plenty of space for entertaining. The kitchen has been updated with high-end appliances and finishes. A perfect home for entertaining.",
+        "localization": "567 Estate Drive, Estatetown, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@estaterealty.com",
+        "price": "$1,800,000",
+        "num_bedrooms": 6,
+        "img": ""
+    },
+    {
+        "title": "Modern and Minimalist Apartment with City Views",
+        "description": "This modern and minimalist apartment boasts city views, with a sleek and contemporary design. The living area features an open-concept design and floor-to-ceiling windows, with plenty of natural light. The building amenities include a rooftop terrace and fitness center.",
+        "localization": "678 City Street, Citytown, USA",
+        "phone_number": "+1 (555) 678-9012",
+        "email": "info@cityrealty.com",
+        "price": "$950,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Cozy and Inviting Bungalow with Outdoor Space",
+        "description": "This cozy and inviting bungalow boasts outdoor space, with a warm and inviting atmosphere. The living area features a fireplace and hardwood floors, with plenty of character. The kitchen has been updated with modern appliances and finishes. A perfect home for nature lovers.",
+        "localization": "789 Bungalow Lane, Bungaltown, USA",
+        "phone_number": "+1 (555) 789-0123",
+        "email": "info@bungalowrealty.com",
+        "price": "$450,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Charming and Quaint Cottage with Garden Oasis",
+        "description": "This charming and quaint cottage boasts a garden oasis, with a peaceful and serene atmosphere. The living area features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect escape from the hustle and bustle of city life.",
+        "localization": "890 Cottage Court, Cottagetown, USA",
+        "phone_number": "+1 (555) 890-1234",
+        "email": "info@cottagerealty.com",
+        "price": "$650,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Spectacular and Luxurious Penthouse with Skyline Views",
+        "description": "This spectacular and luxurious penthouse boasts skyline views, with a lavish and opulent design. The living area features high ceilings and floor-to-ceiling windows, with plenty of space for entertaining. The building amenities include a rooftop pool and concierge service.",
+        "localization": "901 Penthouse Plaza, Skylinetown, USA",
+        "phone_number": "+1 (555) 901-2345",
+        "email": "info@skylinerealty.com",
+        "price": "$5,000,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Chic and Stylish Loft with Industrial Charm",
+        "description": "This chic and stylish loft boasts industrial charm, with a trendy and fashionable design. The living area features an open-concept design and exposed brick walls, with plenty of natural light. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "123 Loft Street, Lofttown, USA",
+        "phone_number": "+1 (555) 123-4567",
+        "email": "info@loftrealty.com",
+        "price": "$1,200,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Spacious and Comfortable Family Home with Pool",
+        "description": "This spacious and comfortable family home boasts a pool, with a warm and inviting atmosphere. The living area features a fireplace and hardwood floors, with plenty of space for entertaining. The kitchen has been updated with modern appliances and finishes. A perfect home for families.",
+        "localization": "234 Family Circle, Familytown, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@familyrealty.com",
+        "price": "$850,000",
+        "num_bedrooms": 4,
+        "img": ""
+    },
+    {
+        "title": "Cozy and Quaint Bungalow with Garden Retreat",
+        "description": "This cozy and quaint bungalow boasts a garden retreat, with a peaceful and tranquil atmosphere. The living area features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect home for nature lovers.",
+        "localization": "567 Bungalow Lane, Bungletown, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@bungalorealty.com",
+        "price": "$450,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Stunning and Sophisticated Villa with Ocean Views",
+        "description": "This stunning and sophisticated villa boasts ocean views, with an elegant and refined design. The living area features high ceilings and marble floors, with plenty of space for entertaining. The outdoor terrace is perfect for enjoying the sunset. A perfect home for those who love luxury living.",
+        "localization": "345 Villa Avenue, Villatown, USA",
+        "phone_number": "+1 (555) 345-6789",
+        "email": "info@villarealty.com",
+        "price": "$4,000,000",
+        "num_bedrooms": 5,
+        "img": ""
+    },
+    {
+        "title": "Modern and Sleek Condo with City Views",
+        "description": "This modern and sleek condo boasts city views, with a minimalist and contemporary design. The living area features an open-concept layout and floor-to-ceiling windows, with plenty of natural light. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "678 Condo Street, Condoville, USA",
+        "phone_number": "+1 (555) 678-9012",
+        "email": "info@condorealty.com",
+        "price": "$800,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Charming and Cozy Cottage with Mountain Views",
+        "description": "This charming and cozy cottage boasts mountain views, with a warm and inviting atmosphere. The living area features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for a peaceful retreat.",
+        "localization": "789 Cottage Lane, Mountaintown, USA",
+        "phone_number": "+1 (555) 789-1234",
+        "email": "info@mountainrealty.com",
+        "price": "$550,000",
+        "num_bedrooms": 3,
+        "img": ""
+    },
+
+    {
+        "title": "Spacious and Serene Townhouse with Private Garden",
+        "description": "This spacious and serene townhouse boasts a private garden, with a peaceful and tranquil atmosphere. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": "123 Townhouse Way, Townsville, USA",
+        "phone_number": "+1 (555) 123-4567",
+        "email": "info@townhouserealty.com",
+        "price": "$750,000",
+        "num_bedrooms": 4
+    },
+    {
+        "title": "Luxurious and Modern Penthouse with Skyline Views",
+        "description": "This luxurious and modern penthouse boasts skyline views, with an elegant and refined design. The living area features high ceilings and floor-to-ceiling windows, with plenty of space for entertaining. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "456 Penthouse Street, Penthouseville, USA",
+        "phone_number": "+1 (555) 456-7890",
+        "email": "info@penthouse-realty.com",
+        "price": "$2,500,000",
+        "num_bedrooms": 3
+    },
+    {
+        "title": "Cozy and Quaint Ranch House with Scenic Views",
+        "description": "This cozy and quaint ranch house boasts scenic views, with a warm and inviting atmosphere. The living area features a fireplace and hardwood floors, with plenty of natural light. The kitchen has been updated with modern appliances and fixtures. A perfect home for those who love nature.",
+        "localization": "789 Ranch Road, Ranchtown, USA",
+        "phone_number": "+1 (555) 789-0123",
+        "email": "info@ranchrealty.com",
+        "price": "$650,000",
+        "num_bedrooms": 2
+    },
+    {
+        "title": "Elegant and Spacious Colonial with Garden Oasis",
+        "description": "This elegant and spacious colonial boasts a garden oasis, with a luxurious and refined design. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": "234 Colonial Drive, Colonytown, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@colonyrealty.com",
+        "price": "$1,200,000",
+        "num_bedrooms": 4
+    },
+    {
+        "title": "Sleek and Modern Apartment with City Views",
+        "description": "This sleek and modern apartment boasts city views, with a minimalist and contemporary design. The living area features an open-concept layout and floor-to-ceiling windows, with plenty of natural light. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "567 Apartment Avenue, Apartmentville, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@apartment-realty.com",
+        "price": "$600,000",
+        "num_bedrooms": 2
+    },
+    {
+        "title": "Stylish and Spacious Loft with Industrial Flair",
+        "description": "This stylish and spacious loft boasts an industrial flair, with an open-concept layout and plenty of natural light. The living area features hardwood floors and exposed brick walls, with high ceilings. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "789 Loft Lane, Loftsville, USA",
+        "phone_number": "+1 (555) 789-0123",
+        "email": "info@loft-realty.com",
+        "price": "$800,000",
+        "num_bedrooms": 1,
+        "img": ""
+    },
+    {
+        "title": "Chic and Modern Condo with City Views",
+        "description": "This chic and modern condo boasts city views, with a sleek and contemporary design. The living area features an open-concept layout and floor-to-ceiling windows, with plenty of natural light. The building amenities include a fitness center and rooftop terrace.",
+        "localization": "234 Condo Boulevard, Condotown, USA",
+        "phone_number": "+1 (555) 234-5678",
+        "email": "info@condo-realty.com",
+        "price": "$1,000,000",
+        "num_bedrooms": 2,
+        "img": ""
+    },
+    {
+        "title": "Spacious and Modern Family Home with Backyard Oasis",
+        "description": "This spacious and modern family home boasts a backyard oasis, with a luxurious and refined design. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": "567 Family Street, Familytown, USA",
+        "phone_number": "+1 (555) 567-8901",
+        "email": "info@family-realty.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 5,
+        "img": ""
+    }
+]
