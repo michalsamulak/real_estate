@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import {initFirebase} from '../../lib/firebase/firebase'
 import styles from "@/styles/Home.module.css";
+import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
 
 initFirebase()
 
@@ -27,6 +28,8 @@ export default function Home() {
             <main className={styles.main}>
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
             </main>
+        <WriteToCloudFirestore />
+
             <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, repudiandae a, laborum sed, unde corrupti doloremque totam voluptates eos inventore aperiam velit suscipit impedit cum culpa ipsam quod error officiis.
             Repellat eum voluptatibus a illum eius fugit id adipisci odit distinctio, nihil eveniet, vel itaque at modi voluptas sequi autem! Libero accusantium dolores cumque nostrum ipsa tempore expedita neque asperiores.
             Incidunt fugit velit nostrum eveniet natus nulla veritatis quas dolore iure quam doloribus, laudantium, corrupti iste repellat suscipit architecto, voluptatibus a aliquam deserunt ex dicta dignissimos in vitae. Eveniet, ipsam.
