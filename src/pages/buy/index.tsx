@@ -12,8 +12,10 @@ const Buy = () => {
     const handleForm = async () => {
         
         const fetch = await getDocument('users', 'user-id2')
-        const test = fetch.result?.data()
-        console.log(test);
+        // const fetch = await getDocument('users', 'user-id2')
+        // const test = fetch.result?.data()
+        // console.log(test);
+
      }
       
     

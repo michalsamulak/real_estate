@@ -1,18 +1,22 @@
 import firebase_app from "./firebase";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { IAuth } from "./type";
 
 const auth = getAuth(firebase_app);
 
-export default async function signIn(email: string, password: string) {
-    let result = null,
-        error = null;
+export default async function signIn({email, password}: IAuth) {
+  
     try {
-        result = await signInWithEmailAndPassword(auth, email, password);
+       const result = await signInWithEmailAndPassword(auth, email, password);
+       const error = null
+
+        return { result, error };
     } catch (e) {
-        error = e;
+       const error = e;
+       const result = null
+       return { result, error };
     }
 
-    return { result, error };
 }
 
 
