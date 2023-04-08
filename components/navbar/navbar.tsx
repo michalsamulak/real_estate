@@ -39,7 +39,7 @@ const NavBar = () => {
                     </Link>
                 </ul>
                 <ul className={styles.navItems}>
-                    <Link href={"/"}>
+                    <Link href={"/login"}>
                         <li className={styles.navItem}>Login</li>
                     </Link>
                 </ul>
