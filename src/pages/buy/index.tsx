@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import getDocument from '../../../lib/firebase/firebaseGetDB'
+import useFetchData from '../../../lib/hooks/useFetchData'
+import useGetDocument from '../../../lib/hooks/useFetchData';
 
 const Buy = () => {
 
+  const [getDocument, result, error] = useFetchData("users", "test");
 
-
-
+  useEffect(() => {
+    getDocument();
+  }, []);
 
     const handleForm = async () => {
         
-        const fetch = await getDocument('users', 'user-id2')
-        const test = fetch.result?.data()
-        console.log(test);
+       
+        console.log(result.data());
      }
       
     
