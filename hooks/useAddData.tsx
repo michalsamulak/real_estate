@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
-import  firebaseApp  from '../firebase/firebase'; 
+import  firebaseApp  from '../lib/firebase/firebase'; 
 
 interface IAddData {
   collection: string;
