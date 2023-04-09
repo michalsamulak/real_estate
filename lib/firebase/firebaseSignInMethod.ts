@@ -11,8 +11,8 @@ export default async function signIn({email, password}: IAuth) {
        const error = null
 
         return { result, error };
-    } catch (e) {
-       const error = e;
+    } catch (err) {
+       const error = err;
        const result = null
        return { result, error };
     }

@@ -16,6 +16,7 @@ const Buy = () => {
         // const test = fetch.result?.data()
         // console.log(test);
 
+console.log(fetch.result);
      }
       
     

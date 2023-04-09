@@ -11,8 +11,8 @@ export default async function signUp({email, password}: IAuth) {
         error = null;
     try {
         result = await createUserWithEmailAndPassword(auth, email, password);
-    } catch (e) {
-        error = e;
+    } catch (err) {
+        error = err;
     }
 
     return { result, error };
