@@ -1,109 +1,37 @@
-
-
 .login_box {
   display: flex;
-  
-//   justify-content: center;
-//   align-content: center;
-flex-direction: column;
+
+  //   justify-content: center;
+  //   align-content: center;
+  flex-direction: column;
   margin: 5% auto;
   width: 50rem;
-//   width: 70dvw;
-//   height: 40rem;
-  background: #FFF;
+  //   width: 70dvw;
+  //   height: 40rem;
+  background: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   margin-top: 20rem;
-
-  
-}
-
-.header {
-    margin: 2rem;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-  box-sizing: border-box;
-  padding: 2rem;
-//   width: 30rem;
-//   height: 40rem;
-}
-
-
-.input {
-//   display: block;
-  box-sizing: border-box;
-  margin-bottom: 2rem;
-  padding: 4px;
-  width: 22rem;
-  height: 3.2rem;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  transition: 0.2s ease;
-}
-
-.input:focus {
-  border-bottom: 2px solid #0b9548;
-  color: #0b9548;
-  transition: 0.2s ease;
-}
-
-.input[type="submit"] {
-  margin-top: 2.8rem;
-  width: 12rem;
-  height: 3.2rem;
-  background: #0b9548;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-}
-
-.input[type="submit"]:hover,
-.input[type="submit"]:focus {
-  opacity: 0.8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
-.input[type="submit"]:active {
-  opacity: 1;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
 }
 
 .or {
-
   height: 4rem;
-  background: #DDD;
+  background: #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   line-height: 4rem;
   text-align: center;
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-  
-    align-items: center;
-//   box-sizing: border-box;
-//   padding: 4rem;
-//   width: 30rem;
-//   height: 40rem;
-    margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
 
+  align-items: center;
+  //   box-sizing: border-box;
+  //   padding: 4rem;
+  //   width: 30rem;
+  //   height: 40rem;
+  margin-top: 4rem;
 }
 
 // .loginwith {
@@ -120,8 +48,8 @@ button.social_signin {
   height: 3.6rem;
   border: none;
   border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   transition: 0.2s ease;
   cursor: pointer;
@@ -139,53 +67,46 @@ button.social_signin:active {
 }
 
 button.social_signin.facebook {
-  background: #32508E;
+  background: #32508e;
+  font-size: 1.5rem;
 }
 
 button.social_signin.github {
   background: #252525;
+  font-size: 1.5rem;
 }
 
 button.social_signin.google {
-  background: #DD4B39;
+  background: #dd4b39;
+  font-size: 1.5rem;
 }
 
-
-
 @media (min-width: 768px) {
-    .login_box {
-        display: flex;
-        
+  .login_box {
+    display: flex;
 
-        align-items: center;
-      flex-direction: row;
+    align-items: center;
+    flex-direction: row;
 
-      justify-content: space-around;
-        margin: 10% auto;
-        width: 70dvw;
-        height: 60dvh;
-  
-        background: rgb(16,29,44);
-        background: linear-gradient(280deg, rgba(16,29,44,1) 48%, rgba(255,255,255,1) 100%);   
-    
-    }
+    justify-content: space-around;
+    margin: 10% auto;
+    width: 70dvw;
+    height: 60dvh;
 
-      .or {
-        // position: absolute;
-        // top: 180px;
-        // left: 280px;
-        width: 4rem;
-        height: 4rem;
-        // background: #DDD;
-        border-radius: 50%;
-        // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        // line-height: 40px;
-        text-align: center;
-      }
-      .header {
-        font-size: 3rem;
-        margin-bottom: 5rem;
-    }
+    background: rgb(16, 29, 44);
+    background: linear-gradient(280deg, rgba(16, 29, 44, 1) 48%, rgba(255, 255, 255, 1) 100%);
+  }
 
- }
-
+  .or {
+    // position: absolute;
+    // top: 180px;
+    // left: 280px;
+    width: 4rem;
+    height: 4rem;
+    // background: #DDD;
+    border-radius: 50%;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    // line-height: 40px;
+    text-align: center;
+  }
+}

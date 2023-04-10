@@ -35,7 +35,7 @@ const NavBar = () => {
             <div className={styles.wrapper}>
                 <ul className={styles.navItems}>
                     <Link href={"/"}>
-                        <li className={styles.navItem}>Sign in</li>
+                        <li className={styles.navItem}>Sign&#8901;in</li>
                     </Link>
                 </ul>
                 <ul className={styles.navItemsBtn}>
