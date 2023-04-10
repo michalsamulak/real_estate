@@ -1,13 +1,9 @@
 .login_box {
   display: flex;
 
-  //   justify-content: center;
-  //   align-content: center;
   flex-direction: column;
   margin: 5% auto;
   width: 50rem;
-  //   width: 70dvw;
-  //   height: 40rem;
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -27,20 +23,9 @@
   flex-direction: column;
 
   align-items: center;
-  //   box-sizing: border-box;
-  //   padding: 4rem;
-  //   width: 30rem;
-  //   height: 40rem;
+
   margin-top: 4rem;
 }
-
-// .loginwith {
-
-//   margin-bottom: 4rem;
-//   font-size: 28px;
-
-//   text-align: center;
-// }
 
 button.social_signin {
   margin-bottom: 2rem;
@@ -98,15 +83,11 @@ button.social_signin.google {
   }
 
   .or {
-    // position: absolute;
-    // top: 180px;
-    // left: 280px;
     width: 4rem;
     height: 4rem;
-    // background: #DDD;
+
     border-radius: 50%;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    // line-height: 40px;
+
     text-align: center;
   }
 }

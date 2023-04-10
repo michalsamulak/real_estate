@@ -35,7 +35,7 @@ a {
 }
 
 .contact--wrapper {
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
   padding: 3rem;
 
   font-size: 1rem;
@@ -43,7 +43,7 @@ a {
   color: goldenrod;
 
   background: rgb(2, 0, 36);
-
+  background-color: #17365a;
 }
 
 @media screen and (min-width: 868px) {
@@ -51,7 +51,7 @@ a {
     display: flex;
     justify-content: center;
       padding: 5rem; 
-   margin-top: 10rem;
+   /* margin-top: 10rem; */
   }
 .contact--wrapper {
   display: flex;

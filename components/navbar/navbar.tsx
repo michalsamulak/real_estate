@@ -13,9 +13,12 @@ const NavBar = () => {
     }, []);
 
     return (
+        // <div
+        //     className={cln(styles.container, `${scroll ? styles.scroll : ""}`)}
+        // >  
         <div
-            className={cln(styles.container, `${scroll ? styles.scroll : ""}`)}
-        >
+        className={styles.container}
+    >
             <div className={styles.wrapper}>
                 <ul className={styles.navItems}>
                     <Link href={"/"}>
@@ -34,7 +37,7 @@ const NavBar = () => {
             </div>
             <div className={styles.wrapper}>
                 <ul className={styles.navItems}>
-                    <Link href={"/"}>
+                    <Link href={"/login"}>
                         <li className={styles.navItem}>Sign&#8901;in</li>
                     </Link>
                 </ul>
