@@ -12,6 +12,8 @@
   // --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(0, 0, 0, 0));
   width: 100%;
   z-index: 50;
+
+  
 }
 
 .wrapper {
@@ -68,6 +70,10 @@
   &:hover:after {width: 100%;}
 }
 
+.navItemsBtn {
+  align-self: center;
+}
+
 .navItemBtn {
   font-weight: 600;
   font-size: 2rem;
@@ -77,11 +83,17 @@
   display: block;
   position: relative;
 
-
+  align-self: center;
 
 
 }
 
+
+//////////////////////////////////////////////////////////////////
+/// 
+/// 
+
+//////////////////////////////////////////////
 
 
 @media (min-width: 768px) {

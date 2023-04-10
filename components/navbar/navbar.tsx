@@ -38,8 +38,8 @@ const NavBar = () => {
                         <li className={styles.navItem}>Sign in</li>
                     </Link>
                 </ul>
-                <ul className={styles.navItems}>
-                    <Link href={"/login"}>
+                <ul className={styles.navItemsBtn}>
+                    <Link href={"/join"}>
                         <li className={styles.navItemBtn}><button className={styles.button_join}>Join</button></li>
                     </Link>
                 </ul>
