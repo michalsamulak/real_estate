@@ -161,12 +161,14 @@ button.social_signin.google {
       flex-direction: row;
 
       justify-content: space-around;
-        margin: 20% auto;
+        margin: 10% auto;
         width: 70dvw;
         height: 60dvh;
   
-        
-      }
+        background: rgb(16,29,44);
+        background: linear-gradient(280deg, rgba(16,29,44,1) 48%, rgba(255,255,255,1) 100%);   
+    
+    }
 
       .or {
         // position: absolute;
