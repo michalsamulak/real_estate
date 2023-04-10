@@ -3,7 +3,7 @@ import { SignUp } from "../../../components/auth/signup"
 import { SignIn } from "../../../components/auth/signin";
 import styles from "./join.module.scss";
 import cls from "classnames";
-import { googleSignIn } from "../../../lib/firebase/firebaseSignInMethod";
+import { fbSignIn, googleSignIn } from "../../../lib/firebase/firebaseSignInMethod";
 
 const Login = () => {
     return (
@@ -15,7 +15,7 @@ const Login = () => {
                     
 
                     <button
-                        className={cls(styles.social_signin, styles.facebook)}
+                        className={cls(styles.social_signin, styles.facebook)} onClick={fbSignIn}
                     >
                         SingUp with Facebook
                     </button>

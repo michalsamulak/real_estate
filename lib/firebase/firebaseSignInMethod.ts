@@ -1,5 +1,5 @@
 import firebase_app from "./firebase";
-import { signInWithEmailAndPassword, getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithRedirect } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithRedirect, FacebookAuthProvider  } from "firebase/auth";
 import { isMobile } from 'react-device-detect';
 
 const auth = getAuth(firebase_app);
@@ -28,6 +28,14 @@ export const logOut = () => {
 export const googleSignIn = () => {
 
     const provider = new GoogleAuthProvider();
+
+    isMobile ? signInWithRedirect(auth, provider) : signInWithPopup(auth, provider)
+
+}
+
+export const fbSignIn =() => {
+    const provider = new FacebookAuthProvider();
+
 
     isMobile ? signInWithRedirect(auth, provider) : signInWithPopup(auth, provider)
 

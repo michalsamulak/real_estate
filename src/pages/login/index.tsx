@@ -3,7 +3,7 @@ import { SignUp } from "../../../components/auth/signup";
 import { SignIn } from "../../../components/auth/signin";
 import styles from "./login.module.scss";
 import cls from "classnames";
-import { googleSignIn } from "../../../lib/firebase/firebaseSignInMethod";
+import { fbSignIn, googleSignIn } from "../../../lib/firebase/firebaseSignInMethod";
 
 const Login = () => {
     return (
@@ -12,7 +12,7 @@ const Login = () => {
             <div className={styles.or}>OR</div>
 
             <div className={styles.right}>
-                <button className={cls(styles.social_signin, styles.facebook)}>
+                <button className={cls(styles.social_signin, styles.facebook)} onClick={fbSignIn}>
                     Log in with facebook
                 </button>
                 <button className={cls(styles.social_signin, styles.github)}>
@@ -27,3 +27,4 @@ const Login = () => {
 };
 
 export default Login;
+
