@@ -35,12 +35,12 @@ const NavBar = () => {
             <div className={styles.wrapper}>
                 <ul className={styles.navItems}>
                     <Link href={"/"}>
-                        <li className={styles.navItem}>User</li>
+                        <li className={styles.navItem}>Sign in</li>
                     </Link>
                 </ul>
                 <ul className={styles.navItems}>
                     <Link href={"/login"}>
-                        <li className={styles.navItem}>Login</li>
+                        <li className={styles.navItemBtn}><button className={styles.button_join}>Join</button></li>
                     </Link>
                 </ul>
             </div>

@@ -34,6 +34,8 @@
   display: flex;
   flex-direction: row;
   
+  
+  
 }
 
 .navItem {
@@ -60,7 +62,24 @@
   transition: width .5s linear;  
   
 }
+
+
+
   &:hover:after {width: 100%;}
+}
+
+.navItemBtn {
+  font-weight: 600;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 0.75rem;
+  text-decoration: none;
+  display: block;
+  position: relative;
+
+
+
+
 }
 
 
@@ -95,4 +114,50 @@
   
   background-color: #17365a;
   transition: background-color .3s linear;
+}
+
+
+/* CSS */
+.button_join {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+
+  
+}
+
+.button_join:hover,
+.button_join:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+  
+}
+
+.button_join:active {
+  opacity: .5;
+}
+.button_join::after {
+  transition: none;  
+
 }
