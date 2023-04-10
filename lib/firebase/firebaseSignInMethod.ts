@@ -2,7 +2,7 @@ import firebase_app from "./firebase";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithRedirect, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { isMobile } from 'react-device-detect';
 
-const auth = getAuth(firebase_app);
+export const auth = getAuth(firebase_app);
 
 export default async function signIn(email: string, password: string) {
 
@@ -30,7 +30,9 @@ export const googleSignIn = () => {
     if (isMobile) {
         return signInWithRedirect(auth, provider)
     }
-    signInWithPopup(auth, provider).then().catch()
+    signInWithPopup(auth, provider).then(
+
+    ).catch()
 }
 
 export const fbSignIn = () => {
@@ -48,3 +50,4 @@ export const githubSignIn = () => {
     }
     signInWithPopup(auth, provider).then().catch()
 }
+
