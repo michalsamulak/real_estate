@@ -4,10 +4,8 @@ import { SignIn } from "../../../components/auth/signin";
 import styles from "./login.module.scss";
 import cls from "classnames";
 import {
-    auth,
-    fbSignIn,
-    githubSignIn,
-    googleSignIn,
+    auth
+
 } from "../../../lib/firebase/firebaseSignInMethod";
 import {
     FacebookAuthProvider,
@@ -19,47 +17,17 @@ import {
 } from "firebase/auth";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
+import { handleAuthProviderLogin } from "../../../lib/utlis";
 
-type IAuthProvider = "Google" | "Facebook" | "Github";
 
 const Login = () => {
     const router = useRouter();
-
-    const handleAuthProviderLogin = async (
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-        authProvider: IAuthProvider
-    ) => {
-        e.preventDefault();
-
-        let provider;
-
-        switch (authProvider) {
-            case "Google":
-                provider = new GoogleAuthProvider();
-                break;
-            case "Facebook":
-                provider = new FacebookAuthProvider();
-                break;
-            case "Github":
-                provider = new GithubAuthProvider();
-                break;
-            default:
-                throw new Error("Unsupported auth provider");
-        }
-
-        try {
-            if (isMobile) {
-                await signInWithRedirect(auth, provider);
-
-                return router.push("/");
-            }
-            signInWithPopup(auth, provider);
-            await signInWithPopup(auth, provider);
-            router.push("/");
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    
+    const redirect = () => {
+        return router.push('/')
+    }
+    
+  
 
     return (
         <div className={styles.login_box}>
@@ -69,19 +37,19 @@ const Login = () => {
             <div className={styles.right}>
                 <button
                     className={cls(styles.social_signin, styles.facebook)}
-                    onClick={(e) => handleAuthProviderLogin(e, "Facebook")}
+                    onClick={(e) => handleAuthProviderLogin(e, "Facebook", redirect)}
                 >
                     Log in with facebook
                 </button>
                 <button
                     className={cls(styles.social_signin, styles.github)}
-                    onClick={(e) => handleAuthProviderLogin(e, "Github")}
+                    onClick={(e) => handleAuthProviderLogin(e, "Github", redirect)}
                 >
                     Log in with GitHub
                 </button>
                 <button
                     className={cls(styles.social_signin, styles.google)}
-                    onClick={(e) => handleAuthProviderLogin(e, "Google")}
+                    onClick={(e) => handleAuthProviderLogin(e, "Google", redirect)}
                 >
                     Log in with Google+
                 </button>

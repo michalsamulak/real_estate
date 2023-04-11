@@ -25,29 +25,29 @@ export const logOut = () => {
 }
 
 
-export const googleSignIn = () => {
-    const provider = new GoogleAuthProvider();
-    if (isMobile) {
-        return signInWithRedirect(auth, provider)
-    }
-    signInWithPopup(auth, provider).then(
+// export const googleSignIn = () => {
+//     const provider = new GoogleAuthProvider();
+//     if (isMobile) {
+//         return signInWithRedirect(auth, provider)
+//     }
+//     signInWithPopup(auth, provider).then(
 
-    ).catch()
-}
+//     ).catch()
+// }
 
-export const fbSignIn = () => {
-    const provider = new FacebookAuthProvider();
-    if (isMobile) {
-        return signInWithRedirect(auth, provider)
-    }
-    signInWithPopup(auth, provider).then().catch()
-}
+// export const fbSignIn = () => {
+//     const provider = new FacebookAuthProvider();
+//     if (isMobile) {
+//         return signInWithRedirect(auth, provider)
+//     }
+//     signInWithPopup(auth, provider).then().catch()
+// }
 
-export const githubSignIn = () => {
-    const provider = new GithubAuthProvider();
-    if (isMobile) {
-        return signInWithRedirect(auth, provider)
-    }
-    signInWithPopup(auth, provider).then().catch()
-}
+// export const githubSignIn = () => {
+//     const provider = new GithubAuthProvider();
+//     if (isMobile) {
+//         return signInWithRedirect(auth, provider)
+//     }
+//     signInWithPopup(auth, provider).then().catch()
+// }
 
