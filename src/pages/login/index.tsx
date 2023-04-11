@@ -4,7 +4,7 @@ import cls from "classnames";
 
 import { useRouter } from "next/router";
 import { handleAuthProviderLogin } from "../../../lib/utlis";
-import { useContext } from "react";
+
 
 
 const Login = () => {

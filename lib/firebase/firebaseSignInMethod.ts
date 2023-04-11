@@ -19,6 +19,6 @@ export default async function signIn(email: string, password: string) {
 }
 
 
-export const logOut = () => {
+export const logOutHandler = () => {
     signOut(auth)
 }
