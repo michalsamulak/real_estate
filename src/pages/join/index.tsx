@@ -1,6 +1,5 @@
 import React from "react";
 import { SignUp } from "../../../components/auth/signup";
-import { SignIn } from "../../../components/auth/signin";
 import styles from "./join.module.scss";
 import cls from "classnames";
 import { useRouter } from "next/router";
@@ -10,7 +9,7 @@ const Login = () => {
     const router = useRouter();
 
     const redirect = () => {
-        return router.push("/");
+        return router.push("/admin");
     };
 
     return (

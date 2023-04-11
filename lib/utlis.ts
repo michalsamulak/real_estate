@@ -2,7 +2,6 @@ import {
     FacebookAuthProvider,
     GithubAuthProvider,
     GoogleAuthProvider,
-    signInWithEmailAndPassword,
     signInWithPopup,
     signInWithRedirect,
 } from "firebase/auth";

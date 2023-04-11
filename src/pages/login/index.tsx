@@ -1,33 +1,20 @@
-import React, { useReducer } from "react";
-import { SignUp } from "../../../components/auth/signup";
 import { SignIn } from "../../../components/auth/signin";
 import styles from "./login.module.scss";
 import cls from "classnames";
-import {
-    auth
 
-} from "../../../lib/firebase/firebaseSignInMethod";
-import {
-    FacebookAuthProvider,
-    GithubAuthProvider,
-    GoogleAuthProvider,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    signInWithRedirect,
-} from "firebase/auth";
 import { useRouter } from "next/router";
-import { isMobile } from "react-device-detect";
 import { handleAuthProviderLogin } from "../../../lib/utlis";
+import { useContext } from "react";
 
 
 const Login = () => {
     const router = useRouter();
-    
+
     const redirect = () => {
         return router.push('/')
     }
     
-  
+
 
     return (
         <div className={styles.login_box}>

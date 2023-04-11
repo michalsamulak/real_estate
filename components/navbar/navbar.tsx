@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./navbar.module.scss";
 const cln = require("classnames");
 
 import Link from "next/link";
+import {  FirebaseAuthContext } from "../../lib/context";
 
 const NavBar = () => {
     const [scroll, setScroll] = useState(false);
+
+    const user = useContext(FirebaseAuthContext)
+
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 50);

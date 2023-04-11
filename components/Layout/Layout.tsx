@@ -6,8 +6,8 @@ const Layout = ({ children }: PropsWithChildren) => {
     return (
         <>
             <ErrorBoundary fallback={<div>Sorry, something went wrong.</div>}>
-                <NavBar />
-                <AuthContextProvider>{children}</AuthContextProvider>
+                
+                <AuthContextProvider><NavBar />{children}</AuthContextProvider>
             </ErrorBoundary>
         </>
     );
