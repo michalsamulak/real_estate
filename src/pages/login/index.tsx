@@ -3,7 +3,7 @@ import styles from "./login.module.scss";
 import cls from "classnames";
 
 import { useRouter } from "next/router";
-import { handleAuthProviderLogin } from "../../../lib/utlis";
+import { handleAuthProviderLogin } from "../../../lib/utils/auth_provider_utlis";
 
 // templates
     // login
@@ -18,13 +18,9 @@ import { handleAuthProviderLogin } from "../../../lib/utlis";
 const Login = () => {
     const router = useRouter();
 
-    const redirect = () => {
-        return router.push('/')
+    const redirect = async () => {
+        await router.push('/')
     }
-    
-    // const redirect = async () => {
-    //     await router.push('/')
-    // }
 
 
     return (
@@ -35,20 +31,20 @@ const Login = () => {
             <div className={styles.right}>
                 <button
                     className={cls(styles.social_signin, styles.facebook)}
-                    // type="button"
-                    onClick={(e) => handleAuthProviderLogin(e, "Facebook", redirect)}
+                    type="button"
+                    onClick={()=> handleAuthProviderLogin( "facebook", redirect)}
                 >
                     Log in with facebook
                 </button>
                 <button
                     className={cls(styles.social_signin, styles.github)}
-                    onClick={(e) => handleAuthProviderLogin(e, "Github", redirect)}
+                    onClick={()=> handleAuthProviderLogin( "github", redirect)}
                 >
                     Log in with GitHub
                 </button>
                 <button
                     className={cls(styles.social_signin, styles.google)}
-                    onClick={(e) => handleAuthProviderLogin(e, "Google", redirect)}
+                    onClick={()=> handleAuthProviderLogin( "google", redirect)}
                 >
                     Log in with Google+
                 </button>

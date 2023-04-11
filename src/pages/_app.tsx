@@ -1,10 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import NavBar from '../../components/navbar/navbar'
-import { useEffect } from 'react';
-import ErrorBoundary from '@/ErrorBoundary';
-import { AuthContextProvider } from '../../lib/context';
 import Layout from '../../components/Layout/Layout';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -16,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Layout>
       
       <Component {...pageProps} />
-      {/* <Toaster /> */}
+      <Toaster />
     </Layout>
   
   ) 

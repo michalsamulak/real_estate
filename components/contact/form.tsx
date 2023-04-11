@@ -1,8 +1,7 @@
-import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import toast, { Toaster } from 'react-hot-toast';
-import * as Yup from 'yup';
 import styles from '../contact/form.module.scss'
+import { initialValues, validationSchema } from '../../lib/utils/contact_form_utils';
 
 type IInitValues = {
     name: string;
@@ -10,11 +9,6 @@ type IInitValues = {
     message: string,
 }
 
-const initialValues = {
-  name: '',
-  email: '',
-  message: ''
-};
 
 // contact
   // Form
@@ -25,18 +19,12 @@ const initialValues = {
     // styles.modules.scss
 
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Please enter your name'),
-  email: Yup.string().email('Invalid email address').required('Please enter your email'),
-  message: Yup.string().required('Please enter your message')
-});
-const notify = () => toast('Thank you for message');
 
 const ContactForm = () => {
 
 
   const handleSubmit = (values: IInitValues) => {
-    // notify()
+
     toast('Thank you for message')
   };
 

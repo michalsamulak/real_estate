@@ -15,7 +15,7 @@ export default async function addData(collection: string, id: string, data: any)
         const result = await setDoc(doc(db, collection, id), data, {
             merge: true,
         });
-        // const error = null
+     
         return { result, error: null };
 
 
