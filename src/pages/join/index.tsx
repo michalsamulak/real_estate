@@ -17,7 +17,7 @@ const Login = () => {
             <SignUp />
             <div className={styles.or}>OR</div>
 
-            <div className={styles.right}>
+            {/* <div className={styles.right}>
                 <button
                     className={cls(styles.social_signin, styles.facebook)}
                     onClick={(e) =>
@@ -42,7 +42,7 @@ const Login = () => {
                 >
                     SingUp with Google+
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 };

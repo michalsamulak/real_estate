@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from '../contact/header.module.scss'
 
+const contactInfo = [
+  "123 Main Street<br />Anytown, USA"
+]
+
 function SectionHeader() {
   return (
     <section className={styles.section_header}>
@@ -12,6 +16,7 @@ function SectionHeader() {
           <div className={styles.contact_info_item}>
             <i className={styles.contact_info_icon}></i>
             <p className={styles.contact_info_text}>123 Main Street<br />Anytown, USA</p>
+            {/* <p dang /> */}
           </div>
           <div className={styles.contact_info_item}>
             <i className={styles.contact_info_icon}></i>

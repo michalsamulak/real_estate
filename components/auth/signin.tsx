@@ -1,19 +1,20 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
 import signIn from "../../lib/firebase/firebaseSignInMethod"
 import { useRouter } from 'next/navigation'
 import styles from "./auth.module.scss";
 
 
 export const SignIn = () => {
-    const [email, setEmail] = React.useState('')
-    const [password, setPassword] = React.useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     
     const router = useRouter()
 
-    const handleForm = async (event: any) => {
+    const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        // ...
 
         const { result, error } = await signIn(email, password);
 
@@ -25,6 +26,13 @@ export const SignIn = () => {
         console.log(result)
         return router.push("/admin")
     }
+
+    // kontrolowane
+    // <input onChange={(e) => setEmail(e.target.value)} value={email} />
+
+    // niekontrolowane
+    // <input ref={ref} />
+
     return (
         <div className={styles.left}>
         <h1 className={styles.header}>Sign in</h1>

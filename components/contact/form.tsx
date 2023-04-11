@@ -16,6 +16,14 @@ const initialValues = {
   message: ''
 };
 
+// contact
+  // Form
+    // index.tsx
+    // styles.modules.scss
+  // Header
+    // index.tsx
+    // styles.modules.scss
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Please enter your name'),
@@ -28,8 +36,8 @@ const ContactForm = () => {
 
 
   const handleSubmit = (values: IInitValues) => {
-    notify()
-
+    // notify()
+    toast('Thank you for message')
   };
 
   return (
@@ -40,6 +48,8 @@ const ContactForm = () => {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           {({ isSubmitting }) => (
             <Form>
+              {/* components/shared */}
+              {/* FormInput */}
               <div className={styles["form-group"]}>
                 <label htmlFor="name" className={styles["form-label"]}>Your Name</label>
                 <Field type="text" id="name" name="name" className={styles["form-input"]} />

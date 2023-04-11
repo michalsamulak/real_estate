@@ -5,7 +5,15 @@ import cls from "classnames";
 import { useRouter } from "next/router";
 import { handleAuthProviderLogin } from "../../../lib/utlis";
 
+// templates
+    // login
+        // index    
+        // styles
+// Login
 
+// login
+    // index.tsx
+    // styles.module.scss
 
 const Login = () => {
     const router = useRouter();
@@ -14,6 +22,9 @@ const Login = () => {
         return router.push('/')
     }
     
+    // const redirect = async () => {
+    //     await router.push('/')
+    // }
 
 
     return (
@@ -24,6 +35,7 @@ const Login = () => {
             <div className={styles.right}>
                 <button
                     className={cls(styles.social_signin, styles.facebook)}
+                    // type="button"
                     onClick={(e) => handleAuthProviderLogin(e, "Facebook", redirect)}
                 >
                     Log in with facebook

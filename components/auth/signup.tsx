@@ -7,6 +7,9 @@ export const SignUp = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [password2, setPassword2] = React.useState("");
+
+    // const [formState, setFormState] = React.useState({ email: "", password: "", repeatedPassword: "" });
+    // setFormState((prev) => ({...prev, password: e.target.value }))
     const router = useRouter();
 
     const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -28,6 +31,7 @@ export const SignUp = () => {
         <div className={styles.left}>
             <h1 className={styles.header}>Sign up</h1>
             <form onSubmit={handleForm} className={styles.form}>
+                {/* label */}
                 <input
                     className={styles.input}
                     onChange={(e) => setEmail(e.target.value)}
@@ -51,7 +55,7 @@ export const SignUp = () => {
                     onChange={(e) => setPassword2(e.target.value)}
                     required
                     type="password"
-                    name="password"
+                    name="reapeated-password"
                     placeholder="Retype password"
                 />
 

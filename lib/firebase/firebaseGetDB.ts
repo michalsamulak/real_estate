@@ -14,17 +14,18 @@ export default async function getDocument(collections: string, id: string) {
     const properties: any = []
     try {
         const docsSnap = await getDocs(colRef);
-        
+        return { result: docsSnap.docs.map((doc) => ({...doc.data(), id: doc.id })), error: null }
+
         docsSnap.forEach(doc => {
             properties.push(doc.data())
         })
+        // getDocuments
         result = properties
         // result = await getDocs(colRef)
 
         // result = await getDoc(docRef);
+        return { result, error };
     } catch (err) {
-        error = err;
+        return { result: null, error: err };
     }
-
-    return { result, error };
 }

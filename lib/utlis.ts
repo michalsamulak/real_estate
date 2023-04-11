@@ -10,11 +10,20 @@ import { auth } from './firebase/firebaseSignInMethod';
 
 type IAuthProvider = "Google" | "Facebook" | "Github";
 
+const authProviders = {
+    google: new GoogleAuthProvider()
+}
+
+// utils
+//  login.ts
+
 export const handleAuthProviderLogin = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     authProvider: IAuthProvider, redirect: () => Promise<boolean>
 ) => {
     e.preventDefault();
+
+    // authProviders[authProvider]
 
     let provider;
 
@@ -39,8 +48,8 @@ export const handleAuthProviderLogin = async (
 
             await signInWithPopup(auth, provider);
         }
-        return redirect()
-
+        redirect()
+        // await redirect()
     } catch (err) {
         console.log(err);
     }
