@@ -64,3 +64,27 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+
+
+////////////// test input component
+
+type IInputField = {
+  label: string,
+   name: string,
+    type:string,
+     errorMessage: any,
+      className: string
+}
+
+const InputField = ({ label, name, type, errorMessage, className }: IInputField) => {
+  return (
+    <div className={`${styles["form-group"]} ${className}`}>
+      <label htmlFor={name} className={styles["form-label"]}>{label}</label>
+      <Field type={type} id={name} name={name} className={styles["form-input"]} />
+      <ErrorMessage name={name} component="div" className={styles["error-message"]}>
+        {errorMessage}
+      </ErrorMessage>
+    </div>
+  );
+};
