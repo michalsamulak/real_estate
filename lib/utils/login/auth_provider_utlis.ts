@@ -6,7 +6,7 @@ import {
     signInWithRedirect,
 } from "firebase/auth";
 import { isMobile } from "react-device-detect";
-import { auth } from '../firebase/firebaseSignInMethod';
+import { auth } from '../../firebase/firebaseSignInMethod';
 
 export type IAuthProvider = "google" | "facebook" | "github";
 

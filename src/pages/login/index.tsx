@@ -4,7 +4,7 @@ import styles from "../../styles/Login.module.scss"
 import cls from "classnames";
 
 import { useRouter } from "next/router";
-import { handleAuthProviderLogin } from "../../../lib/utils/auth_provider_utlis";
+import { handleAuthProviderLogin } from "../../../lib/utils/login/auth_provider_utlis";
 
 
 const Login = () => {

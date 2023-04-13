@@ -1,21 +1,15 @@
-import firebase_app from "./firebase";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { requestHandlerSet } from "../utils/firebase/requestHandlers";
 
-const db = getFirestore(firebase_app)
 
-// requestHandler(async () => {
-//  const result = await setDoc(doc(db, collection, id), data, {
-//     merge: true,
-// });
-// })
 
 export default async function addData(collection: string, id: string, data: any) {
 
+
+
     try {
-        const result = await setDoc(doc(db, collection, id), data, {
-            merge: true,
-        });
-     
+
+        const result = requestHandlerSet(collection, id, data)
+
         return { result, error: null };
 
 

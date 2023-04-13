@@ -1,10 +1,10 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import toast, { Toaster } from "react-hot-toast";
+import { Formik, Form } from "formik";
+import toast from "react-hot-toast";
 import styles from "./styles.module.scss";
 import {
     initialValues,
     validationSchema,
-} from "../../../lib/utils/contact_form_utils";
+} from "./contact_form_utils";
 import { FormInput } from "../../shared/contactInput/FormInput";
 
 type IInitValues = {
