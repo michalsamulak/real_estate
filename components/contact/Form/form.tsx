@@ -5,7 +5,7 @@ import {
     initialValues,
     validationSchema,
 } from "../../../lib/utils/contact_form_utils";
-import { FormInput } from "../../shared/FormInput";
+import { FormInput } from "../../shared/contactInput/FormInput";
 
 type IInitValues = {
     name: string;

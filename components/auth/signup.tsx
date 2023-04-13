@@ -1,71 +1,74 @@
-import React from "react";
 import signUp from "../../lib/firebase/firebaseSignUpWithEmail";
 import { useRouter } from "next/navigation";
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
+import { Formik, Form } from "formik";
+import { AuthFormInput } from "../shared/authInput/AuthFormInput";
+import * as Yup from "yup";
+
+const schema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
+    repeatedPassword: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
+});
+
+type IInitialVal = {
+    email: string;
+    password: string;
+    repeatedPassword: string;
+};
+const initialValues: IInitialVal = {
+    email: "",
+    password: "",
+    repeatedPassword: "",
+};
 
 export const SignUp = () => {
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    const [password2, setPassword2] = React.useState("");
-
-    // const [formState, setFormState] = React.useState({ email: "", password: "", repeatedPassword: "" });
-    // setFormState((prev) => ({...prev, password: e.target.value }))
     const router = useRouter();
+    const handleForm = async (values: IInitialVal) => {
+        if (values.password !== values.repeatedPassword)
+            return alert("Passwords do not match! Please try again.");
 
-    const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if(password !== password2) return alert("Passwords do not match! Please try again.")
-
-        const { result, error } = await signUp(email, password);
+        const { result, error } = await signUp(values.email, values.password);
 
         if (error) {
-            return console.log(error);
+            return <p>Sorry, an error has occurred. Please try again later.</p>;
         }
 
         // else successful
         console.log(result);
-        return router.push("/admin");
+        return router.push("/");
     };
+
     return (
         <div className={styles.left}>
             <h1 className={styles.header}>Sign up</h1>
-            <form onSubmit={handleForm} className={styles.form}>
-                {/* label */}
-                <input
-                    className={styles.input}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                />
+            <Formik
+                initialValues={initialValues}
+                onSubmit={handleForm}
+                validationSchema={schema}
+            >
+                <Form className={styles.form}>
+                    <AuthFormInput label="email" name="email" type="email" />
+                    <AuthFormInput
+                        label="password"
+                        name="password"
+                        type="password"
+                    />
+                    <AuthFormInput
+                        label="retype password"
+                        name="repeatedPassword"
+                        type="password"
+                    />
 
-                <input
-                    className={styles.input}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                />
-
-                <input
-                    className={styles.input}
-                    onChange={(e) => setPassword2(e.target.value)}
-                    required
-                    type="password"
-                    name="reapeated-password"
-                    placeholder="Retype password"
-                />
-
-                <input
-                    className={styles.input}
-                    type="submit"
-                    name="signup_submit"
-                    value="Sign me up"
-                />
-            </form>
+                    <button className={styles.input} type="submit">
+                        Submit
+                    </button>
+                </Form>
+            </Formik>
         </div>
     );
 };
