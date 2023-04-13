@@ -1,19 +1,11 @@
 import { SignIn } from "../../../components/auth/signin";
-import styles from "./login.module.scss";
+import styles from "../../styles/Login.module.scss"
+
 import cls from "classnames";
 
 import { useRouter } from "next/router";
 import { handleAuthProviderLogin } from "../../../lib/utils/auth_provider_utlis";
 
-// templates
-    // login
-        // index    
-        // styles
-// Login
-
-// login
-    // index.tsx
-    // styles.module.scss
 
 const Login = () => {
     const router = useRouter();

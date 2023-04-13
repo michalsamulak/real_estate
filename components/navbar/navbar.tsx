@@ -2,7 +2,7 @@ import styles from "./navbar.module.scss";
 
 
 import Link from "next/link";
-import { useAuthContext } from "../../lib/context";
+import { useAuthContext } from "../../lib/context/context";
 import { logOutHandler } from "../../lib/firebase/firebaseSignInMethod";
 
 // const navLinks = [{label: "Home", href: "/"}]

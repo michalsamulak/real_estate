@@ -1,0 +1,27 @@
+
+.contact__wrapper {
+  padding: 3rem;
+
+  font-size: 1rem;
+  line-height: 1.5;
+  color: goldenrod;
+
+  background: rgb(2, 0, 36);
+  background-color: #17365a;
+}
+
+@media screen and (min-width: 868px) {
+  .contact__container {
+    display: flex;
+    justify-content: center;
+      padding: 5rem; 
+
+  }
+.contact__wrapper {
+  display: flex;
+  justify-items: center;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+}

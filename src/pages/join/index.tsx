@@ -1,6 +1,6 @@
 import React from "react";
 import { SignUp } from "../../../components/auth/signup";
-import styles from "./join.module.scss";
+import styles from "../../styles/Join.module.scss"
 
 
 

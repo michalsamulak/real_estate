@@ -1,5 +1,4 @@
-import React from "react";
-import styles from "../contact/header.module.scss";
+import styles from './styles.module.scss'
 import DOMPurify from "dompurify";
 
 const contactInfo = [
@@ -26,11 +25,11 @@ function SectionHeader() {
                     {contactInfo.map((info, i) => (
                         <div key={i} className={styles.contact_info_item}>
                             <i className={styles.contact_info_icon}></i>
-                            <p className={styles.contact_info_text}>
+                            <div className={styles.contact_info_text}>
                                 <div
                                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(info) }}
                                 ></div>
-                            </p>
+                            </div>
                         </div>
                     ))}
                 </div>

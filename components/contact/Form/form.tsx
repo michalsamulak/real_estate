@@ -1,24 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import toast, { Toaster } from 'react-hot-toast';
-import styles from '../contact/form.module.scss'
-import { initialValues, validationSchema } from '../../lib/utils/contact_form_utils';
+import styles from './styles.module.scss'
+import { initialValues, validationSchema } from '../../../lib/utils/contact_form_utils';
 
 type IInitValues = {
     name: string;
     email: string,
     message: string,
 }
-
-
-// contact
-  // Form
-    // index.tsx
-    // styles.modules.scss
-  // Header
-    // index.tsx
-    // styles.modules.scss
-
-
 
 const ContactForm = () => {
 
@@ -58,7 +47,6 @@ const ContactForm = () => {
           )}
         </Formik>
       </div>
-      <Toaster />
     </section>
   );
 };

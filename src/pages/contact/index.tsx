@@ -1,18 +1,17 @@
-import React from 'react'
-import SectionHeader from '../../../components/contact/header'
-import ContactForm from '../../../components/contact/form'
-
+import React from "react";
+import SectionHeader from "../../../components/contact/Header/header";
+import ContactForm from "../../../components/contact/Form/form";
+import styled from "../../styles/Contact.module.scss";
 
 const Contact = () => {
-  return (
-    <div className='contact--container'>
-        <div className='contact--wrapper'>
-
-    <SectionHeader />
-    <ContactForm />
+    return (
+        <div className={styled.contact__container}>
+            <div className={styled.contact__wrapper}>
+                <SectionHeader />
+                <ContactForm />
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default Contact
+export default Contact;
