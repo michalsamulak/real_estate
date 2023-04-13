@@ -1,49 +1,49 @@
-.contact-form {
+.contact_form {
     padding: 3rem 1.5rem;
 
 }
 
-.form-title {
+.form_title {
     font-size: 2.4rem;
     margin-bottom: 1rem;
 }
 
-.form-subtitle {
+.form_subtitle {
     font-size: 1.8rem;
     margin-bottom: 3rem;
 }
 
-.form-label {
-    display: block;
-    // margin-bottom: 5rem;
-    margin-top: 2rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
+// .form_label {
+//     display: block;
+//     // margin-bottom: 5rem;
+//     margin-top: 2rem;
+//     font-size: 1.6rem;
+//     font-weight: 700;
+// }
 
-.form-input {
-    padding: 1.2rem 2rem;
-    font-size: 1rem;
-    border-width: 5px;
-    border-style: none;
-    border-radius: 6px;
-    outline: transparent;
-    width: 100%;
-    transition: border-color 0.2s ease;
-}
+// .form_input {
+//     padding: 1.2rem 2rem;
+//     font-size: 1rem;
+//     border-width: 5px;
+//     border-style: none;
+//     border-radius: 6px;
+//     outline: transparent;
+//     width: 100%;
+//     transition: border-color 0.2s ease;
+// }
 
-.form-textarea {
-    padding: 1.2px 2rem;
-    font-size: 1rem;
-    border-width: 5px;
-    border-style: none;
-    border-radius: 6px;
-    outline: transparent;
-    width: 100%;
-    transition: border-color 0.2s ease;
-}
+// .form_textarea {
+//     padding: 1.2px 2rem;
+//     font-size: 1rem;
+//     border-width: 5px;
+//     border-style: none;
+//     border-radius: 6px;
+//     outline: transparent;
+//     width: 100%;
+//     transition: border-color 0.2s ease;
+// }
 
-.form-submit {
+.form_submit {
     background-color: #333;
     color: #fff;
     border: none;
@@ -55,114 +55,49 @@
     cursor: pointer;
 }
 
-.error-message {
- color: red;
-}
+// .error_message {
+//  color: red;
+// }
 
-.form-submit:hover {
+.form_submit:hover {
     background-color: #555;
 }
 
 @media screen and (min-width: 768px) {
 
-    .section-title {
+    .section_title {
         font-size: 4.8rem;
     }
 
-    .section-subtitle {
+    .section_subtitle {
         font-size: 3.6rem;
     }
 
-    .contact-info {
+    .contact_info {
         flex-direction: row;
         justify-content: center;
     }
 
-    .contact-info-item {
-        margin-right: 3rem;
-        margin-bottom: 0;
-    }
+    // .contact_info-item {
+    //     margin-right: 3rem;
+    //     margin-bottom: 0;
+    // }
 
-    .form-title {
+    .form_title {
         font-size: 3.6rem;
         margin-bottom: 2rem;
     }
 
-    .form-subtitle {
+    .form_subtitle {
         font-size: 2.4rem;
         margin-bottom: 5rem;
     }
 
-    .form-input,
-    .form-textarea {
-        font-size: 1.8rem;
-    }
+    // .form_input,
+    // .form_textarea {
+    //     font-size: 1.8rem;
+    // }
 
 
 }
 
-// @media screen and (min-width: 1024px) {
-//     .test {
-//         display: flex;
-//         flex-direction: row;
-//     }
-//     .section-header {
-//         display: flex;
-//         flex-wrap: wrap;
-//         justify-content: space-between;
-//         align-items: center;
-//     }
-
-//     .section-title {
-//         font-size: 6.4rem;
-//         flex: 1 0 50%;
-//     }
-
-//     .section-subtitle {
-//         font-size: 4.8rem;
-//         flex: 1 0 50%;
-//     }
-
-//     .contact-info {
-//         flex-direction: row;
-//         justify-content: space-between;
-//     }
-
-//     .contact-info-item {
-//         margin-right: 5rem;
-//         margin-bottom: 0;
-//     }
-
-//     .form-title {
-//         font-size: 4.8rem;
-//         margin-bottom: 3rem;
-//         flex: 1 0 50%;
-//     }
-
-//     .form-subtitle {
-//         font-size: 3.6rem;
-//         margin-bottom: 8rem;
-//         flex: 1 0 50%;
-//     }
-
-//     .form-input,
-//     .form-textarea {
-//         font-size: 2.4rem;
-//     }
-
-//     .form-group {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: flex-start;
-//     }
-
-//     .form-group label {
-//         flex-basis: 30%;
-//         margin-right: 2rem;
-//     }
-
-//     .form-group input,
-//     .form-group textarea {
-//         flex: 1;
-//     }
-// }

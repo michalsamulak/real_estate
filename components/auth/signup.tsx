@@ -1,7 +1,7 @@
 import React from "react";
 import signUp from "../../lib/firebase/firebaseSignUpWithEmail";
 import { useRouter } from "next/navigation";
-import styles from "./auth.module.scss";
+import styles from './styles.module.scss'
 
 export const SignUp = () => {
     const [email, setEmail] = React.useState("");

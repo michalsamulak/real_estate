@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import signIn from "../../lib/firebase/firebaseSignInMethod"
 import { useRouter } from 'next/navigation'
-import styles from "./auth.module.scss";
+import styles from './styles.module.scss'
 
 
 export const SignIn = () => {
