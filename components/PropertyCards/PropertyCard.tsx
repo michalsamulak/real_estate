@@ -9,6 +9,7 @@ import {
     faBed,
     faUsd,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 type IPropertyCardProps = {
     imgSrc: string;
@@ -32,51 +33,51 @@ export const PropertyCard = ({
     return (
         <section className={styles.card}>
             <div>
-                <div className={styles["img-overlay"]}>
-                    <Image src={defaultImg} width={100} height={200} alt="" />
+                <div className={styles.img_overlay}>
+                    <Image src={imgSrc} width={100} height={200} alt="" />
                     <div className={styles.overlay}>
-                        <a className={styles.a} href="#">
+                      <Link href={'#'} className={styles.a}>
                             view property
-                        </a>
-                    </div>
+                      </Link>
+                      </div>
                     <div className={styles.cont}>
-                        <div className={styles["icons-img"]}></div>
+                        <div className={styles.icons_img}></div>
                     </div>
                 </div>
-                <h2>{title}</h2>
+                <h2 className={styles.title}>{title}</h2>
             </div>
-            <div className={styles["card-content"]}>
+            <div className={styles.card_content}>
                 <p>{description}</p>
 
-                <section className={styles["icons-home"]}>
-                    <div className={styles["name-icon"]}>
+                <section className={styles.icons_home}>
+                    <div className={styles.name_icon}>
                         <span>bedrooms</span>
                         <div className={styles.icon}>
                             <FontAwesomeIcon
                                 icon={faBed}
                                 style={{ fontSize: 13, color: "gray" }}
                             />
-                            <span>{bedrooms}</span>
+                            <span className={styles.qty}>{bedrooms}</span>
                         </div>
                     </div>
-                    <div className={styles["name-icon"]}>
+                    <div className={styles.name_icon}>
                         <span>bathrooms</span>
                         <div className={styles.icon}>
                             <FontAwesomeIcon
                                 icon={faSink}
                                 style={{ fontSize: 13, color: "gray" }}
                             />
-                            <span>{bathrooms}</span>
+                            <span className={styles.qty}>{bathrooms}</span>
                         </div>
                     </div>
-                    <div className={styles["name-icon"]}>
+                    <div className={styles.name_icon}>
                         <span>area</span>
                         <div className={styles.icon}>
                             <FontAwesomeIcon
                                 icon={faVectorSquare}
                                 style={{ fontSize: 13, color: "gray" }}
                             />
-                            <span>{area}</span>
+                            <span className={styles.qty}>{area}</span>
                         </div>
                     </div>
                 </section>
