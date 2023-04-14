@@ -1,4 +1,5 @@
-import { PropertyCard } from '../../../components/PropertyCard/PropertyCard'
+import { CardsWrapper } from '../../../components/PropertyCards/CardsWrapper'
+import { PropertyCard } from '../../../components/PropertyCards/PropertyCard'
 import getDocument from '../../../lib/firebase/firebaseGetDB'
 
 const Buy = () => {
@@ -26,7 +27,12 @@ const props = {
     
       return (
         <div>
+          <CardsWrapper>
+
            <PropertyCard imgSrc= '/' title= 'title' description= 'desc' bedrooms={1} bathrooms={2} area={23} price={'233'} />
+           <PropertyCard imgSrc= '/' title= 'title' description= 'desc' bedrooms={1} bathrooms={2} area={23} price={'233'} />
+           <PropertyCard imgSrc= '/' title= 'title' description= 'desc' bedrooms={1} bathrooms={2} area={23} price={'233'} />
+          </CardsWrapper>
            {/* <button onClick={handleForm}>buy</button> */}
         </div>
       )

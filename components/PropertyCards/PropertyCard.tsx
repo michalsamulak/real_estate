@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import Image from 'next/image'
+import defaultImg from '../../public/static/default_img.jpg'
 
 type IPropertyCardProps = {
   imgSrc: string;
@@ -11,13 +13,14 @@ type IPropertyCardProps = {
   price: string;
 }
 
+
+
 export const PropertyCard = ({ imgSrc, title, description, bedrooms, bathrooms, area, price }: IPropertyCardProps) => {
   return (
-    <div className={styles.container}>
-    <div className={styles.cards}>
+    
     <section className={styles.card}>
       <div>
-        <div className={styles['img-overlay']}><img src={imgSrc} alt={title} />
+        <div className={styles['img-overlay']}><Image src={defaultImg} width={100} height={300} alt='' />
           <div className={styles.overlay}><a className={styles.a} href="#">view property</a></div>
           <div className={styles.cont}>
             <div className={styles['icons-img']}>
@@ -60,7 +63,6 @@ export const PropertyCard = ({ imgSrc, title, description, bedrooms, bathrooms, 
         </section>
       </div>
     </section>
-    </div></div>
   );
 }
 
