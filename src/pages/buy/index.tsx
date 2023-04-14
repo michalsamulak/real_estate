@@ -1,4 +1,4 @@
-import React from 'react'
+import { PropertyCard } from '../../../components/PropertyCard/PropertyCard'
 import getDocument from '../../../lib/firebase/firebaseGetDB'
 
 const Buy = () => {
@@ -9,21 +9,25 @@ const Buy = () => {
   
 
 
-    const handleForm = async () => {
+//     const handleForm = async () => {
         
-        const fetch = await getDocument('users', 'user-id2')
-        // const fetch = await getDocument('users', 'user-id2')
-        // const test = fetch.result?.data()
-        // console.log(test);
+//         const fetch = await getDocument('users', 'user-id2')
+//         // const fetch = await getDocument('users', 'user-id2')
+//         // const test = fetch.result?.data()
+//         // console.log(test);
 
-console.log(fetch.result);
-     }
+// console.log(fetch.result);
+//      }
+
+const props = {
+  imgSrc: '/', title: 'title', description: 'desc', bedrooms: '1', bathrooms: '2', area: 23, price: 233
+}
       
     
       return (
-        <div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-           tets
-           <button onClick={handleForm}>buy</button>
+        <div>
+           <PropertyCard imgSrc= '/' title= 'title' description= 'desc' bedrooms={1} bathrooms={2} area={23} price={'233'} />
+           {/* <button onClick={handleForm}>buy</button> */}
         </div>
       )
     }
