@@ -2,7 +2,9 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '../../components/Layout/Layout';
 import { Toaster } from 'react-hot-toast';
+import "@fortawesome/fontawesome-svg-core/styles.css"; 
 
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 
 
