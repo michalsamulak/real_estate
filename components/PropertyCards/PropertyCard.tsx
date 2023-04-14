@@ -19,6 +19,7 @@ type IPropertyCardProps = {
     bathrooms: number;
     area: number;
     price: string;
+    id: string;
 };
 
 export const PropertyCard = ({
@@ -29,6 +30,7 @@ export const PropertyCard = ({
     bathrooms,
     area,
     price,
+    id
 }: IPropertyCardProps) => {
     return (
         <section className={styles.card}>
@@ -36,12 +38,13 @@ export const PropertyCard = ({
                 <div className={styles.img_overlay}>
                     <Image 
                     
-                    src={imgSrc} width={100} height={200} alt="" 
-                    unoptimized={true}
-                    
+                    src={imgSrc} 
+                    width={300} height={500} 
+                    alt={title} 
+                                  
                     />
                     <div className={styles.overlay}>
-                      <Link href={'#'} className={styles.a}>
+                      <Link href={`/buy/${id}`} className={styles.a}>
                             view property
                       </Link>
                       </div>
@@ -52,7 +55,7 @@ export const PropertyCard = ({
                 <h2 className={styles.title}>{title}</h2>
             </div>
             <div className={styles.card_content}>
-                <p>{description}</p>
+                <p>{description.slice(0,80)}...</p>
 
                 <section className={styles.icons_home}>
                     <div className={styles.name_icon}>
@@ -82,21 +85,16 @@ export const PropertyCard = ({
                                 icon={faVectorSquare}
                                 style={{ fontSize: 13, color: "gray" }}
                             />
-                            <span className={styles.qty}>{area}</span>
+                            <span className={styles.qty}>{area}m&sup2;</span>
                         </div>
                     </div>
                 </section>
                 <section className={styles.price}>
-                    <span>for sale</span>
-                    <br />
+                    {/* <span>for sale</span> */}
+                    {/* <br /> */}
 
                     <span>
-                        {" "}
-                        <FontAwesomeIcon
-                            icon={faUsd}
-                            style={{ fontSize: 16, color: "#252525" }}
-                        />{" "}
-                        {price}
+                                               {price}
                     </span>
                 </section>
             </div>

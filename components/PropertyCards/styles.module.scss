@@ -5,6 +5,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  width: auto;
+  height: auto;
 }
 
 .a {
@@ -18,7 +20,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 6rem)) 1fr;
   grid-gap: 40px;
   margin: 35px 0;
 }
@@ -26,7 +28,7 @@
 .cards {
   grid-column: 2 / span 12;
   display: grid;
-  grid-template-columns: repeat(12, minmax(auto, 60px));
+  grid-template-columns: repeat(12, minmax(auto, 6rem));
   grid-gap: 40px;
   position: relative;
 }
@@ -39,7 +41,6 @@
   transition: all 0.3s ease;
   background-color: white;
   box-shadow: 0px 0px 7px 3px #dfdfdf;
-
   &:hover {
     transform: translateY(-7px);
   }
@@ -174,7 +175,9 @@
 }
 
 .price span:last-of-type {
-  color: #2fa89e;
+  color: goldenrod;
+  color: #7e4a0a;
+  color: #0ba33e;
   font-size: 18px;
 }
 
