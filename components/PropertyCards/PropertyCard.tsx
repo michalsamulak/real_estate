@@ -34,7 +34,12 @@ export const PropertyCard = ({
         <section className={styles.card}>
             <div>
                 <div className={styles.img_overlay}>
-                    <Image src={imgSrc} width={100} height={200} alt="" />
+                    <Image 
+                    
+                    src={imgSrc} width={100} height={200} alt="" 
+                    unoptimized={true}
+                    
+                    />
                     <div className={styles.overlay}>
                       <Link href={'#'} className={styles.a}>
                             view property
