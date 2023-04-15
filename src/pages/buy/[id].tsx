@@ -1,6 +1,8 @@
 
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import propertiesJSON from "../../../data/staticData.json"
+import { PropertyPage } from "../../../components/PropertyPage/propertyPage";
+
 
 
 export const getStaticProps = async ({params}: any) => {
@@ -44,14 +46,16 @@ export const getStaticPaths = async () => {
 }; 
 
 
+
+
 const Launch = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
     // !'' -> true
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
 
-
+  console.log(data[0]);
     return (
         <>
-          
+            <PropertyPage property={data[0]}/>
         </>
     );
 };
