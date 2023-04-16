@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
     };
 };
 
-    const Buy = ({ data } : {data: IProperty[]}) => {
+    const PropertyDetails = ({ data } : {data: IProperty[]}) => {
 
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
 
@@ -45,7 +45,7 @@ export const getStaticPaths = async () => {
     );
 };
 
-export default Buy;
+export default PropertyDetails;
 
 // import { CardsWrapper } from '../../../components/PropertyCards/CardsWrapper'
 // import { PropertyCard } from '../../../components/PropertyCards/PropertyCard'

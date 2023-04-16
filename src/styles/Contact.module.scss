@@ -14,10 +14,13 @@
   .contact__container {
     display: flex;
     justify-content: center;
-      padding: 5rem; 
-
+    padding: 5rem; 
+    
   }
-.contact__wrapper {
+  .contact__wrapper {
+    margin-top: 10rem;
+  max-width: 60vw;
+  max-height: 60vh;
   display: flex;
   justify-items: center;
   padding: 1rem;

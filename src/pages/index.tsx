@@ -36,10 +36,11 @@ export default function Home() {
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
             </main>
             <CardsWrapper>
-          {data.map(record => {
+          {data.map((record, i) => {
             const {id, title, img, description, bathrooms, num_bedrooms, area, price, localization} = record
+            const recordsPerPage = 6
             return (
-              <PropertyCard key={id} id={id} imgSrc={img} title={title} description={description} bathrooms={bathrooms} bedrooms={num_bedrooms} area={area} price={price} />
+             (i<recordsPerPage) && <PropertyCard key={id} id={id} imgSrc={img} title={title} description={description} bathrooms={bathrooms} bedrooms={num_bedrooms} area={area} price={price} />
             )
           })}
           </CardsWrapper>
