@@ -1,4 +1,3 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import propertiesJSON from "../../../data/staticData.json";
 import { PropertyPage } from "../../../components/PropertyPage/propertyPage";
 import { IProperty } from "../../../components/PropertyPage/types";
@@ -34,13 +33,14 @@ export const getStaticPaths = async () => {
     };
 };
 
-    const Buy = ({ data } : {data: IProperty}) => {
-    // !'' -> true
+    const Buy = ({ data } : {data: IProperty[]}) => {
+
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
 
+    console.log(data);
        return (
         <>
-            <PropertyPage property={data} />
+            <PropertyPage property={data[0]} />
         </>
     );
 };

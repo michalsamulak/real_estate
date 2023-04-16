@@ -13,9 +13,10 @@ import { IProperty } from "./types";
 
 export const PropertyPage = ({property}: {property: IProperty}) => {
 
+    console.log(property.img);
     return (
         <>
-            <div className="container">
+            <div className={styles.featured_container}>
                 <div className={styles.featured_property}>
                     <div className={styles.image}>
                         <Image src={property.img} width={700} height={500} alt="test" />
