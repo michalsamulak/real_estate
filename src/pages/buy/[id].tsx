@@ -1,80 +1,51 @@
-
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import propertiesJSON from "../../../data/staticData.json"
+import propertiesJSON from "../../../data/staticData.json";
 import { PropertyPage } from "../../../components/PropertyPage/propertyPage";
+import { IProperty } from "../../../components/PropertyPage/types";
 
-
-
-export const getStaticProps = async ({params}: any) => {
-
-  
-
-     try {
-
-        const property = propertiesJSON.filter(singleProperty => {
-        return  singleProperty.id === params.id
-        })
-
+export const getStaticProps = async ({ params }: any) => {
+    try {
+        const property = propertiesJSON.filter((singleProperty) => {
+            return singleProperty.id === params.id;
+        });
 
         return {
-          props: {
-              data: property,
-          },
-      }
-      } catch (error) {
+            props: {
+                data: property,
+            },
+        };
+    } catch (error) {
         return {
-          props: {
-              data: '',
-          },
-      }
-
-
+            props: {
+                data: "",
+            },
+        };
+    }
 };
-}
 
 export const getStaticPaths = async () => {
-
-    const paths = propertiesJSON.map(record => {
-      return {params: {id: record.id}}
-    })
+    const paths = propertiesJSON.map((record) => {
+        return { params: { id: record.id } };
+    });
 
     return {
-
         paths,
         fallback: false,
     };
-}; 
+};
 
-
-
-
-const Launch = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const Buy = ({ data } : {data: IProperty}) => {
     // !'' -> true
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
-const property = data[0]
 
-    return (
+       return (
         <>
-            <PropertyPage property={property}/>
+            <PropertyPage property={data} />
         </>
     );
 };
 
-export default Launch;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Buy;
 
 // import { CardsWrapper } from '../../../components/PropertyCards/CardsWrapper'
 // import { PropertyCard } from '../../../components/PropertyCards/PropertyCard'
@@ -84,14 +55,10 @@ export default Launch;
 
 // const Buy = () => {
 
-
-
 //     // 'users', 'user-id2'
-  
-
 
 // //     const handleForm = async () => {
-        
+
 // //         const fetch = await getDocument('users', 'user-id2')
 // //         // const fetch = await getDocument('users', 'user-id2')
 // //         // const test = fetch.result?.data()
@@ -100,19 +67,14 @@ export default Launch;
 // // console.log(fetch.result);
 // //      }
 
-
 //       console.log(data);
-    
+
 //       return (
 //         <div>
-         
+
 //            {/* <button onClick={handleForm}>buy</button> */}
 //         </div>
 //       )
 //     }
 
-
 // export default Buy
-
-
-

@@ -11,35 +11,32 @@ import { IProperty } from "./types";
 
 
 
-export const PropertyPage = ({property}: {property:IProperty}) => {
-
+export const PropertyPage = ({property}: {property: IProperty}) => {
 
     return (
         <>
             <div className="container">
                 <div className={styles.featured_property}>
                     <div className={styles.image}>
-                        <Image src={img} width={700} height={500} alt="test" />
+                        <Image src={property.img} width={700} height={500} alt="test" />
                     </div>
                     <div className={styles.text}>
                         <h2>Property Information</h2>
                         <p className={styles.details}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Omnis quae obcaecati doloribus distinctio,
-                            aliquam vero? Molestias, amet, eveniet.
+                            {property.description}
                         </p>
                         <ul className="property-list-details">
                             <li className="text-black">
                                 Property:{" "}
                                 <strong className="text-black">
-                                    Marga Luxury Suite
+                                   {property.title}
                                 </strong>
                             </li>
                             <li>
-                                Room: <strong>2</strong>
+                                Room: <strong>{property.num_bedrooms}</strong>
                             </li>
                             <li>
-                                Total Area: <strong>482 Square Feets</strong>
+                                Total Area: <strong>{property.area}m&sup2;</strong>
                             </li>
                             <li>
                                 Category: <strong>Modern House</strong>
@@ -56,14 +53,14 @@ export const PropertyPage = ({property}: {property:IProperty}) => {
                                         icon={faPhone}
                                         style={{ fontSize: 13, color: "gray", paddingRight: '5px' }}
                                     />
-                                    555 555 555
+                                    {property.phone_number}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon
                                         icon={faEnvelope}
-                                        style={{ fontSize: 13, color: "gray", paddingRight: '5px' }}
+                                        style={{ fontSize: 13, color: "gray", paddingRight: '5px', marginTop: '10px' }}
                                     />
-                                    email
+                                    {property.email}
                                 </p>
                             </div>
                         </div>

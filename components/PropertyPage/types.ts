@@ -1,4 +1,4 @@
-export type IProperty = string | { 
+export type IProperty =  { 
   id: string;
   title: string;
   description: string;
