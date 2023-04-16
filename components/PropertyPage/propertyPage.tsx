@@ -11,7 +11,7 @@ import { IProperty } from "./types";
 
 
 
-export const PropertyPage = ({property}: {property:any}) => {
+export const PropertyPage = ({property}: {property:IProperty}) => {
 
 
     return (

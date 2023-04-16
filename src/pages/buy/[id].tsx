@@ -51,11 +51,11 @@ export const getStaticPaths = async () => {
 const Launch = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
     // !'' -> true
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
+const property = data[0]
 
-  console.log(data[0]);
     return (
         <>
-            <PropertyPage property={data[0]}/>
+            <PropertyPage property={property}/>
         </>
     );
 };
