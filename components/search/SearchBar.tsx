@@ -27,6 +27,13 @@ type IInitSearch = {
 }
 export const SearchBar = () => {
     const handleSubmit = (values: IInitSearch) => {
+      const {title, minBedrooms, maxBedrooms, minPrice, maxPrice} = values
+
+      if(minBedrooms > maxBedrooms || minPrice > maxPrice) return alert('wow')
+
+
+
+
         console.log(values); // Send values to backend for processing
     }
 
@@ -50,23 +57,27 @@ export const SearchBar = () => {
                         <div className={styles.selectsWrapper}>
                             <div className={styles.range}>
                                 <RangeSearch
-                                    name={"Min Price"}
+                                    label={"Min Price"}
+                                    name={"minPrice"}
                                     options={priceRange}
                                     formatPrice={formatPrice}
                                 />
                                 <RangeSearch
-                                    name={"Max Price"}
+                                    label={"Max Price"}
+                                    name={"maxPrice"}
                                     options={priceRange}
                                     formatPrice={formatPrice}
                                 />
                             </div>
                             <div className={styles.range}>
                                 <RangeSearch
-                                    name={"Min Bedrooms"}
+                                    label={"Min Bedrooms"}
+                                    name={"minBedrooms"}
                                     options={bedroomsRange}
                                 />
                                 <RangeSearch
-                                    name={"Max Bedrooms"}
+                                    label={"Max Bedrooms"}
+                                    name={"maxBedrooms"}
                                     options={bedroomsRange}
                                 />
                             </div>
