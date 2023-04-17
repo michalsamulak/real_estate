@@ -1,5 +1,23 @@
 .container {
     background-color: rgba(245, 245, 220, 0.267);
-    height: 10rem;
+    
+    display: flex;
+    justify-content: center;
+    min-height: 12rem;
     width: 40rem;
+    
+}
+.barWrapper {
+    padding: 1rem;
+}
+.selectsWrapper {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-around;
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
 }

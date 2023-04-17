@@ -1,7 +1,7 @@
 import { Field } from 'formik'
 import React from 'react'
 
-export const TextSearch = (name: string) => {
+export const TextSearch = ({name}: {name: string}) => {
   return (
     <>
          <label htmlFor={name}>
