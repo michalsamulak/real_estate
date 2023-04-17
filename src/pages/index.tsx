@@ -7,6 +7,8 @@ import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
 import data from "../../data/staticData.json"
 import { SearchBar } from "../../components/search/SearchBar";
+import { SearchContext, useAuthContext } from "../../lib/context/context";
+import { useContext } from "react";
 
 ////////////////////
 
@@ -15,6 +17,8 @@ import { SearchBar } from "../../components/search/SearchBar";
 // initFirebase()
 
 export default function Home() {
+
+
     return (
         <>
             <Head>

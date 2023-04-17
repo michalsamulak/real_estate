@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import styles from "./styles.module.scss";
 import { Formik, Form, Field } from "formik";
 import { RangeSearch } from "../shared/searchInputs/rangeSearch";
@@ -8,6 +8,13 @@ import {
     priceRange,
 } from "../../lib/utils/search/dropdownRanges";
 import { formatPrice } from "../../lib/utils/search/formatPrice";
+import DOMPurify from "dompurify";
+
+import data from "../../data/staticData.json"
+
+
+
+import { SearchContext, useAuthContext } from "../../lib/context/context";
 
 export const initialSearch = {
     title: "",
@@ -26,11 +33,18 @@ type IInitSearch = {
     maxBedrooms: number;
 }
 export const SearchBar = () => {
+  const test = useAuthContext()
+  const test2 = useContext(SearchContext)
+
+  
     const handleSubmit = (values: IInitSearch) => {
       const {title, minBedrooms, maxBedrooms, minPrice, maxPrice} = values
+      const searchTitle = DOMPurify.sanitize(title)
 
-      if(minBedrooms > maxBedrooms || minPrice > maxPrice) return alert('wow')
+      if(minBedrooms > maxBedrooms || minPrice > maxPrice) return 
 
+      test2('a')
+    console.log(test);
 
 
 
