@@ -3,29 +3,37 @@ import styles from "./styles.module.scss";
 import { Formik, Form, Field } from "formik";
 import { RangeSearch } from "../shared/searchInputs/rangeSearch";
 import { TextSearch } from "../shared/searchInputs/textSearch";
+import {
+    bedroomsRange,
+    priceRange,
+} from "../../lib/utils/search/dropdownRanges";
+import { formatPrice } from "../../lib/utils/search/formatPrice";
 
+export const initialSearch = {
+    title: "",
+    minPrice: 0,
+    maxPrice: 0,
+    minBedrooms: 0,
+    maxBedrooms: 0,
+};
+
+
+type IInitSearch = {
+    title: string;
+    minPrice: number;
+    maxPrice: number;
+    minBedrooms: number;
+    maxBedrooms: number;
+}
 export const SearchBar = () => {
-    function handleSubmit(values: any) {
+    const handleSubmit = (values: IInitSearch) => {
         console.log(values); // Send values to backend for processing
     }
-
-    const bedroomsRange = [1, 2, 3, 4, 5, 6];
-    const priceRange = [
-        100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000,
-        1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1700000,
-        1800000, 1900000, 2000000, 2500000, 3000000,
-    ];
 
     return (
         <div className={styles.container}>
             <Formik
-                initialValues={{
-                    title: "",
-                    minPrice: "",
-                    maxPrice: "",
-                    minBedrooms: "",
-                    maxBedrooms: "",
-                }}
+                initialValues={initialSearch}
                 onSubmit={handleSubmit}
             >
                 {(formik) => (
@@ -44,10 +52,12 @@ export const SearchBar = () => {
                                 <RangeSearch
                                     name={"Min Price"}
                                     options={priceRange}
+                                    formatPrice={formatPrice}
                                 />
                                 <RangeSearch
                                     name={"Max Price"}
                                     options={priceRange}
+                                    formatPrice={formatPrice}
                                 />
                             </div>
                             <div className={styles.range}>
