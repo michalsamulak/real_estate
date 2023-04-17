@@ -6,6 +6,7 @@ import { CardsWrapper } from "../../components/PropertyCards/CardsWrapper";
 import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
 import data from "../../data/staticData.json"
+import { SearchBar } from "../../components/search/SearchBar";
 
 ////////////////////
 
@@ -34,6 +35,7 @@ export default function Home() {
             </Head>
             <main className={styles.main}>
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
+            <SearchBar />
             </main>
             <CardsWrapper>
           {data.map((record, i) => {
