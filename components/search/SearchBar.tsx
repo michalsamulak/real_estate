@@ -13,6 +13,8 @@ import DOMPurify from "dompurify";
 import data from "../../data/staticData.json";
 
 import { SearchContext, useAuthContext } from "../../lib/context/context";
+import { IInitSearch } from "../../lib/utils/search/type";
+import { filterData } from "../../lib/utils/search/filterData";
 
 export const initialSearch = {
     title: "",
@@ -22,13 +24,7 @@ export const initialSearch = {
     maxBedrooms: 0,
 };
 
-type IInitSearch = {
-    title: string;
-    minPrice: number;
-    maxPrice: number;
-    minBedrooms: number;
-    maxBedrooms: number;
-};
+
 export const SearchBar = () => {
     const { search, updateSearch } = useAuthContext();
 
@@ -43,44 +39,11 @@ export const SearchBar = () => {
 
         const searchTitle = DOMPurify.sanitize(title);
 
-        const test = filterData(values);
+        const test = filterData(values, data);
         console.log(test);
     };
 
-    const filterData = (values: IInitSearch) => {
-        const filtered = data.filter((record) => {
-            const price = parseInt(record.price.substring(1).replace(",", ""));
-            const title = record.title.toLowerCase();
-            const roomsNum = record.num_bedrooms;
-
-            if (
-                values.title.length > 3 &&
-                !title.includes(values.title.toLowerCase())
-            ) {
-                return false;
-            }
-
-            if (
-                values.minPrice &&
-                values.maxPrice &&
-                (price < values.minPrice || price > values.maxPrice)
-            ) {
-                return false;
-            }
-
-            if (
-                values.minBedrooms &&
-                values.maxBedrooms &&
-                (roomsNum < values.minBedrooms || roomsNum > values.maxBedrooms)
-            ) {
-                return false;
-            }
-
-            return true;
-        });
-
-        return filtered;
-    };
+   
 
     return (
         <div className={styles.container}>
