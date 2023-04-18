@@ -1,4 +1,3 @@
-import { useContext, useReducer, useState } from "react";
 import styles from "./styles.module.scss";
 import { Formik, Form, Field } from "formik";
 import { RangeSearch } from "../shared/searchInputs/rangeSearch";
@@ -8,11 +7,11 @@ import {
     priceRange,
 } from "../../lib/utils/search/dropdownRanges";
 import { formatPrice } from "../../lib/utils/search/formatPrice";
-import DOMPurify from "dompurify";
+
 
 import data from "../../data/staticData.json";
 
-import { SearchContext, useAuthContext } from "../../lib/context/context";
+import { useAuthContext } from "../../lib/context/context";
 import { IInitSearch } from "../../lib/utils/search/type";
 import { filterData } from "../../lib/utils/search/filterData";
 
@@ -24,11 +23,13 @@ export const initialSearch = {
     maxBedrooms: 0,
 };
 
-
 export const SearchBar = () => {
     const { search, updateSearch } = useAuthContext();
 
-    const handleSubmit = (values: IInitSearch, { resetForm }:{ resetForm: () => void }) => {
+    const handleSubmit = (
+        values: IInitSearch,
+        { resetForm }: { resetForm: () => void }
+    ) => {
         const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
 
         if (
@@ -37,16 +38,11 @@ export const SearchBar = () => {
         )
             return;
 
-        const searchTitle = DOMPurify.sanitize(title);
-
         const propertyQuery = filterData(values, data);
-        updateSearch(propertyQuery)
+        updateSearch(propertyQuery);
 
-        resetForm()
-        
+        resetForm();
     };
-
-   
 
     return (
         <div className={styles.container}>

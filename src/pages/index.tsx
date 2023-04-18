@@ -27,6 +27,7 @@ export default function Home() {
     
     useEffect(()=> {
        const defaultDisplayProperties = getRandomItems(data, numPropertiesOnHomePage)
+
         updateSearch(defaultDisplayProperties)
     },[])
 
