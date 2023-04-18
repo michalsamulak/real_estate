@@ -7,7 +7,7 @@ const auth = getAuth(firebase_app);
 
 type IUser = User | null;
 type ISearch = typeof data | null
-type ContextState = { user: IUser, search: ISearch };
+type ContextState = { user: IUser, search: ISearch, updateSearch: any };
 
 
 export const AuthContext = createContext<ContextState>(
@@ -21,7 +21,7 @@ export const useAuthContext = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }: any) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState<any | null>(null)
+    const [search, setSearch] = useState<ISearch | null>(null)
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -37,11 +37,11 @@ export const AuthContextProvider = ({ children }: any) => {
     }
 
     return (
-        <AuthContext.Provider value={{ user, search }}>
-            <SearchContext.Provider value={updateSearch}>
+        <AuthContext.Provider value={{ user, search, updateSearch }}>
+            {/* <SearchContext.Provider value={updateSearch}> */}
 
             {loading ? <div>Loading...</div> : children}
-            </SearchContext.Provider>
+            {/* </SearchContext.Provider> */}
         </AuthContext.Provider>
     );
 };

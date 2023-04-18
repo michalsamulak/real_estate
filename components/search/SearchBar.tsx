@@ -10,9 +10,7 @@ import {
 import { formatPrice } from "../../lib/utils/search/formatPrice";
 import DOMPurify from "dompurify";
 
-import data from "../../data/staticData.json"
-
-
+import data from "../../data/staticData.json";
 
 import { SearchContext, useAuthContext } from "../../lib/context/context";
 
@@ -24,39 +22,69 @@ export const initialSearch = {
     maxBedrooms: 0,
 };
 
-
 type IInitSearch = {
     title: string;
     minPrice: number;
     maxPrice: number;
     minBedrooms: number;
     maxBedrooms: number;
-}
+};
 export const SearchBar = () => {
-  const test = useAuthContext()
-  const test2 = useContext(SearchContext)
+    const { search, updateSearch } = useAuthContext();
 
-  
     const handleSubmit = (values: IInitSearch) => {
-      const {title, minBedrooms, maxBedrooms, minPrice, maxPrice} = values
-      const searchTitle = DOMPurify.sanitize(title)
+        const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
 
-      if(minBedrooms > maxBedrooms || minPrice > maxPrice) return 
+        if (
+            (!title || title.length < 3) &&
+            (minBedrooms > maxBedrooms || minPrice > maxPrice)
+        )
+            return;
 
-      test2('a')
-    console.log(test);
+        const searchTitle = DOMPurify.sanitize(title);
 
+        const test = filterData(values);
+        console.log(test);
+    };
 
+    const filterData = (values: IInitSearch) => {
+        const filtered = data.filter((record) => {
+            const price = parseInt(record.price.substring(1).replace(",", ""));
+            const title = record.title.toLowerCase();
+            const roomsNum = record.num_bedrooms;
 
-        console.log(values); // Send values to backend for processing
-    }
+            if (
+                values.title.length > 3 &&
+                !title.includes(values.title.toLowerCase())
+            ) {
+                return false;
+            }
+
+            if (
+                values.minPrice &&
+                values.maxPrice &&
+                (price < values.minPrice || price > values.maxPrice)
+            ) {
+                return false;
+            }
+
+            if (
+                values.minBedrooms &&
+                values.maxBedrooms &&
+                (roomsNum < values.minBedrooms || roomsNum > values.maxBedrooms)
+            ) {
+                return false;
+            }
+
+            return true;
+        });
+
+        return filtered;
+    };
 
     return (
         <div className={styles.container}>
-            <Formik
-                initialValues={initialSearch}
-                onSubmit={handleSubmit}
-            >
+            <Formik initialValues={initialSearch} onSubmit={handleSubmit}>
                 {(formik) => (
                     <Form>
                         <div className={styles.barWrapper}>
