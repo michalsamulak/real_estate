@@ -28,7 +28,7 @@ export const initialSearch = {
 export const SearchBar = () => {
     const { search, updateSearch } = useAuthContext();
 
-    const handleSubmit = (values: IInitSearch) => {
+    const handleSubmit = (values: IInitSearch, { resetForm }:{ resetForm: () => void }) => {
         const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
 
         if (
@@ -39,8 +39,11 @@ export const SearchBar = () => {
 
         const searchTitle = DOMPurify.sanitize(title);
 
-        const test = filterData(values, data);
-        console.log(test);
+        const propertyQuery = filterData(values, data);
+        updateSearch(propertyQuery)
+
+        resetForm()
+        
     };
 
    

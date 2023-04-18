@@ -17,25 +17,17 @@ import { getRandomItems } from "../../lib/utils/helpers/randomArrayElements";
 
 // initFirebase()
 
-function getRandomNumber(size: number) {
-    return Math.floor(Math.random() * size);
-  }
+const numPropertiesOnHomePage = 6
 
 export default function Home() {
 
+
     const {search, updateSearch} = useAuthContext()
 
-    console.log({search});
-
-    getRandomItems(data, 6)
-
+    
     useEffect(()=> {
-
-        const test = data.map((record, i) => {
-            return 
-        })
-
-        // updateSearch()
+       const defaultDisplayProperties = getRandomItems(data, numPropertiesOnHomePage)
+        updateSearch(defaultDisplayProperties)
     },[])
 
     return (
@@ -61,11 +53,11 @@ export default function Home() {
             <SearchBar />
             </main>
             <CardsWrapper>
-          {data.map((record, i) => {
+          {search && search.map((record, i) => {
             const {id, title, img, description, bathrooms, num_bedrooms, area, price, localization} = record
-            const recordsPerPage = 6
+            
             return (
-             (i<recordsPerPage) && <PropertyCard key={id} id={id} imgSrc={img} title={title} description={description} bathrooms={bathrooms} bedrooms={num_bedrooms} area={area} price={price} />
+             <PropertyCard key={id} id={id} imgSrc={img} title={title} description={description} bathrooms={bathrooms} bedrooms={num_bedrooms} area={area} price={price} />
             )
           })}
           </CardsWrapper>
