@@ -8,7 +8,8 @@ import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
 import data from "../../data/staticData.json"
 import { SearchBar } from "../../components/search/SearchBar";
 import { SearchContext, useAuthContext } from "../../lib/context/context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { getRandomItems } from "../../lib/utils/helpers/randomArrayElements";
 
 ////////////////////
 
@@ -16,8 +17,26 @@ import { useContext } from "react";
 
 // initFirebase()
 
+function getRandomNumber(size: number) {
+    return Math.floor(Math.random() * size);
+  }
+
 export default function Home() {
 
+    const {search, updateSearch} = useAuthContext()
+
+    console.log({search});
+
+    getRandomItems(data, 6)
+
+    useEffect(()=> {
+
+        const test = data.map((record, i) => {
+            return 
+        })
+
+        // updateSearch()
+    },[])
 
     return (
         <>
