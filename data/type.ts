@@ -11,8 +11,12 @@ export interface IEstateData {
     bathrooms: number;
     img: string;
   }
+
   export interface Localization {
-    lat: number;
-    long: number;
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    country: string;
   }
   

@@ -2,10 +2,8 @@ export type IProperty =  {
   id: string;
   title: string;
   description: string;
-  localization: {
-      lat: number;
-      long: number;
-  };
+  localization: Localization;
+
   phone_number: string;
   email: string;
   price: string;
@@ -15,4 +13,11 @@ export type IProperty =  {
   img: string;
 
 }
- 
+
+type Localization = {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+}

@@ -47,7 +47,7 @@ export const PropertyPage = ({property}: {property: IProperty}) => {
                             </li>
                         </ul>
                         <div className={styles.contact_wrapper}>
-                            <p className={styles.contact}>Details:</p>
+                            <p className={styles.contact}>Contact:</p>
                             <div>
                                 <p>
                                     <FontAwesomeIcon
@@ -65,9 +65,19 @@ export const PropertyPage = ({property}: {property: IProperty}) => {
                                 </p>
                             </div>
                         </div>
+                        <div className={styles.contact_wrapper}>
+                        <p className={styles.contact}>Address:</p>
+                            <div>
+                                <p>{property.localization.street}</p>
+                                <p>{property.localization.city}</p>
+                                <p>{property.localization.zip}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     );
 };
+
+
