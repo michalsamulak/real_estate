@@ -1,20 +1,14 @@
+import { Formik, Form } from "formik";
 import styles from "./styles.module.scss";
-import { Formik, Form, Field } from "formik";
 import { RangeSearch } from "../shared/SearchInputs/RangeSearch"
 import { TextSearch } from "../shared/SearchInputs/TextSearch";
-import {
-    bedroomsRange,
-    priceRange,
-} from "../../utils/search/dropdownRanges";
+import {bedroomsRange, priceRange } from "../../utils/search/dropdownRanges";
 import { formatPrice } from "../../utils/search/formatPrice";
-
-
 import data from "../../data/staticData.json"
-
-import { useAuthContext } from "../../contexts/AuthContext";
 import { IInitSearch } from "../../utils/search/type";
 import { filterData } from "../../utils/search/filterData";
 import { IEstateData } from "@/types/estateTypes";
+import { validation } from "./validation";
 
 export const initialSearch = {
     title: "",
@@ -23,9 +17,6 @@ export const initialSearch = {
     minBedrooms: 0,
     maxBedrooms: 0,
 };
-
-// search -> SearchBar
-// SearchBar -> index.tsx
 
 export type ISearch = {
     setSearchItems: React.Dispatch<React.SetStateAction<IEstateData[]>>;
@@ -39,14 +30,7 @@ export const SearchBar = ({setSearchItems}: ISearch) => {
     ) => {
         const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
 
-        // yup
-        if (
-            (!title || title.length < 3) &&
-            (minBedrooms > maxBedrooms || minPrice > maxPrice)
-        )
-            return;
-
-        const propertyQuery = filterData(values, data);
+         const propertyQuery = filterData(values, data);
         setSearchItems(propertyQuery);
 
         resetForm();
@@ -54,7 +38,7 @@ export const SearchBar = ({setSearchItems}: ISearch) => {
 
     return (
         <div className={styles.container}>
-            <Formik initialValues={initialSearch} onSubmit={handleSubmit}>
+            <Formik initialValues={initialSearch} onSubmit={handleSubmit} validationSchema={validation}>
                 {(formik) => (
                     <Form>
                         <div className={styles.barWrapper}>
