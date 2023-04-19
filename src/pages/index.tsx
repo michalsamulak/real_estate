@@ -7,8 +7,7 @@ import { PropertyCard } from "../components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
 import data from "../data/staticData.json"
 import { SearchBar } from "../components/Search";
-import { SearchContext, useAuthContext } from "../contexts/AuthContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getRandomItems } from "../utils/helpers/randomArrayElements";
 
 ////////////////////
@@ -20,18 +19,10 @@ import { getRandomItems } from "../utils/helpers/randomArrayElements";
 const NUM_PROPERTIES_ON_HOME_PAGE = 6
 
 export default function Home() {
-    // useState
+    const defaultDisplayProperties = getRandomItems(data, NUM_PROPERTIES_ON_HOME_PAGE)
+    const [searchItems, setSearchItems] = useState(defaultDisplayProperties)
 
-    const {search, updateSearch} = useAuthContext()
-
-    
-    useEffect(()=> {
-       const defaultDisplayProperties = getRandomItems(data, NUM_PROPERTIES_ON_HOME_PAGE)
-
-        updateSearch(defaultDisplayProperties)
-        // eslint-disable-next-line
-    }, [])
-
+ 
     // PageWrapper | props - title
 
     return (
@@ -54,10 +45,10 @@ export default function Home() {
             </Head>
             <main className={styles.main}>
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
-            <SearchBar />
+            <SearchBar setSearchItems={setSearchItems}/>
             </main>
             <CardsWrapper>
-          {search && search.map((record: any) => {
+          {searchItems && searchItems.map((record: any) => {
             const { localization, id, num_bedrooms, img, ...restData } = record
             
             return (

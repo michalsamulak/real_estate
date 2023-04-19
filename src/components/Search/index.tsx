@@ -14,6 +14,7 @@ import data from "../../data/staticData.json"
 import { useAuthContext } from "../../contexts/AuthContext";
 import { IInitSearch } from "../../utils/search/type";
 import { filterData } from "../../utils/search/filterData";
+import { IEstateData } from "@/types/estateTypes";
 
 export const initialSearch = {
     title: "",
@@ -26,8 +27,11 @@ export const initialSearch = {
 // search -> SearchBar
 // SearchBar -> index.tsx
 
-export const SearchBar = () => {
-    const { search, updateSearch } = useAuthContext();
+export type ISearch = {
+    setSearchItems: React.Dispatch<React.SetStateAction<IEstateData[]>>;
+  }
+
+export const SearchBar = ({setSearchItems}: ISearch) => {
 
     const handleSubmit = (
         values: IInitSearch,
@@ -43,7 +47,7 @@ export const SearchBar = () => {
             return;
 
         const propertyQuery = filterData(values, data);
-        updateSearch(propertyQuery);
+        setSearchItems(propertyQuery);
 
         resetForm();
     };

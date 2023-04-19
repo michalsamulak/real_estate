@@ -1,28 +1,27 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useState,
+    ReactNode,
+} from "react";
 import { onAuthStateChanged, User, getAuth } from "firebase/auth";
 import firebase_app from "../lib/firebase/firebase";
-import data from "../data/staticData.json"
 
 const auth = getAuth(firebase_app);
 
 type IUser = User | null;
-type ISearch = typeof data | null
-type ContextState = { user: IUser, search: ISearch, updateSearch: any }; // X
+type ContextState = { user: IUser };
 
 // AuthContext.tsx
 
-export const AuthContext = createContext<ContextState>(
-    {} as ContextState
-);
-
-export const SearchContext = createContext<any>('') // X
+export const AuthContext = createContext<ContextState>({} as ContextState);
 
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState<ISearch | null>(null)
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -33,17 +32,9 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         return () => unsubscribe();
     }, []);
 
-    // useCallback
-    const updateSearch = (value: any) => {
-        setSearch(value)
-    }
-
     return (
-        <AuthContext.Provider value={{ user, search, updateSearch }}>
-            {/* <SearchContext.Provider value={updateSearch}> */}
-
+        <AuthContext.Provider value={{ user }}>
             {loading ? <div>Loading...</div> : children}
-            {/* </SearchContext.Provider> */}
         </AuthContext.Provider>
     );
 };
