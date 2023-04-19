@@ -1,6 +1,6 @@
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
-import Layout from '../../components/Layout/Layout';
+import Layout from '../components/Layout';
 import { Toaster } from 'react-hot-toast';
 import "@fortawesome/fontawesome-svg-core/styles.css"; 
 

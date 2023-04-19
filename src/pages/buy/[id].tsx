@@ -1,9 +1,13 @@
-import propertiesJSON from "../../../data/staticData.json";
-import { PropertyPage } from "../../../components/PropertyPage/propertyPage";
-import { IProperty } from "../../../components/PropertyPage/types";
+import {GetStaticProps} from 'next'
+import propertiesJSON from "../../data/staticData.json"
+import { PropertyPage } from "../../components/PropertyPage/propertyPage";
+import { IProperty } from "../../components/PropertyPage/types";
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps  = async ({ params }) => {
     try {
+        if (!params) throw 'No params attached'
+
+        // find
         const property = propertiesJSON.filter((singleProperty) => {
             return singleProperty.id === params.id;
         });
@@ -16,7 +20,7 @@ export const getStaticProps = async ({ params }: any) => {
     } catch (error) {
         return {
             props: {
-                data: "",
+                data: "", // undefined
             },
         };
     }
@@ -33,12 +37,12 @@ export const getStaticPaths = async () => {
     };
 };
 
-    const PropertyDetails = ({ data } : {data: IProperty[]}) => {
-
+// data: IProperty[] | undefined
+const PropertyDetails = ({ data }: { data: IProperty[] }) => {
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
 
     console.log(data);
-       return (
+    return (
         <>
             <PropertyPage property={data[0]} />
         </>

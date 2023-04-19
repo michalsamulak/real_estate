@@ -1,17 +1,18 @@
 import React from "react";
-import { SignUp } from "../../../components/auth/signup";
-import styles from "../../styles/Join.module.scss"
-
-
-
+import Head from "next/head";
+import { SignUp } from "../../components/auth/Signup";
+import styles from "../../styles/Join.module.scss";
 
 const Login = () => {
-  
-
     return (
-        <div className={styles.signin_box}>
-            <SignUp />
-        </div>
+        <>
+            <Head>
+                <title>Sign up</title>
+            </Head>
+            <div className={styles.signin_box}>
+                <SignUp />
+            </div>
+        </>
     );
 };
 

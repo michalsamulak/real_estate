@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 // import initFirebase from '../../lib/firebase/firebase'
-import styles from "@/styles/Home.module.css";
-import { CardsWrapper } from "../../components/PropertyCards/CardsWrapper";
-import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
+import styles from "@/styles/Home.module.scss"; // src/styles/ome.module.css
+import { CardsWrapper } from "../components/PropertyCards/CardsWrapper";
+import { PropertyCard } from "../components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
-import data from "../../data/staticData.json"
-import { SearchBar } from "../../components/search/SearchBar";
-import { SearchContext, useAuthContext } from "../../lib/context/context";
+import data from "../data/staticData.json"
+import { SearchBar } from "../components/Search";
+import { SearchContext, useAuthContext } from "../contexts/AuthContext";
 import { useContext, useEffect } from "react";
-import { getRandomItems } from "../../lib/utils/helpers/randomArrayElements";
+import { getRandomItems } from "../utils/helpers/randomArrayElements";
 
 ////////////////////
 
@@ -17,19 +17,22 @@ import { getRandomItems } from "../../lib/utils/helpers/randomArrayElements";
 
 // initFirebase()
 
-const numPropertiesOnHomePage = 6
+const NUM_PROPERTIES_ON_HOME_PAGE = 6
 
 export default function Home() {
-
+    // useState
 
     const {search, updateSearch} = useAuthContext()
 
     
     useEffect(()=> {
-       const defaultDisplayProperties = getRandomItems(data, numPropertiesOnHomePage)
+       const defaultDisplayProperties = getRandomItems(data, NUM_PROPERTIES_ON_HOME_PAGE)
 
         updateSearch(defaultDisplayProperties)
-    },[])
+        // eslint-disable-next-line
+    }, [])
+
+    // PageWrapper | props - title
 
     return (
         <>
@@ -54,11 +57,11 @@ export default function Home() {
             <SearchBar />
             </main>
             <CardsWrapper>
-          {search && search.map((record, i) => {
-            const {id, title, img, description, bathrooms, num_bedrooms, area, price, localization} = record
+          {search && search.map((record: any) => {
+            const { localization, id, num_bedrooms, img, ...restData } = record
             
             return (
-             <PropertyCard key={id} id={id} imgSrc={img} title={title} description={description} bathrooms={bathrooms} bedrooms={num_bedrooms} area={area} price={price} />
+             <PropertyCard key={id} id={id} imgSrc={img} bedrooms={num_bedrooms} {...restData} />
             )
           })}
           </CardsWrapper>

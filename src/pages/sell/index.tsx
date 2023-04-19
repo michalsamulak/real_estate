@@ -1,20 +1,16 @@
 import React from "react";
-import addData from "../../../lib/firebase/firebaseAddToDB";
-import dataset from '../../../data/staticData.json'
+import addData from "../../lib/firebase/firebaseAddToDB";
+import dataset from "../../../data/staticData.json";
+import Head from "next/head";
 const Sell = () => {
-  const dbTitle = 'properties'
+    const dbTitle = "properties";
     const handleForm = async () => {
         const data = {
             name: "John snow2",
             house: "Stark2",
         };
-        const { result, error } = await addData(
-            dbTitle,
-            "resr",
-            data
-        );
+        const { result, error } = await addData(dbTitle, "resr", data);
 
-     
         console.log(result);
         if (error) {
             return console.log(error);
@@ -22,25 +18,11 @@ const Sell = () => {
     };
 
     return (
-        <div >
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+        <div>
+            <Head>
+                <title>Sell your property</title>
+            </Head>
+
             tets
             <button onClick={handleForm}>clic</button>
         </div>
