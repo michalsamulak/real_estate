@@ -13,8 +13,6 @@ const auth = getAuth(firebase_app);
 type IUser = User | null;
 type ContextState = { user: IUser };
 
-// AuthContext.tsx
-
 export const AuthContext = createContext<ContextState>({} as ContextState);
 
 export const useAuthContext = () => useContext(AuthContext);

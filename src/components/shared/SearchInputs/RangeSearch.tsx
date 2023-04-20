@@ -12,10 +12,6 @@ type ISelect = {
 
 export const RangeSearch = ({ label, name, options, formatPrice, formik, ...rest }: ISelect) => {
 
- 
-    if(formik.touched && formik.errors[name]) {
-       
-    }
     return (
         <div className={styles.wrapper}>
             <label htmlFor={name}>

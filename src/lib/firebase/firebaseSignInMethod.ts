@@ -7,8 +7,8 @@ const signIn = async (email: string, password: string) => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       return { result, error: null };
-    } catch (err) {
-      return { result: null, error: err };
+    } catch (error) {
+      return { result: null, error };
     }
   };
   

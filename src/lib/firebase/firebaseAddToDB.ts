@@ -1,24 +1,15 @@
 import { requestHandlerSet } from "../../utils/firebase/requestHandlers";
 
 
-// generyk
-export default async function addData(collection: string, id: string, data: any) {
 
-
+export default async function addData<T>(collection: string, id: string, data: T) {
 
     try {
-
         const result = requestHandlerSet(collection, id, data)
-
         return { result, error: null };
-
-
-    } catch (err) {
-        const error = err;
+    } catch (error) {
         return { result: null, error };
-
     }
 
 }
-
 
