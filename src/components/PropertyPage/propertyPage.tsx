@@ -1,16 +1,15 @@
-import React from "react";
-import styles from "./Property.module.scss";
-import img from "../../public/static/default_img.jpg";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Head from "next/head";
+import styles from "./styles.module.scss";
+import img from "../../public/static/default_img.jpg";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { IProperty } from "./types";
-import Head from "next/head";
-
+import { PropertyDetails } from "./Details";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ContactInfo } from "./ContactInfo";
 
 // PropertyDetails
 export const PropertyPage = ({ property }: { property: IProperty }) => {
-
     // const displayImg = property.img.
 
     return (
@@ -31,28 +30,12 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
                     <div className={styles.text}>
                         <h2>Property Information</h2>
                         <p className={styles.details}>{property.description}</p>
-                        <ul className="property-list-details">
-                            <li className="text-black">
-                                Property:{" "}
-                                <strong className="text-black">
-                                    {property.title}
-                                </strong>
-                            </li>
-                            <li>
-                                Room: <strong>{property.num_bedrooms}</strong>
-                            </li>
-                            <li>
-                                Total Area:{" "}
-                                <strong>{property.area}m&sup2;</strong>
-                            </li>
-                            <li>
-                                Category: <strong>Modern House</strong>
-                            </li>
-                            <li>
-                                Lunch Date: <strong>Jan 20, 2019</strong>
-                            </li>
-                        </ul>
-                        <div className={styles.contact_wrapper}>
+
+                        <PropertyDetails property={property} />
+
+                        <ContactInfo property={property} />
+
+                        {/* <div className={styles.contact_wrapper}>
                             <p className={styles.contact}>Contact:</p>
                             <div>
                                 <p>
@@ -64,6 +47,7 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
                                             paddingRight: "5px",
                                         }}
                                     />
+
                                     {property.phone_number}
                                 </p>
                                 <p>
@@ -76,10 +60,11 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
                                             marginTop: "10px",
                                         }}
                                     />
+
                                     {property.email}
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                         <div className={styles.contact_wrapper}>
                             <p className={styles.contact}>Address:</p>
                             <div>
@@ -94,3 +79,8 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
         </>
     );
 };
+
+{
+}
+{
+}

@@ -30,24 +30,18 @@ export const PropertyCard = ({
     bathrooms,
     area,
     price,
-    id
+    id,
 }: IPropertyCardProps) => {
     return (
         <section className={styles.card}>
             <div>
                 <div className={styles.img_overlay}>
-                    <Image 
-                    
-                    src={imgSrc} 
-                    width={300} height={500} 
-                    alt={title} 
-                                  
-                    />
+                    <Image src={imgSrc} width={300} height={500} alt={title} />
                     <div className={styles.overlay}>
-                      <Link href={`/buy/${id}`} className={styles.a}>
+                        <Link href={`/buy/${id}`} className={styles.a}>
                             view property
-                      </Link>
-                      </div>
+                        </Link>
+                    </div>
                     <div className={styles.cont}>
                         <div className={styles.icons_img}></div>
                     </div>
@@ -55,7 +49,7 @@ export const PropertyCard = ({
                 <h2 className={styles.title}>{title}</h2>
             </div>
             <div className={styles.card_content}>
-                <p>{description.slice(0,80)}...</p>
+                <p>{description.slice(0, 80)}...</p>
 
                 <div className={styles.icons_home}>
                     {/* PropertyCardIcon */}
@@ -94,9 +88,7 @@ export const PropertyCard = ({
                     {/* <span>for sale</span> */}
                     {/* <br /> */}
 
-                    <span>
-                                               {price}
-                    </span>
+                    <span>{price}</span>
                 </div>
             </div>
         </section>
