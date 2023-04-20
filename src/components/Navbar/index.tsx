@@ -1,8 +1,9 @@
 import styles from "./navbar.module.scss";
 
 import Link from "next/link";
-import { useAuthContext } from "../../contexts/AuthContext";
-import { logOutHandler } from "../../lib/firebase/firebaseSignInMethod";
+
+
+import { LoginButton } from "./Login";
 
 // const navLinks = [{label: "Home", href: "/"}]
 
@@ -16,9 +17,7 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const userContext = useAuthContext();
 
-    const isLoggedIn = userContext.user !== null;
 
     return (
         <div className={styles.container}>
@@ -31,38 +30,10 @@ const NavBar = () => {
                     ))}
                 </ul>
             </div>
-            {isLoggedIn ? (
-                <div className={styles.wrapper}>
-                    <ul className={styles.navItems}>
 
-                        <Link href={"/"}>
-                            <li
-                                className={styles.navItem}
-                                onClick={logOutHandler}
-                            >
-                                Sign&#8901;out
-                            </li>
-                        </Link>
-                    </ul>
-                </div>
-            ) : (
-                <div className={styles.wrapper}>
-                    <ul className={styles.navItems}>
-                        <Link href={"/login"}>
-                            <li className={styles.navItem}>Sign&#8901;in</li>
-                        </Link>
-                    </ul>
-                    <ul className={styles.navItemsBtn}>
-                        <Link href={"/join"}>
-                            <li className={styles.navItemBtn}>
-                                <button className={styles.button_join}>
-                                    Join
-                                </button>
-                            </li>
-                        </Link>
-                    </ul>
-                </div>
-            )}
+            <LoginButton
+                           />
+
             {/* {userAuthHandler()} */}
         </div>
     );

@@ -35,6 +35,8 @@
   transition: 0.5s linear;
   display: flex;
   flex-direction: row;
+
+  align-self: center;
 }
 
 .navItem {
