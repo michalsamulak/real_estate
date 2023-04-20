@@ -29,7 +29,7 @@ const initialValues: IInitialVal = {
 // signup.tsx
 // SignUpForm.tsx
 
-export const SignUp = () => {
+export const SignUpForm = () => {
     const router = useRouter();
     const handleForm = async (values: IInitialVal) => {
         if (values.password !== values.repeatedPassword)

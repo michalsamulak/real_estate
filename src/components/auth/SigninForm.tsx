@@ -22,7 +22,7 @@ const initialValues: IInitialVal = {
     password: "",
 };
 
-export const SignIn = () => {
+export const SignInForm = () => {
     const router = useRouter();
     const handleForm = async (values: IInitialVal) => {
         const { result, error } = await signIn(values.email, values.password);

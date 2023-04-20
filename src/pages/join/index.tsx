@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { SignUp } from "../../components/auth/Signup";
+import { SignUpForm } from "../../components/auth/SignupForm";
 import styles from "../../styles/Join.module.scss";
 
 const Login = () => {
@@ -10,7 +10,7 @@ const Login = () => {
                 <title>Sign up</title>
             </Head>
             <div className={styles.signin_box}>
-                <SignUp />
+                <SignUpForm />
             </div>
         </>
     );

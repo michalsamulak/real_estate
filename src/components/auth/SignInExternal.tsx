@@ -1,30 +1,18 @@
-import { SignInForm } from "../../components/auth/SigninForm";
-import styles from "../../styles/Login.module.scss";
-
-import cls from "classnames";
-
+import styles from './styles.module.scss'
 import { useRouter } from "next/router";
 import { handleAuthProviderLogin } from "../../utils/login/auth_provider_utlis";
-import Head from "next/head";
-import { SignInExternal } from "@/components/auth/SignInExternal";
+import cls from "classnames";
 
-const Login = () => {
+export const SignInExternal = () => {
     const router = useRouter();
 
     const redirect = async () => {
         await router.push("/");
     };
 
-    return (
-        <>
-            <Head>
-                <title>Sign in</title>
-            </Head>
-            <div className={styles.login_box}>
-                <SignInForm />
-                <div className={styles.or}>OR</div>
-                <SignInExternal />
-                {/* <div className={styles.right}>
+    
+  return (
+    <div className={styles.right}>
                     <button
                         className={cls(styles.social_signin, styles.facebook)}
                         type="button"
@@ -50,10 +38,6 @@ const Login = () => {
                     >
                         Log in with Google
                     </button>
-                </div> */}
-            </div>
-        </>
-    );
-};
-
-export default Login;
+                </div>
+  )
+}

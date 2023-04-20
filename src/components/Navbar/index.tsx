@@ -1,6 +1,5 @@
 import styles from "./navbar.module.scss";
 
-
 import Link from "next/link";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { logOutHandler } from "../../lib/firebase/firebaseSignInMethod";
@@ -9,35 +8,33 @@ import { logOutHandler } from "../../lib/firebase/firebaseSignInMethod";
 
 // navbar -> Navbar
 
+const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "Buy", href: "/buy" },
+    { label: "Sell", href: "/sell" },
+    { label: "Contact", href: "/contact" },
+];
+
 const NavBar = () => {
-
-
-    const userContext = useAuthContext()
-
+    const userContext = useAuthContext();
 
     const isLoggedIn = userContext.user !== null;
 
     return (
-
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <ul className={styles.navItems}>
-                    <Link href={"/"}>
-                        <li className={styles.navItem}>Home</li>
-                    </Link>
-                    <Link href={"/buy"}>
-                        <li className={styles.navItem}>Buy</li>
-                    </Link>
-                    <Link href={"/sell"}>
-                        <li className={styles.navItem}>Sell</li>
-                    </Link>
-                    <Link href={"/contact"}>
-                        <li className={styles.navItem}>Contact</li>
-                    </Link>
+                    {navLinks.map((link, i) => (
+                        <Link href={link.href} key={i}>
+                            <li className={styles.navItem}>{link.label}</li>
+                        </Link>
+                    ))}
                 </ul>
             </div>
-            {isLoggedIn ? <div className={styles.wrapper}>
+            {isLoggedIn ? (
+                <div className={styles.wrapper}>
                     <ul className={styles.navItems}>
+
                         <Link href={"/"}>
                             <li
                                 className={styles.navItem}
@@ -47,7 +44,9 @@ const NavBar = () => {
                             </li>
                         </Link>
                     </ul>
-                </div> : <div className={styles.wrapper}>
+                </div>
+            ) : (
+                <div className={styles.wrapper}>
                     <ul className={styles.navItems}>
                         <Link href={"/login"}>
                             <li className={styles.navItem}>Sign&#8901;in</li>
@@ -62,7 +61,8 @@ const NavBar = () => {
                             </li>
                         </Link>
                     </ul>
-                </div>}
+                </div>
+            )}
             {/* {userAuthHandler()} */}
         </div>
     );
