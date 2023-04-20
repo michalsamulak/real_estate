@@ -52,7 +52,7 @@ export default function Home() {
             const { localization, id, num_bedrooms, img, ...restData } = record
             
             return (
-             <PropertyCard key={id} id={id} imgSrc={img} bedrooms={num_bedrooms} {...restData} />
+             <PropertyCard key={id} id={id} img={img} bedrooms={num_bedrooms} {...restData} />
             )
           })}
           </CardsWrapper>
