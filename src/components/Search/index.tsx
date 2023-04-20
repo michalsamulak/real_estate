@@ -1,4 +1,4 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import styles from "./styles.module.scss";
 import { RangeSearch } from "../shared/SearchInputs/RangeSearch"
 import { TextSearch } from "../shared/SearchInputs/TextSearch";
@@ -57,12 +57,15 @@ export const SearchBar = ({setSearchItems}: ISearch) => {
                                     name={"minPrice"}
                                     options={priceRange}
                                     formatPrice={formatPrice}
+                                    formik={formik}
+
                                 />
                                 <RangeSearch
                                     label={"Max Price"}
                                     name={"maxPrice"}
                                     options={priceRange}
                                     formatPrice={formatPrice}
+                                    formik={formik}
                                 />
                             </div>
                             <div className={styles.range}>
@@ -70,14 +73,19 @@ export const SearchBar = ({setSearchItems}: ISearch) => {
                                     label={"Min Bedrooms"}
                                     name={"minBedrooms"}
                                     options={bedroomsRange}
+                                    formik={formik}
+
                                 />
                                 <RangeSearch
                                     label={"Max Bedrooms"}
                                     name={"maxBedrooms"}
                                     options={bedroomsRange}
+                                    formik={formik}
+
                                 />
                             </div>
                         </div>
+                               {/* <ErrorMessage className={styles.error}  component={'span'} name={'maxPrice'} /> */}
                     </Form>
                 )}
             </Formik>

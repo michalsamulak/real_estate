@@ -18,11 +18,21 @@
 .range {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 }
 
 @media screen and (min-width: 780px) {
     .container {
         width: 45rem;
     }
+}
+
+.error {
+    display: inline-block;
+    // width: 10rem;
+    // height: 10rem;/
+    font-size: 1.1rem;
+    color: #f4f4f4;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }

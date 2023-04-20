@@ -1,16 +1,23 @@
-import { Field } from "formik";
-import React from "react";
+import { ErrorMessage, Field, FormikProps } from "formik";
+import styles from './styles.module.scss'
+
 
 type ISelect = {
     label: string
     name: string;
     options: number[];
+    formik: FormikProps<any>,
     formatPrice?: (price:number) => any
 };
 
-export const RangeSearch = ({ label, name, options, formatPrice, ...rest }: ISelect) => {
+export const RangeSearch = ({ label, name, options, formatPrice, formik, ...rest }: ISelect) => {
+
+ 
+    if(formik.touched && formik.errors[name]) {
+       
+    }
     return (
-        <>
+        <div className={styles.wrapper}>
             <label htmlFor={name}>
                 <Field as="select" id={name} name={name} {...rest}>
                     <option value="">{label}</option>
@@ -27,6 +34,7 @@ export const RangeSearch = ({ label, name, options, formatPrice, ...rest }: ISel
                     )})}
                 </Field>
             </label>
-        </>
+                  {formik.touched && <ErrorMessage className={styles.error}  component={'span'} name={name} />}
+        </div>
     );
 };
