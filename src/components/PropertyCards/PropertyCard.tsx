@@ -26,7 +26,9 @@ export const PropertyCard = ({
     price,
     id,
 }: IPropertyCardProps) => {
-    
+    const displayImg = img.length > 0 ? img : defaultImg
+
+
     return (
         <section className={styles.card}>
             <div>

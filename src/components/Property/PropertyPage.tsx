@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Head from "next/head";
 import styles from "./styles.module.scss";
-import img from "../../public/static/default_img.jpg";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { IProperty } from "./types";
 import { PropertyDetails } from "./Details";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ContactInfo } from "./ContactInfo";
+import defaultImg from "../../../public/static/default_img.jpg";
 
 // PropertyDetails
 export const PropertyPage = ({ property }: { property: IProperty }) => {
-    // const displayImg = property.img.
+const displayImg = property.img.length > 0 ? property.img :  defaultImg
 
     return (
         <>
@@ -21,7 +21,7 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
                 <div className={styles.featured_property}>
                     <div className={styles.image}>
                         <Image
-                            src={property.img}
+                            src={displayImg}
                             width={700}
                             height={500}
                             alt="test"
