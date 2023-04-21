@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./navbar.module.scss";
-import { useAuthContext } from "../../contexts/AuthContext";
-import { logOutHandler } from "../../lib/firebase/firebaseSignInMethod";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { logOutHandler } from "@/lib/firebase/firebaseSignInMethod";
 
 export const LoginButton = () => {
     // export const LoginButton = ({ isLoggedIn, logOutHandler } : {isLoggedIn: boolean, logOutHandler: () => void}) => {

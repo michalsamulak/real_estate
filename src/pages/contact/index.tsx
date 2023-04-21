@@ -1,13 +1,9 @@
-import React from "react";
-import Head from "next/head";
-
-// import SectionHeader from "../../components/contact/Header";
-import SectionHeader from "../../components/contact/Header";
-
-// import ContactForm from "../../../components/contact/Form"; index.tsx
-import ContactForm from "../../components/contact/Form";
-import styled from "../../styles/Contact.module.scss";
+import SectionHeader from "@/components/contact/Header";
+import ContactForm from "@/components/contact/Form";
 import { PageWrapper } from "@/components/PageWrapper";
+import styled from "../../styles/Contact.module.scss";
+// import ContactForm from "../../../components/contact/Form"; index.tsx
+// import SectionHeader from "../../components/contact/Header";
 
 const Contact = () => {
     return (

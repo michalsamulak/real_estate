@@ -6,7 +6,7 @@ import {
     signInWithRedirect,
 } from "firebase/auth";
 import { isMobile } from "react-device-detect";
-import { auth } from '../../lib/firebase/firebaseSignInMethod';
+import { auth } from '@/lib/firebase/firebaseSignInMethod';
 
 export type IAuthProvider = "google" | "facebook" | "github";
 
@@ -15,11 +15,6 @@ const authProviders = {
     facebook: new FacebookAuthProvider(),
     github: new GithubAuthProvider()
 }
-
-// utils
-//  login.ts
-
-// utils.ts
 
 export const handleAuthProviderLogin = async (
     //e: React.MouseEvent<HTMLButtonElement, MouseEvent>,

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import ErrorBoundary from "@/ErrorBoundary";
 import NavBar from "../Navbar";
-import { AuthContextProvider } from "../../contexts/AuthContext";
+import { AuthContextProvider } from "@/contexts/AuthContext";
 const Layout = ({ children }: PropsWithChildren) => {
     return (
         <>

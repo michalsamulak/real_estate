@@ -5,7 +5,6 @@ import {
     initialValues,
     validationSchema,
 } from "./utils";
-// import { FormInput } from "../../shared/ContactInput";
 import {FormInput} from "@/components/shared/ContactInput"
 
 type IInitValues = {

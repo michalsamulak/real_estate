@@ -1,9 +1,7 @@
-import Head from "next/head";
-import { CardsWrapper } from "../../components/PropertyCards/CardsWrapper";
-import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
-import data from "../../data/staticData.json";
-import { useState } from "react";
+import { CardsWrapper } from "@/components/PropertyCards/CardsWrapper";
+import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
 import { PageWrapper } from "@/components/PageWrapper";
+import data from "@/data/staticData.json";
 
 // paginacje
 // filtry

@@ -1,13 +1,8 @@
-import { SignInForm } from "../../components/auth/SigninForm";
-import styles from "../../styles/Login.module.scss";
-
-import cls from "classnames";
-
 import { useRouter } from "next/router";
-import { handleAuthProviderLogin } from "../../utils/login/auth_provider_utlis";
-import Head from "next/head";
+import { SignInForm } from "@/components/auth/SigninForm";
 import { SignInExternal } from "@/components/auth/SignInExternal";
 import { PageWrapper } from "@/components/PageWrapper";
+import styles from "../../styles/Login.module.scss";
 
 const Login = () => {
     const router = useRouter();

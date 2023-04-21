@@ -1,22 +1,19 @@
 import Image from "next/image";
-import Head from "next/head";
 import styles from "./styles.module.scss";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { IProperty } from "./types";
 import { PropertyDetails } from "./Details";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ContactInfo } from "./ContactInfo";
-import defaultImg from "../../../public/static/default_img.jpg";
 import { PageWrapper } from "../PageWrapper";
+import defaultImg from "@/../public/static/default_img.jpg";
 
 // PropertyDetails
 export const PropertyPage = ({ property }: { property: IProperty }) => {
-const displayImg = property.img.length > 0 ? property.img : defaultImg
+    const displayImg = property.img.length > 0 ? property.img : defaultImg;
 
     return (
         <>
-              <PageWrapper title={property.title} />
-      
+            <PageWrapper title={property.title} />
+
             <div className={styles.featured_container}>
                 <div className={styles.featured_property}>
                     <div className={styles.image}>

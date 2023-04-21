@@ -1,8 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import { SignUpForm } from "../../components/auth/SignupForm";
-import styles from "../../styles/Join.module.scss";
+import { SignUpForm } from "@/components/auth/SignupForm";
 import { PageWrapper } from "@/components/PageWrapper";
+import styles from "../../styles/Join.module.scss";
 
 const Login = () => {
     return (

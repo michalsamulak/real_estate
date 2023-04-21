@@ -1,14 +1,14 @@
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import styles from "./styles.module.scss";
 import { RangeSearch } from "../shared/SearchInputs/RangeSearch"
 import { TextSearch } from "../shared/SearchInputs/TextSearch";
-import {bedroomsRange, priceRange } from "../../utils/search/dropdownRanges";
-import { formatPrice } from "../../utils/search/formatPrice";
-import data from "../../data/staticData.json"
-import { IInitSearch } from "../../utils/search/type";
-import { filterData } from "../../utils/search/filterData";
+import {bedroomsRange, priceRange } from "@/utils/search/dropdownRanges";
+import { formatPrice } from "@/utils/search/formatPrice";
+import { IInitSearch } from "@/utils/search/type";
+import { filterData } from "@/utils/search/filterData";
 import { IEstateData } from "@/types/estateTypes";
 import { validation } from "./validation";
+import data from "@/data/staticData.json"
 
 export const initialSearch = {
     title: "",

@@ -1,20 +1,14 @@
-
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-
-import defaultImg from "../../../public/static/default_img.jpg";
-
+import defaultImg from "@/../public/static/default_img.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faVectorSquare,
     faSink,
     faBed,
-    faUsd,
 } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
 import { IPropertyCardProps } from "./types";
-
-
 
 const detailsFields = ["bedrooms", "bathrooms", "area"];
 
@@ -28,8 +22,7 @@ export const PropertyCard = ({
     price,
     id,
 }: IPropertyCardProps) => {
-    const displayImg = img.length > 0 ? img : defaultImg
-
+    const displayImg = img.length > 0 ? img : defaultImg;
 
     return (
         <section className={styles.card}>

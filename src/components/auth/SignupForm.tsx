@@ -26,8 +26,7 @@ const initialValues: IInitialVal = {
     repeatedPassword: "",
 };
 
-// signup.tsx
-// SignUpForm.tsx
+
 
 export const SignUpForm = () => {
     const router = useRouter();

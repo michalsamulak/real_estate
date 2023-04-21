@@ -1,9 +1,9 @@
-import signIn from "../../lib/firebase/firebaseSignInMethod";
 import { useRouter } from "next/navigation";
-import styles from "./styles.module.scss";
 import { Formik, Form } from "formik";
-import { AuthFormInput } from "../shared/AuthInput";
 import * as Yup from "yup";
+import signIn from "@/lib/firebase/firebaseSignInMethod";
+import styles from "./styles.module.scss";
+import { AuthFormInput } from "../shared/AuthInput";
 
 
 const schema = Yup.object().shape({

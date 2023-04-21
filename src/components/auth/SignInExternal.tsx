@@ -1,7 +1,7 @@
-import styles from './styles.module.scss'
 import { useRouter } from "next/router";
-import { handleAuthProviderLogin } from "../../utils/login/auth_provider_utlis";
 import cls from "classnames";
+import styles from './styles.module.scss'
+import { handleAuthProviderLogin } from "@/utils/login/auth_provider_utlis";
 
 export const SignInExternal = () => {
     const router = useRouter();

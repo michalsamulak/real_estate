@@ -1,15 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
+import { useState } from "react";
 // import initFirebase from '../../lib/firebase/firebase'
-import styles from "@/styles/Home.module.scss"; // src/styles/ome.module.css
-import { CardsWrapper } from "../components/PropertyCards/CardsWrapper";
-import { PropertyCard } from "../components/PropertyCards/PropertyCard";
+import { CardsWrapper } from "@/components/PropertyCards/CardsWrapper";
+import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
-import data from "../data/staticData.json"
-import { SearchBar } from "../components/Search";
-import { getRandomItems } from "../utils/helpers/randomArrayElements";
+import data from "@/data/staticData.json"
+import { SearchBar } from "@/components/Search";
+import { getRandomItems } from "@/utils/helpers/randomArrayElements";
 import { PageWrapper } from "@/components/PageWrapper";
+import styles from "@/styles/Home.module.scss"; 
 
 ////////////////////
 

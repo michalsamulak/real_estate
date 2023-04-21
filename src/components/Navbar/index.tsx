@@ -1,6 +1,6 @@
+import Link from "next/link";
 import styles from "./navbar.module.scss";
 
-import Link from "next/link";
 
 
 import { LoginButton } from "./Login";

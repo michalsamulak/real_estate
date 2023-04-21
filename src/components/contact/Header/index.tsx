@@ -1,5 +1,5 @@
-import styles from './styles.module.scss'
 import DOMPurify from "dompurify";
+import styles from './styles.module.scss'
 
 const contactInfo = [
     "123 Main Street<br />Anytown, USA",

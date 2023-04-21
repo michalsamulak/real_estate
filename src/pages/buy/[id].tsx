@@ -1,7 +1,7 @@
 import {GetStaticProps} from 'next'
-import propertiesJSON from "../../data/staticData.json"
-import { PropertyPage } from "../../components/Property/PropertyPage";
-import { IProperty } from "../../components/Property/types";
+import propertiesJSON from "@/data/staticData.json"
+import { PropertyPage } from "@/components/Property/PropertyPage";
+import { IProperty } from "@/components/Property/types";
 
 export const getStaticProps: GetStaticProps  = async ({ params }) => {
     try {
