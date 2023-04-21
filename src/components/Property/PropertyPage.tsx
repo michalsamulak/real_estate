@@ -7,16 +7,16 @@ import { PropertyDetails } from "./Details";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ContactInfo } from "./ContactInfo";
 import defaultImg from "../../../public/static/default_img.jpg";
+import { PageWrapper } from "../PageWrapper";
 
 // PropertyDetails
 export const PropertyPage = ({ property }: { property: IProperty }) => {
-const displayImg = property.img.length > 0 ? property.img :  defaultImg
+const displayImg = property.img.length > 0 ? property.img : defaultImg
 
     return (
         <>
-            <Head>
-                <title>{property.title}</title>
-            </Head>
+              <PageWrapper title={property.title} />
+      
             <div className={styles.featured_container}>
                 <div className={styles.featured_property}>
                     <div className={styles.image}>

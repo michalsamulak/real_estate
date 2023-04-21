@@ -2,6 +2,8 @@ import Head from "next/head";
 import { CardsWrapper } from "../../components/PropertyCards/CardsWrapper";
 import { PropertyCard } from "../../components/PropertyCards/PropertyCard";
 import data from "../../data/staticData.json";
+import { useState } from "react";
+import { PageWrapper } from "@/components/PageWrapper";
 
 // paginacje
 // filtry
@@ -14,12 +16,14 @@ import data from "../../data/staticData.json";
 
 // getEstates 
 
+
+
+
 const Buy = () => {
     return (
         <>
-            <Head>
-                <title>Buy dream property</title>
-            </Head>
+              <PageWrapper title="Buy dream property" />
+
             {/* PropertyCards data={data} */}
 
             <CardsWrapper>
@@ -39,7 +43,7 @@ const Buy = () => {
                         <PropertyCard
                             key={id}
                             id={id}
-                            imgSrc={img}
+                            img={img}
                             title={title}
                             description={description}
                             bathrooms={bathrooms}

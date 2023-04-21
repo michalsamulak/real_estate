@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 // import initFirebase from '../../lib/firebase/firebase'
@@ -7,8 +8,8 @@ import { PropertyCard } from "../components/PropertyCards/PropertyCard";
 // import WriteToCloudFirestore from "../../components/cloudFirestore/Write";
 import data from "../data/staticData.json"
 import { SearchBar } from "../components/Search";
-import { useContext, useEffect, useState } from "react";
 import { getRandomItems } from "../utils/helpers/randomArrayElements";
+import { PageWrapper } from "@/components/PageWrapper";
 
 ////////////////////
 
@@ -27,22 +28,8 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <title>
-                    Real Estate Agency - Your One Stop Shop for Buying and
-                    Selling Properties
-                </title>
-
-                <meta
-                    name="description"
-                    content="We are a real estate agency that helps clients buy and sell properties."
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+        <PageWrapper title={' Real Estate Agency - Your One Stop Shop for Buying and Selling Properties'}/>
+            
             <main className={styles.main}>
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
             <SearchBar setSearchItems={setSearchItems}/>

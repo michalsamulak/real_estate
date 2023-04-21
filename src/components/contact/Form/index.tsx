@@ -5,7 +5,8 @@ import {
     initialValues,
     validationSchema,
 } from "./utils";
-import { FormInput } from "../../shared/ContactInput";
+// import { FormInput } from "../../shared/ContactInput";
+import {FormInput} from "@/components/shared/ContactInput"
 
 type IInitValues = {
     name: string;
@@ -13,7 +14,6 @@ type IInitValues = {
     message: string;
 };
 
-// index.tsx
 
 const ContactForm = () => {
     const handleSubmit = (values: IInitValues) => {

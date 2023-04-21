@@ -1,7 +1,9 @@
 
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import defaultImg from "../../public/static/default_img.jpg";
+
+import defaultImg from "../../../public/static/default_img.jpg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faVectorSquare,

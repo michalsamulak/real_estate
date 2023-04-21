@@ -5,4 +5,3 @@ export const priceRange = [
     1800000, 1900000, 2000000, 2500000, 3000000,
 ];
 
-// dropdownRanges.ts

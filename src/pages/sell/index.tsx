@@ -1,7 +1,8 @@
 import React from "react";
 import addData from "../../lib/firebase/firebaseAddToDB";
-import dataset from "../../../data/staticData.json";
+// import dataset from "../../../data/staticData.json";
 import Head from "next/head";
+import { PageWrapper } from "@/components/PageWrapper";
 const Sell = () => {
     const dbTitle = "properties";
     const handleForm = async () => {
@@ -19,9 +20,8 @@ const Sell = () => {
 
     return (
         <div>
-            <Head>
-                <title>Sell your property</title>
-            </Head>
+            <PageWrapper title="Sell your property" />
+
 
             tets
             <button onClick={handleForm}>clic</button>

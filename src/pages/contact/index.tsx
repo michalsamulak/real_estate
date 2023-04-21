@@ -7,13 +7,13 @@ import SectionHeader from "../../components/contact/Header";
 // import ContactForm from "../../../components/contact/Form"; index.tsx
 import ContactForm from "../../components/contact/Form";
 import styled from "../../styles/Contact.module.scss";
+import { PageWrapper } from "@/components/PageWrapper";
 
 const Contact = () => {
     return (
         <>
-            <Head>
-                <title>Contact Us</title>
-            </Head>
+              <PageWrapper title="Contact us" />
+
             <div className={styled.contact__container}>
                 <div className={styled.contact__wrapper}>
                     <SectionHeader />

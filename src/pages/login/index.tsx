@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { handleAuthProviderLogin } from "../../utils/login/auth_provider_utlis";
 import Head from "next/head";
 import { SignInExternal } from "@/components/auth/SignInExternal";
+import { PageWrapper } from "@/components/PageWrapper";
 
 const Login = () => {
     const router = useRouter();
@@ -17,9 +18,8 @@ const Login = () => {
 
     return (
         <>
-            <Head>
-                <title>Sign in</title>
-            </Head>
+        <PageWrapper title="Sign in" />
+
             <div className={styles.login_box}>
                 <SignInForm />
                 <div className={styles.or}>OR</div>
