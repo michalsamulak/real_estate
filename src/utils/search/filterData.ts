@@ -1,5 +1,4 @@
 import { IInitSearch } from "./type";
-import data from '../../data/staticData.json'
 import { IEstateData } from "../../types/estateTypes";
 
 export const filterData = (values: IInitSearch, data: IEstateData[]) => {

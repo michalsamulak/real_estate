@@ -1,4 +1,4 @@
-export interface IEstateData {
+export type IEstateData = {
     id: string;
     title: string;
     description: string;
@@ -12,7 +12,7 @@ export interface IEstateData {
     img: string;
   }
 
-  export interface Localization {
+  export type Localization = {
     street: string;
     city: string;
     state: string;

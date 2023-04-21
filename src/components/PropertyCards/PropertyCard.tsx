@@ -8,27 +8,47 @@ import {
     faSink,
     faBed,
 } from "@fortawesome/free-solid-svg-icons";
-import { IPropertyCardProps } from "./types";
+
+import { IEstateData } from "@/types/estateTypes";
+
 
 const detailsFields = ["bedrooms", "bathrooms", "area"];
 
-export const PropertyCard = ({
-    img,
-    title,
-    description,
-    bedrooms,
-    bathrooms,
-    area,
-    price,
-    id,
-}: IPropertyCardProps) => {
+// export const PropertyCard = ({
+//     img,
+//     title,
+//     description,
+//     bedrooms,
+//     bathrooms,
+//     area,
+//     price,
+//     id,
+// }: IPropertyCardProps) => {
+
+export const PropertyCard = ({record}: {record:IEstateData}) => {
+    if (!record) {
+        return <div>Loading...</div>;
+      }
+
+    const {
+        id,
+        title,
+        img,
+        description,
+        bathrooms,
+        num_bedrooms,
+        area,
+        price,
+    } = record;
+
+
     const displayImg = img.length > 0 ? img : defaultImg;
 
     return (
         <section className={styles.card}>
             <div>
                 <div className={styles.img_overlay}>
-                    <Image src={img} width={300} height={500} alt={title} />
+                    <Image src={displayImg} width={300} height={500} alt={title} />
                     <div className={styles.overlay}>
                         <Link href={`/buy/${id}`} className={styles.a}>
                             view property
@@ -60,7 +80,7 @@ export const PropertyCard = ({
                                 />
                                 <span className={styles.qty}>
                                     {item === "bedrooms"
-                                        ? bedrooms
+                                        ? num_bedrooms
                                         : item === "bathrooms"
                                         ? bathrooms
                                         : `${area}m²`}
