@@ -6,16 +6,11 @@ import styles from "@/styles/Cards.module.scss";
 import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estateTypes";
 
-// paginacje
-// filtry
-// sortowanie
 
 // SSG
 // getStaticProps
 // SSR
 // getServerSideProps
-
-// getEstates
 
 const Buy = () => {
     const [items, setItems] = useState<IEstateData[]>(data);
