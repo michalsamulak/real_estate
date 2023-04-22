@@ -1,13 +1,13 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import styles from "@/styles/Sell.module.scss"
-
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import styles from "@/styles/Sell.module.scss";
 
 import addData from "../../lib/firebase/firebaseAddToDB";
 // import dataset from "../../../data/staticData.json";
 
 import { PageWrapper } from "@/components/PageWrapper";
-
+import { SellInput } from "@/components/shared/SellInput/SellInput";
+import { TextareaInput } from "@/components/shared/SellInput/SellTextarea";
 
 interface FormValues {
     firstname: string;
@@ -15,36 +15,35 @@ interface FormValues {
     email: string;
     password: string;
     confirmPassword: string;
-  }
-  
-
+}
 
 const Sell = () => {
-
     const initialValues: FormValues = {
-        firstname: '',
-        lastname: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      };
-    
-      const validationSchema = Yup.object({
-        firstname: Yup.string().required('Required'),
-        lastname: Yup.string().required('Required'),
-        email: Yup.string().email('Invalid email address').required('Required'),
-        password: Yup.string().required('Required'),
-       
-      });
-    
-      const handleSubmit = (values: FormValues, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    };
+
+    const validationSchema = Yup.object({
+        firstname: Yup.string().required("Required"),
+        lastname: Yup.string().required("Required"),
+        email: Yup.string().email("Invalid email address").required("Required"),
+        password: Yup.string().required("Required"),
+    });
+
+    const handleSubmit = (
+        values: FormValues,
+        { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+    ) => {
         // handle form submission
         console.log(values);
         setSubmitting(false);
-      };
+    };
 
-      /////////////////////////////////////////////
-    
+    /////////////////////////////////////////////
+
     const dbTitle = "properties";
     const handleForm = async () => {
         const data = {
@@ -62,65 +61,114 @@ const Sell = () => {
     return (
         <div>
             <PageWrapper title="Sell your property" />
-            
+
             <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {({ isSubmitting }) => (
-        <Form className={styles.form}>
-          <p className={styles.title}>Sell</p>
-          <p className={styles.message}>Signup now and get full access to our app.</p>
-          <div className={styles.flex}>
-            <label>
-              <Field type="text" name="firstname" placeholder="" className={styles.input} />
-              <span>Firstname</span>
-              <ErrorMessage name="firstname" />
-            </label>
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+            >
+                {({ isSubmitting }) => (
+                    <Form className={styles.form}>
+                        <p className={styles.title}>List Your Property for Sale</p>
+                        <p className={styles.message}>
+                            Provide us with the details of the property you are
+                            selling.
+                        </p>
 
-            <label>
-              <Field type="text" name="lastname" placeholder="" className={styles.input} />
-              <span>Lastname</span>
-              <ErrorMessage name="lastname" />
-            </label>
-          </div>
+                        <SellInput
+                            name="title"
+                            placeholder="title"
+                            label="title"
+                        />
+                        <div className={styles.flex}>
+                            <SellInput
+                                name="num_bedrooms"
+                                placeholder="bedrooms"
+                                label="bedrooms"
+                                type="number"
+                            />
+                            <SellInput
+                                name="bathrooms"
+                                placeholder="bathrooms"
+                                label="bathrooms"
+                                type="number"
+                            />
+                        </div>
+                        <div className={styles.flex}>
+                            <SellInput
+                                name="area"
+                                placeholder="area"
+                                label="area"
+                                type="number"
+                            />
+                            <SellInput
+                                name="price"
+                                placeholder="price"
+                                label="price"
+                                type="number"
+                            />
+                        </div>
 
-          <label>
-            <Field type="email" name="email" placeholder="" className={styles.input} />
-            <span>Email</span>
-            <ErrorMessage name="email" />
-          </label>
+                        <TextareaInput
+                            name="description"
+                            placeholder="description"
+                        />
+                        <SellInput
+                            name="img"
+                            placeholder="link to property image"
+                            label="img"
+                            type="url"
+                        />
+                        <SellInput
+                            name="phone_number"
+                            placeholder="phone number"
+                            label="phone_number"
+                            type="tel"
+                        />
+                        <SellInput
+                            name="street"
+                            placeholder="street address"
+                            label="street"
+                        />
 
-          <label>
-            <Field type="password" name="password" placeholder="" className={styles.input} />
-            <span>Password</span>
-            <ErrorMessage name="password" />
-          </label>
+                        <div className={styles.flex}>
+                            <SellInput
+                                name="city"
+                                placeholder="city"
+                                label="city"
+                            />
+                            <SellInput
+                                name="state"
+                                placeholder="state"
+                                label="state"
+                            />
+                        </div>
+                        <div className={styles.flex}>
+                            <SellInput
+                                name="zip"
+                                placeholder="post code"
+                                label="zip"
+                            />
+                            <SellInput
+                                name="country"
+                                placeholder="country"
+                                label="country"
+                            />
+                        </div>
 
-          <label>
-            <Field
-              type="password"
-              name="confirmPassword"
-              placeholder=""
-              className={styles.input}
-            />
-            <span>Confirm password</span>
-            <ErrorMessage name="confirmPassword" />
-          </label>
+                        <button
+                            type="submit"
+                            className={styles.submit}
+                            disabled={isSubmitting}
+                        >
+                            Submit
+                        </button>
 
-          <button type="submit" className={styles.submit} disabled={isSubmitting}>
-            Submit
-          </button>
+                      
+                    </Form>
+                )}
+            </Formik>
 
-          <p className={styles.signin}>
-            Already have an account? <a href="#">Sign in</a>
-          </p>
-        </Form>
-      )}
-    </Formik>
-
-          
             {/* <button onClick={handleForm}>clic</button> */}
         </div>
     );

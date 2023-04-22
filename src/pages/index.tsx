@@ -8,6 +8,7 @@ import { SearchBar } from "@/components/Search";
 import { getRandomItems } from "@/utils/helpers/randomArrayElements";
 import { PageWrapper } from "@/components/PageWrapper";
 import styles from "@/styles/Home.module.scss"; 
+import { IEstateData } from "@/types/estateTypes";
 
 ////////////////////
 
@@ -26,18 +27,19 @@ export default function Home() {
 
     return (
         <>
-        <PageWrapper title={' Real Estate Agency - Your One Stop Shop for Buying and Selling Properties'}/>
+        <PageWrapper title={'Real Estate Agency - Your One Stop Shop for Buying and Selling Properties'}/>
             
             <main className={styles.main}>
                 <h1 className={styles.h1}>Find Your Dream Home</h1>
             <SearchBar setSearchItems={setSearchItems}/>
             </main>
             <CardsWrapper>
-          {searchItems && searchItems.map((record: any) => {
-            const { localization, id, num_bedrooms, img, ...restData } = record
+          {searchItems && searchItems.map((record: IEstateData) => {
+            const { id, num_bedrooms, img, ...restData } = record
             
             return (
-             <PropertyCard key={id} id={id} img={img} bedrooms={num_bedrooms} {...restData} />
+             <PropertyCard key={id} record={record} />
+            //  <PropertyCard key={id} id={id} img={img} bedrooms={num_bedrooms} {...restData} />
             )
           })}
           </CardsWrapper>
