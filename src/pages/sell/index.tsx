@@ -11,19 +11,23 @@ import { TextareaInput } from "@/components/shared/SellInput/SellTextarea";
 import { FormValues } from "@/types/sellFormTypes";
 import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
-
-
+import { useAuthContext } from "@/contexts/AuthContext";
+import { generateId } from "@/utils/helpers/generateId";
 
 const Sell = () => {
-   
+    const user = useAuthContext()
 
-    const handleSubmit = (
-        values: FormValues,
-        { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
-    ) => {
-        // handle form submission
-        console.log(values);
-        setSubmitting(false);
+    
+    const handleSubmit = async (values: FormValues) => {
+        const ID = generateId()
+
+       const submitForm = {...values, email: user.user?.email, id: ID}
+
+       const { result, error } = await addData(dbTitle, ID, submitForm);
+       console.log(result);
+       if (error) {
+        return console.log(error);
+    }
     };
 
     /////////////////////////////////////////////
@@ -75,6 +79,7 @@ const Sell = () => {
                                     label="bedrooms"
                                     type="number"
                                 />
+           
                                 <SellInput
                                     name="bathrooms"
                                     placeholder="bathrooms"
