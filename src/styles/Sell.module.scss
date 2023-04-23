@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
 .form {
     max-width: 100dvw;
     padding: 2rem;
@@ -134,3 +138,16 @@
     }
   }
   
+
+  @media only screen and (min-width: 700px) {
+    .container {
+      margin-top: 5rem;
+    }
+    
+    .form {
+      width: 80dvw;
+      max-width: 70rem;
+
+  
+    }
+  }

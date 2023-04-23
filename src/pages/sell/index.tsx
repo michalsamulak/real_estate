@@ -68,6 +68,8 @@ const Sell = () => {
                 onSubmit={handleSubmit}
             >
                 {({ isSubmitting }) => (
+                    <div className={styles.container}>
+
                     <Form className={styles.form}>
                         <p className={styles.title}>List Your Property for Sale</p>
                         <p className={styles.message}>
@@ -79,20 +81,20 @@ const Sell = () => {
                             name="title"
                             placeholder="title"
                             label="title"
-                        />
+                            />
                         <div className={styles.flex}>
                             <SellInput
                                 name="num_bedrooms"
                                 placeholder="bedrooms"
                                 label="bedrooms"
                                 type="number"
-                            />
+                                />
                             <SellInput
                                 name="bathrooms"
                                 placeholder="bathrooms"
                                 label="bathrooms"
                                 type="number"
-                            />
+                                />
                         </div>
                         <div className={styles.flex}>
                             <SellInput
@@ -100,76 +102,77 @@ const Sell = () => {
                                 placeholder="area"
                                 label="area"
                                 type="number"
-                            />
+                                />
                             <SellInput
                                 name="price"
                                 placeholder="price"
                                 label="price"
                                 type="number"
-                            />
+                                />
                         </div>
 
                         <TextareaInput
                             name="description"
                             placeholder="description"
-                        />
+                            />
                         <SellInput
                             name="img"
                             placeholder="link to property image"
                             label="img"
                             type="url"
-                        />
+                            />
                         <SellInput
                             name="phone_number"
                             placeholder="phone number"
                             label="phone_number"
                             type="tel"
-                        />
+                            />
                         <SellInput
                             name="street"
                             placeholder="street address"
                             label="street"
-                        />
+                            />
 
                         <div className={styles.flex}>
                             <SellInput
                                 name="city"
                                 placeholder="city"
                                 label="city"
-                            />
+                                />
                             <SellInput
                                 name="state"
                                 placeholder="state"
                                 label="state"
-                            />
+                                />
                         </div>
                         <div className={styles.flex}>
                             <SellInput
                                 name="zip"
                                 placeholder="post code"
                                 label="zip"
-                            />
+                                />
                             <SellInput
                                 name="country"
                                 placeholder="country"
                                 label="country"
-                            />
+                                />
                         </div>
 
                         <button
                             type="submit"
                             className={styles.submit}
                             disabled={isSubmitting}
-                        >
+                            >
                             Submit
                         </button>
 
                       
                     </Form>
+                </div>
                 )}
             </Formik>
 
-            {/* <button onClick={handleForm}>clic</button> */}
+{/* <button onClick={handleForm}>clic</button> */}
         </div>
     );
 };
