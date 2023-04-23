@@ -20,11 +20,22 @@
   .contact__wrapper {
     margin-top: 10rem;
   max-width: 60vw;
-  max-height: 60vh;
+  // max-height: 60vh;
   display: flex;
+  flex-direction: column;
   justify-items: center;
   padding: 1rem;
   align-items: center;
   justify-content: space-around;
 }
 }
+
+@media screen and (min-width: 1068px) {
+
+  .contact__wrapper {
+max-width: 100%;
+  flex-direction: row;
+
+}
+}
+
