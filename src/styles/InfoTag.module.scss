@@ -1,0 +1,33 @@
+.info {
+    font-size: 2rem;
+    // padding: 3rem;
+    margin: 10rem;
+}
+
+.link {
+
+
+    font-weight: 600;
+    font-size: 2rem;
+    cursor: pointer;
+
+    text-decoration: none;
+    position: relative;
+    color: #c69963;
+    text-transform: uppercase;
+  
+    &:after {
+      content: "";
+      width: 0;
+      height: 0.2rem;
+      position: absolute;
+      left: 0;
+      top: 2.5rem;
+      background: #868686;
+      transition: width 0.5s linear;
+    }
+  
+    &:hover:after {
+      width: 100%;
+    }
+  }

@@ -14,16 +14,16 @@ export const LoginButton = () => {
             {isLoggedIn ? (
                 <div className={styles.wrapper}>
                     <ul className={styles.navItems}>
+                        <Link href={"/listed"}>
+                            <li className={styles.navItem}>my&#160;listings</li>
+                        </Link>
                         <Link href={"/"}>
                             <li
                                 className={styles.navItem}
                                 onClick={logOutHandler}
                             >
-                                Sign&#8901;out
+                                Sign&#160;out
                             </li>
-                        </Link>
-                        <Link href={"/listed"}>
-                            <li className={styles.navItem}>my listings</li>
                         </Link>
                     </ul>
                 </div>
@@ -31,7 +31,7 @@ export const LoginButton = () => {
                 <div className={styles.wrapper}>
                     <ul className={styles.navItems}>
                         <Link href={"/login"}>
-                            <li className={styles.navItem}>Sign&#8901;in</li>
+                            <li className={styles.navItem}>Sign&#160;in</li>
                         </Link>
                     </ul>
                     <ul className={styles.navItemsBtn}>

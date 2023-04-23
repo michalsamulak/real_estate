@@ -838,5 +838,62 @@
         "area": 157,
         "bathrooms": 3,
         "img": "https://images.unsplash.com/photo-1562073358-108876d35ce0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+    },
+    {
+        "id": "g6h8j93",
+        "title": "Spacious and Modern Family Home with Backyard Oasis",
+        "description": "This spacious and modern family home boasts a backyard oasis, with a luxurious and refined design. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": {
+            "street": "109 E 42nd St",
+            "city": "New York",
+            "state": "NY",
+            "zip": "10017",
+            "country": "US"
+        },
+        "phone_number": "+1 (555) 567-8901",
+        "email": "sanchossjmistik@gmail.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 5,
+        "area": 157,
+        "bathrooms": 3,
+        "img": "https://images.unsplash.com/photo-1562073358-108876d35ce0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+    },
+    {
+        "id": "g6h8j92",
+        "title": "Spacious and Modern Family Home with Backyard Oasis",
+        "description": "This spacious and modern family home boasts a backyard oasis, with a luxurious and refined design. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": {
+            "street": "109 E 42nd St",
+            "city": "New York",
+            "state": "NY",
+            "zip": "10017",
+            "country": "US"
+        },
+        "phone_number": "+1 (555) 567-8901",
+        "email": "sanchossjmistik@gmail.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 5,
+        "area": 157,
+        "bathrooms": 3,
+        "img": "https://images.unsplash.com/photo-1562073358-108876d35ce0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+    },
+    {
+        "id": "g6h8j91",
+        "title": "Spacious and Modern Family Home with Backyard Oasis",
+        "description": "This spacious and modern family home boasts a backyard oasis, with a luxurious and refined design. The living area features hardwood floors and large windows, with plenty of natural light. The kitchen has been updated with modern appliances and finishes. A perfect home for those who love outdoor living.",
+        "localization": {
+            "street": "109 E 42nd St",
+            "city": "New York",
+            "state": "NY",
+            "zip": "10017",
+            "country": "US"
+        },
+        "phone_number": "+1 (555) 567-8901",
+        "email": "sanchossjmistik@gmail.com",
+        "price": "$1,500,000",
+        "num_bedrooms": 5,
+        "area": 157,
+        "bathrooms": 3,
+        "img": "https://images.unsplash.com/photo-1562073358-108876d35ce0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
     }
 ]
