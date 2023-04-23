@@ -14,5 +14,8 @@ export const validationSchema = Yup.object().shape({
   state: Yup.string().required(),
   zip: Yup.string().required(),
   country: Yup.string().required(),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
 });
 

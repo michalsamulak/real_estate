@@ -7,6 +7,7 @@ export type FormValues = {
     description: string;
     img: string;
     phone_number: number | string;
+    email: string;
     street: string;
     city: string;
     state: string;

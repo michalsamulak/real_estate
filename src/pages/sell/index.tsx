@@ -21,7 +21,7 @@ const Sell = () => {
     const handleSubmit = async (values: FormValues) => {
         const ID = generateId()
 
-       const submitForm = {...values, email: user.user?.email, id: ID}
+       const submitForm = {...values, id: ID}
  
        const { result, error } = await addData(DB_TITLE, ID, submitForm);
        console.log(result);
@@ -96,12 +96,21 @@ const Sell = () => {
                                 label="img"
                                 type="url"
                             />
+                            <div className={styles.flex}>
+
                             <SellInput
                                 name="phone_number"
                                 placeholder="phone number"
                                 label="phone_number"
                                 type="tel"
+                                />
+                                <SellInput
+                                name="email"
+                                placeholder="email"
+                                label="email"
+                                type="email"
                             />
+                                </div>
                             <SellInput
                                 name="street"
                                 placeholder="street address"
