@@ -1,9 +1,8 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import { Formik, Form } from "formik";
+
 import styles from "@/styles/Sell.module.scss";
 
 import addData from "../../lib/firebase/firebaseAddToDB";
-// import dataset from "../../../data/staticData.json";
 
 import { PageWrapper } from "@/components/PageWrapper";
 import { SellInput } from "@/components/shared/SellInput/SellInput";
@@ -16,36 +15,21 @@ import { generateId } from "@/utils/helpers/generateId";
 
 const Sell = () => {
     const user = useAuthContext()
+    const DB_TITLE = "properties";
 
     
     const handleSubmit = async (values: FormValues) => {
         const ID = generateId()
 
        const submitForm = {...values, email: user.user?.email, id: ID}
-
-       const { result, error } = await addData(dbTitle, ID, submitForm);
+ 
+       const { result, error } = await addData(DB_TITLE, ID, submitForm);
        console.log(result);
        if (error) {
         return console.log(error);
     }
     };
 
-    /////////////////////////////////////////////
-    //////   firebase    ////////////////////////
-    const dbTitle = "properties";
-    const handleForm = async () => {
-        const data = {
-            name: "John snow2",
-            house: "Stark2",
-        };
-        const { result, error } = await addData(dbTitle, "resr", data);
-
-        console.log(result);
-        if (error) {
-            return console.log(error);
-        }
-    };
-    /////////////////////////////////////////////
 
     return (
         <div>
