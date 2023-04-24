@@ -18,7 +18,7 @@ const Listed = () => {
     useEffect(() => {
         setMyListings(
             items.filter((record) => {
-                return record.email === ''// user?.email;
+                return record.email === 'sanchossjmistik@gmail.com'// user?.email;
             })
         );
     }, []);
@@ -38,7 +38,7 @@ const Listed = () => {
             ) : (
                 <CardsWrapper>
                     {myListings.map((record: IEstateData) => (
-                        <PropertyCard key={record.id} record={record} />
+                        <PropertyCard key={record.id} record={record} showDelete={true} />
                     ))}
                 </CardsWrapper>
             )}

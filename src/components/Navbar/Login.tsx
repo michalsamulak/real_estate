@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./navbar.module.scss";
+import styles from "./styles.module.scss";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { logOutHandler } from "@/lib/firebase/firebaseSignInMethod";
 

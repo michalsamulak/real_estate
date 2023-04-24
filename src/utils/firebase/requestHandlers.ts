@@ -1,4 +1,4 @@
-import { getFirestore, doc, setDoc, collection, getDocs, DocumentReference, SetOptions,DocumentData } from "firebase/firestore";
+import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs, DocumentReference, SetOptions,DocumentData } from "firebase/firestore";
 import firebase_app from '@/lib/firebase/firebase'
 
 
@@ -26,5 +26,12 @@ export const requestHandlerGet = async (dataBase: string) => {
 
 }
 
+
+
+export const requestHandlerDelete = async (collection: string, id: string) => {
+
+    return await deleteDoc(doc(db, collection, id))
+
+}
 
 
