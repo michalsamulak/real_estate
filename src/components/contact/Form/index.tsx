@@ -15,8 +15,10 @@ type IInitValues = {
 
 
 const ContactForm = () => {
-    const handleSubmit = (values: IInitValues) => {
+    const handleSubmit = (values: IInitValues,
+        { resetForm }: { resetForm: () => void }) => {
         toast("Thank you for message");
+        resetForm()
     };
 
     return (

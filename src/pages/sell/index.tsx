@@ -19,7 +19,8 @@ const Sell = () => {
     const DB_TITLE = "properties";
 
     
-    const handleSubmit = async (values: FormValues) => {
+    const handleSubmit = async (values: FormValues,
+        { resetForm }: { resetForm: () => void }) => {
         const ID = generateId()
 
         const value = +values.price
@@ -28,6 +29,9 @@ const Sell = () => {
  
        const { result, error } = await addData(DB_TITLE, ID, submitForm);
        console.log(result);
+
+            resetForm()
+
        if (error) {
         return console.log(error);
     }
