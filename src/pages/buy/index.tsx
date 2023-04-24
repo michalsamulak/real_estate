@@ -5,6 +5,8 @@ import { PageWrapper } from "@/components/PageWrapper";
 import styles from "@/styles/Cards.module.scss";
 import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estateTypes";
+import { InferGetServerSidePropsType } from "next";
+import getDocument from "@/lib/firebase/getFromDB";
 
 
 // SSG
@@ -12,8 +14,8 @@ import { IEstateData } from "@/types/estateTypes";
 // SSR
 // getServerSideProps
 
-const Buy = () => {
-    const [items, setItems] = useState<IEstateData[]>(data);
+const Buy = ({ properties }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+    const [items, setItems] = useState<IEstateData[]>(properties);
     const [visibleItems, setVisibleItems] = useState<IEstateData[]>(items.slice(0, 6));
 
     const handleLoadMore = () => {
@@ -37,3 +39,21 @@ const Buy = () => {
 };
 
 export default Buy;
+
+
+export async function getServerSideProps() {
+
+    try {
+
+    const {result } = await getDocument()
+      const properties = await result
+  
+      return { props:  {properties: properties as IEstateData[]}  };
+    } catch (error) {
+      console.log('Error fetching document:', error);
+      return { props:  {properties: data}  };
+    }
+  
+  
+   
+  }

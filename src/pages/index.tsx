@@ -20,7 +20,6 @@ const NUM_PROPERTIES_ON_HOME_PAGE = 6
 const Home = ({ properties }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const defaultDisplayProperties = getRandomItems(properties, NUM_PROPERTIES_ON_HOME_PAGE)
     const [searchItems, setSearchItems] = useState(defaultDisplayProperties)
-  console.log(properties.map(record => record.id));
     return (
         <>
         <PageWrapper title={'Real Estate Agency - Your One Stop Shop for Buying and Selling Properties'}/>

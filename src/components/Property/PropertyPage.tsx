@@ -6,10 +6,10 @@ import { ContactInfo } from "./ContactInfo";
 import { PageWrapper } from "../PageWrapper";
 import defaultImg from "@/../public/static/default_img.jpg";
 
-// PropertyDetails
 export const PropertyPage = ({ property }: { property: IProperty }) => {
-    const displayImg = property.img.length > 0 ? property.img : defaultImg;
-
+    if (!property) {
+        return <div>Loading...</div>;
+    }
     return (
         <>
             <PageWrapper title={property.title} />
@@ -18,10 +18,10 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
                 <div className={styles.featured_property}>
                     <div className={styles.image}>
                         <Image
-                            src={displayImg}
+                            src={property.img || defaultImg}
                             width={700}
                             height={500}
-                            alt="test"
+                            alt={property.title}
                         />
                     </div>
                     <div className={styles.text}>
@@ -32,43 +32,30 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
 
                         <ContactInfo property={property} />
 
-                        {/* <div className={styles.contact_wrapper}>
-                            <p className={styles.contact}>Contact:</p>
-                            <div>
-                                <p>
-                                    <FontAwesomeIcon
-                                        icon={faPhone}
-                                        style={{
-                                            fontSize: 13,
-                                            color: "gray",
-                                            paddingRight: "5px",
-                                        }}
-                                    />
-
-                                    {property.phone_number}
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon
-                                        icon={faEnvelope}
-                                        style={{
-                                            fontSize: 13,
-                                            color: "gray",
-                                            paddingRight: "5px",
-                                            marginTop: "10px",
-                                        }}
-                                    />
-
-                                    {property.email}
-                                </p>
-                            </div>
-                        </div> */}
                         <div className={styles.contact_wrapper}>
                             <p className={styles.contact}>Address:</p>
-                            <div>
-                                <p>{property.localization.street}</p>
-                                <p>{property.localization.city}</p>
-                                <p>{property.localization.zip}</p>
-                            </div>
+                            {!property.localization ? (
+                                <div>
+                                    <p>{property.street}</p>
+                                    <p>{property.city}</p>
+                                    <p>{property.zip}</p>
+                                </div>
+                            ) : (
+                                <div>
+                                    <p>
+                                        {property.localization.street ||
+                                            property.street}
+                                    </p>
+                                    <p>
+                                        {property.localization.city ||
+                                            property.city}
+                                    </p>
+                                    <p>
+                                        {property.localization.zip ||
+                                            property.zip}
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

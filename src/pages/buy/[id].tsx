@@ -2,83 +2,69 @@ import {GetStaticProps} from 'next'
 import propertiesJSON from "@/data/staticData.json"
 import { PropertyPage } from "@/components/Property/PropertyPage";
 import { IProperty } from "@/components/Property/types";
+import getDocument from '@/lib/firebase/getFromDB';
 
-export const getStaticProps: GetStaticProps  = async ({ params }) => {
+
+export async function getServerSideProps({ params }: { params: { id: string } }) {
+
+
+
     try {
-        if (!params) throw 'No params attached'
+      if (!params) throw 'No params attached';
 
-        // find
-        const property = propertiesJSON.filter((singleProperty) => {
-            return singleProperty.id === params.id;
-        });
+      const {result } = await getDocument()
+      const properties = await result
 
-        return {
-            props: {
-                data: property,
-            },
-        };
-    } catch (error) {
-        return {
-            props: {
-                data: "", // undefined
-            },
-        };
-    }
-};
+      if(properties === null) return
 
-export const getStaticPaths = async () => {
-    const paths = propertiesJSON.map((record) => {
-        return { params: { id: record.id } };
+      
+      const property = properties.find((singleProperty) => {
+        return singleProperty.id === params.id;
     });
+  
+    
+      return {
+        props: {
+          data: property,
+        },
+      };
+    } catch (error) {
+      console.log('Error fetching property:', error);
 
+      return {
+        props: {
+          data: {property: propertiesJSON},
+        },
+      };
+    }
+  }
+
+
+  export async function getServerSidePaths() {
+    
+    const {result } = await getDocument()
+    const properties = await result
+    if(properties === null) return
+
+    const paths = properties.map((record) => {
+      return { params: { id: record.id } };
+    });
+  
     return {
-        paths,
-        fallback: false,
+      paths,
+      fallback: false,
     };
-};
+  }
 
-// data: IProperty[] | undefined
-const PropertyDetails = ({ data }: { data: IProperty[] }) => {
+const PropertyDetails = ({ data }: { data: IProperty }) => {
     if (!data) return <div>Sorry no data retrieved. Try again</div>;
 
-    console.log(data);
     return (
         <>
-            <PropertyPage property={data[0]} />
+            <PropertyPage property={data} />
         </>
     );
 };
 
 export default PropertyDetails;
 
-// import { CardsWrapper } from '../../../components/PropertyCards/CardsWrapper'
-// import { PropertyCard } from '../../../components/PropertyCards/PropertyCard'
-// import getDocument from '../../../lib/firebase/firebaseGetDB'
-
-// import data from '../../../data/staticData.json'
-
-// const Buy = () => {
-
-//     // 'users', 'user-id2'
-
-// //     const handleForm = async () => {
-
-// //         const fetch = await getDocument('users', 'user-id2')
-// //         // const fetch = await getDocument('users', 'user-id2')
-// //         // const test = fetch.result?.data()
-// //         // console.log(test);
-
-// // console.log(fetch.result);
-// //      }
-
-//       console.log(data);
-
-//       return (
-//         <div>
-
-//            {/* <button onClick={handleForm}>buy</button> */}
-//         </div>
-//       )
-//     }
-
-// export default Buy

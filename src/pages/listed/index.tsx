@@ -7,18 +7,22 @@ import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estateTypes";
 import { useAuthContext } from "@/contexts/AuthContext";
 import Link from "next/link";
+import getDocument from "@/lib/firebase/getFromDB";
+import { InferGetServerSidePropsType } from "next";
 
-const Listed = () => {
+const Listed = ({ properties }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const { user } = useAuthContext();
-    const [items, setItems] = useState<IEstateData[]>(data);
+    const [items, setItems] = useState<IEstateData[]>(properties);
     const [myListings, setMyListings] = useState<IEstateData[]>(
         [] as IEstateData[]
     );
 
+
     useEffect(() => {
         setMyListings(
             items.filter((record) => {
-                return record.email === 'sanchossjmistik@gmail.com'// user?.email;
+                if(user === null) return
+                return record.email ===  user.email;
             })
         );
     }, []);
@@ -47,3 +51,21 @@ const Listed = () => {
 };
 
 export default Listed;
+
+
+export async function getServerSideProps() {
+
+    try {
+
+    const {result } = await getDocument()
+      const properties = await result
+  
+      return { props:  {properties: properties as IEstateData[]}  };
+    } catch (error) {
+      console.log('Error fetching document:', error);
+      return { props:  {properties: data}  };
+    }
+  
+  
+   
+  }

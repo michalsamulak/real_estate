@@ -12,6 +12,7 @@ import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { generateId } from "@/utils/helpers/generateId";
+import { formatPrice } from "@/utils/search/formatPrice";
 
 const Sell = () => {
     const user = useAuthContext()
@@ -21,7 +22,9 @@ const Sell = () => {
     const handleSubmit = async (values: FormValues) => {
         const ID = generateId()
 
-       const submitForm = {...values, id: ID}
+        const value = +values.price
+
+       const submitForm = {...values, id: ID, price: formatPrice(value)}
  
        const { result, error } = await addData(DB_TITLE, ID, submitForm);
        console.log(result);

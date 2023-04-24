@@ -3,7 +3,11 @@ export type IProperty =  {
   title: string;
   description: string;
   localization: Localization;
-
+  street?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  country?: string;
   phone_number: string;
   email: string;
   price: string;
