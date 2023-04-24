@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 type ITextareaInputProps = {
   name: string;
   placeholder?: string;
-  label?: string;
+  label: string;
 }
 
 export const TextareaInput = ({ name, placeholder, label }: ITextareaInputProps) => (
@@ -15,8 +15,9 @@ export const TextareaInput = ({ name, placeholder, label }: ITextareaInputProps)
         <div>
 
           <textarea {...field} placeholder={placeholder} className={styles.textarea} />
+          <span className={styles.span}>{label.toUpperCase()}</span>
         </div>
-          {/* <span>{label}</span> */}
+
           <ErrorMessage name={name} />
         </>
       )}

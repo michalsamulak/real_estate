@@ -13,12 +13,12 @@ export const SellInput = ({ name, placeholder, label, type = 'text' }: IInputPro
 
   
 
-  <label>
+  <label >
     <Field name={name}>
       {({ field }: FieldProps) => (
         <>
-          <input {...field} type={type} placeholder={placeholder} className={styles.input} />
-          {/* <span>{label}</span> */}
+          <input {...field} type={type} placeholder={placeholder} className={styles.input} ></input>
+          <span className={styles.span}>{label.toUpperCase()}</span>
           <ErrorMessage name={name} />
         </>
       )}

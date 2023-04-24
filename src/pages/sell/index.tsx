@@ -89,11 +89,12 @@ const Sell = () => {
                             <TextareaInput
                                 name="description"
                                 placeholder="description"
+                                label="description"
                             />
                             <SellInput
                                 name="img"
                                 placeholder="link to property image"
-                                label="img"
+                                label="Picture URL"
                                 type="url"
                             />
                             <div className={styles.flex}>
@@ -101,7 +102,7 @@ const Sell = () => {
                             <SellInput
                                 name="phone_number"
                                 placeholder="phone number"
-                                label="phone_number"
+                                label="phone number"
                                 type="tel"
                                 />
                                 <SellInput
@@ -113,7 +114,7 @@ const Sell = () => {
                                 </div>
                             <SellInput
                                 name="street"
-                                placeholder="street address"
+                                placeholder="street "
                                 label="street"
                             />
 
