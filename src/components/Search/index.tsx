@@ -20,9 +20,10 @@ export const initialSearch = {
 
 export type ISearch = {
     setSearchItems: React.Dispatch<React.SetStateAction<IEstateData[]>>;
+    properties: IEstateData[]
   }
 
-export const SearchBar = ({setSearchItems}: ISearch) => {
+export const SearchBar = ({setSearchItems, properties}: ISearch) => {
 
     const handleSubmit = (
         values: IInitSearch,
@@ -30,7 +31,7 @@ export const SearchBar = ({setSearchItems}: ISearch) => {
     ) => {
         const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
 
-         const propertyQuery = filterData(values, data);
+         const propertyQuery = filterData(values, properties);
         setSearchItems(propertyQuery);
 
         resetForm();

@@ -9,8 +9,8 @@
   height: 3rem;
   background-color: grey;
   position: absolute;
-  top: -1rem;
-  right: -1rem;
+  top: -2rem;
+  right: -2rem;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -174,13 +174,13 @@
   width: 100%;
 }
 
-.overlay:hover > a {
+.overlay:hover > .a {
   display: block;
   text-align: center;
   border-color: goldenrod;
 }
 
-.overlay a {
+.overlay .a {
   display: none;
   width: 140px;
   padding: 15px 0;

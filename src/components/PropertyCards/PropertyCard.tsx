@@ -50,7 +50,8 @@ export const PropertyCard = ({
         price,
     } = record;
 
-    const displayImg = img.length > 0 ? img : defaultImg;
+   
+    const displayImg = img//.length > 0 |  ? img : defaultImg;
 
     return (
         <section className={styles.card}>
@@ -60,22 +61,25 @@ export const PropertyCard = ({
                 </div>
             )}
             <div>
+            <Link href={`/buy/${id}`} >
                 <div className={styles.img_overlay}>
                     <Image
-                        src={displayImg}
+                        src={displayImg || defaultImg}
                         width={300}
                         height={500}
                         alt={title}
                     />
                     <div className={styles.overlay}>
-                        <Link href={`/buy/${id}`} className={styles.a}>
+                        
+                        <span className={styles.a}>
                             view property
-                        </Link>
+                        </span>
                     </div>
                     <div className={styles.cont}>
                         <div className={styles.icons_img}></div>
                     </div>
                 </div>
+                </Link>
                 <h2 className={styles.title}>{title}</h2>
             </div>
             <div className={styles.card_content}>

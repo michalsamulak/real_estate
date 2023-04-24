@@ -2,7 +2,7 @@ import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs, DocumentRefe
 import firebase_app from '@/lib/firebase/firebase'
 
 
-const db = getFirestore(firebase_app)
+export const db = getFirestore(firebase_app)
 
 // generyk
 export const requestHandlerSet = async <T>(collection: string, id: string, data: T) => {
@@ -22,7 +22,7 @@ export const requestHandlerGet = async (dataBase: string) => {
     const colRef = collection(db, dataBase)
     const docsSnap = await getDocs(colRef);
 
-    return  docsSnap.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    return  docsSnap.docs.map((doc) => ({ ...doc.data() }))
 
 }
 
