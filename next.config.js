@@ -6,7 +6,7 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'firebasestorage.googleapis.com'],
   },
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
@@ -16,3 +16,5 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+

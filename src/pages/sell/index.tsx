@@ -1,5 +1,7 @@
+import toast from "react-hot-toast";
 import { Formik, Form } from "formik";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4, v4 } from "uuid";
+import Link from "next/link";
 import styles from "@/styles/Sell.module.scss";
 import { SEOHead } from "@/components/PageWrapper";
 import { SellInput } from "@/components/shared/SellInput/SellInput";
@@ -8,42 +10,86 @@ import { FormValues } from "@/types/sellForm";
 import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
 import addProperty from "../../lib/firebase/addToDB";
-import toast from "react-hot-toast";
 import { useAuthContext } from "@/contexts/AuthContext";
-import Link from "next/link";
+// import { useImageUploader } from "@/lib/firebase/hooks/useImageUploader";
+import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
+import { UploadInput } from "@/components/shared/SellInput/UploadInput";
+import { storage } from "@/lib/firebase";
+import { ref, uploadBytes, getDownloadURL, listAll, StorageReference } from "firebase/storage";
 
 const Sell = () => {
 
-    const {user} = useAuthContext()
+const [imageUpload, setImageUpload] = useState<File | null>(null);
+const [imageUrls, setImageUrls] = useState<string[]>([]);
+const [imgLink, setImgLink] = useState('')
 
-    if(user === null) {
-        return (
-                <div className={styles.wrapper}>
-                <h2 className={styles.info}>
-                You must be {" "}
-                  <Link className={styles.link} href={"/login"}>
-                  logged in
-                  </Link>{" "}
-                  to sell property.{" "}
-                </h2>
-              </div>
-        
-            )
-    }
+const imagesListRef: StorageReference = ref(storage, "images/");
+  const uploadFile = () => {
+    if (imageUpload == null) return;
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+
+ 
 
 
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImgLink(url)
+        // setImageUrls((prev) => [...prev, url]);
+      });
+    });
+  };
+
+  useEffect(() => {
+    listAll(imagesListRef).then((response) => {
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+        setImgLink(url)
+
+          // setImageUrls((prev) => [...prev, url]);
+        });
+      });
+    });
+  }, []);
+
+    const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files === null) return;
+    setImageUpload(e.target.files[0]);
+
+    console.log(imgLink);
+
+  };
+
+    const { user } = useAuthContext();
+
+  if (user === null) {
+    return (
+      <div className={styles.wrapper}>
+        <h2 className={styles.info}>
+          You must be{" "}
+          <Link className={styles.link} href={"/login"}>
+            logged in
+          </Link>{" "}
+          to sell property.{" "}
+        </h2>
+      </div>
+    );
+  }
 
   const handleSubmit = async (
     values: FormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    const ID = uuidv4();
 
-    if(user === null) return
-    const { result, error } = await addProperty({...values, email: user.email});
+    // uploadFile();
+
+    if (user === null) return;
+    const { result, error } = await addProperty({
+      ...values,
+      email: user.email,
+      img: imgLink || ''
+    });
     toast("Wonderful you list your property");
     resetForm();
-
 
     if (error) console.log(error);
   };
@@ -101,12 +147,7 @@ const Sell = () => {
                 placeholder="description"
                 label="description"
               />
-              <SellInput
-                name="img"
-                placeholder="link to property image"
-                label="Picture URL"
-                type="url"
-              />
+                      <UploadInput name="img" uplander={handleImageUpload} handler={uploadFile} />
               <div className={styles.flex}>
                 <SellInput
                   name="phone_number"
@@ -114,12 +155,6 @@ const Sell = () => {
                   label="phone number"
                   type="tel"
                 />
-                {/* <SellInput
-                  name="email"
-                  placeholder="email"
-                  label="email"
-                  type="email"
-                /> */}
               </div>
               <SellInput name="street" placeholder="street " label="street" />
 
@@ -147,6 +182,7 @@ const Sell = () => {
           </div>
         )}
       </Formik>
+     
     </div>
   );
 };

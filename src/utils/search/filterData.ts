@@ -5,8 +5,6 @@ import { isInRange } from "./isInRange";
 export const filterData = (values: IInitSearch, data: IEstateData[]) => {
     const filtered = data.filter((record) => {
 
-
-
         const cost = record.price.toString()
         const price = parseInt(cost.substring(1).replace(",", ""));
         const title = record.title.toLowerCase();

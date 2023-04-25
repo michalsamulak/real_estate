@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from "react";
 import { Field, ErrorMessage, FieldProps } from "formik";
 import styles from "./styles.module.scss";
 

@@ -119,18 +119,18 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-  
+
     &:hover,
     &:active {
       background-color: initial;
       background-position: 0 0;
       color: #ff4742;
     }
-  
+
     &:active {
       opacity: 0.5;
     }
-  
+
     &::after {
       transition: none;
     }
