@@ -1,162 +1,155 @@
 import { Formik, Form } from "formik";
+import { v4 as uuidv4 } from "uuid";
 import styles from "@/styles/Sell.module.scss";
-import addData from "../../lib/firebase/firebaseAddToDB";
-import { PageWrapper } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/PageWrapper";
 import { SellInput } from "@/components/shared/SellInput/SellInput";
 import { TextareaInput } from "@/components/shared/SellInput/SellTextarea";
-import { FormValues } from "@/types/sellFormTypes";
+import { FormValues } from "@/types/sellForm";
 import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
-import { generateId } from "@/utils/helpers/generateId";
-import { formatPrice } from "@/utils/search/formatPrice";
+import addProperty from "../../lib/firebase/addToDB";
+import toast from "react-hot-toast";
+import { useAuthContext } from "@/contexts/AuthContext";
+import Link from "next/link";
 
 const Sell = () => {
-    const DB_TITLE = "properties";
 
-    const handleSubmit = async (
-        values: FormValues,
-        { resetForm }: { resetForm: () => void }
-    ) => {
-        const ID = generateId();
+    const {user} = useAuthContext()
 
-        const value = +values.price;
+    if(user === null) {
+        return (
+                <div className={styles.wrapper}>
+                <h2 className={styles.info}>
+                You must be {" "}
+                  <Link className={styles.link} href={"/login"}>
+                  logged in
+                  </Link>{" "}
+                  to sell property.{" "}
+                </h2>
+              </div>
+        
+            )
+    }
 
-        const submitForm = { ...values, id: ID, price: formatPrice(value) };
 
-        const { result, error } = await addData(DB_TITLE, ID, submitForm);
-        console.log(result);
 
-        resetForm();
+  const handleSubmit = async (
+    values: FormValues,
+    { resetForm }: { resetForm: () => void }
+  ) => {
+    const ID = uuidv4();
 
-        if (error) {
-            return console.log(error);
-        }
-    };
 
-    return (
-        <div>
-            <PageWrapper title="Sell your property" />
 
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-            >
-                {({ isSubmitting }) => (
-                    <div className={styles.container}>
-                        <Form className={styles.form}>
-                            <p className={styles.title}>
-                                List Your Property for Sale
-                            </p>
-                            <p className={styles.message}>
-                                Provide us with the details of the property you
-                                are selling.
-                            </p>
+    const { result, error } = await addProperty(values);
+    toast("Wonderful you list your property");
+    resetForm();
 
-                            <SellInput
-                                name="title"
-                                placeholder="title"
-                                label="title"
-                            />
-                            <div className={styles.flex}>
-                                <SellInput
-                                    name="num_bedrooms"
-                                    placeholder="bedrooms"
-                                    label="bedrooms"
-                                    type="number"
-                                />
 
-                                <SellInput
-                                    name="bathrooms"
-                                    placeholder="bathrooms"
-                                    label="bathrooms"
-                                    type="number"
-                                />
-                            </div>
-                            <div className={styles.flex}>
-                                <SellInput
-                                    name="area"
-                                    placeholder="area"
-                                    label="area"
-                                    type="number"
-                                />
-                                <SellInput
-                                    name="price"
-                                    placeholder="price"
-                                    label="price"
-                                    type="number"
-                                />
-                            </div>
+    if (error) console.log(error);
+  };
 
-                            <TextareaInput
-                                name="description"
-                                placeholder="description"
-                                label="description"
-                            />
-                            <SellInput
-                                name="img"
-                                placeholder="link to property image"
-                                label="Picture URL"
-                                type="url"
-                            />
-                            <div className={styles.flex}>
-                                <SellInput
-                                    name="phone_number"
-                                    placeholder="phone number"
-                                    label="phone number"
-                                    type="tel"
-                                />
-                                <SellInput
-                                    name="email"
-                                    placeholder="email"
-                                    label="email"
-                                    type="email"
-                                />
-                            </div>
-                            <SellInput
-                                name="street"
-                                placeholder="street "
-                                label="street"
-                            />
+  return (
+    <div>
+      <SEOHead title="Sell your property" />
 
-                            <div className={styles.flex}>
-                                <SellInput
-                                    name="city"
-                                    placeholder="city"
-                                    label="city"
-                                />
-                                <SellInput
-                                    name="state"
-                                    placeholder="state"
-                                    label="state"
-                                />
-                            </div>
-                            <div className={styles.flex}>
-                                <SellInput
-                                    name="zip"
-                                    placeholder="post code"
-                                    label="zip"
-                                />
-                                <SellInput
-                                    name="country"
-                                    placeholder="country"
-                                    label="country"
-                                />
-                            </div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting }) => (
+          <div className={styles.container}>
+            <Form className={styles.form}>
+              <p className={styles.title}>List Your Property for Sale</p>
+              <p className={styles.message}>
+                Provide us with the details of the property you are selling.
+              </p>
 
-                            <button
-                                type="submit"
-                                className={styles.submit}
-                                disabled={isSubmitting}
-                            >
-                                Submit
-                            </button>
-                        </Form>
-                    </div>
-                )}
-            </Formik>
-        </div>
-    );
+              <SellInput name="title" placeholder="title" label="title" />
+              <div className={styles.flex}>
+                <SellInput
+                  name="num_bedrooms"
+                  placeholder="bedrooms"
+                  label="bedrooms"
+                  type="number"
+                />
+
+                <SellInput
+                  name="bathrooms"
+                  placeholder="bathrooms"
+                  label="bathrooms"
+                  type="number"
+                />
+              </div>
+              <div className={styles.flex}>
+                <SellInput
+                  name="area"
+                  placeholder="area"
+                  label="area"
+                  type="number"
+                />
+                <SellInput
+                  name="price"
+                  placeholder="price"
+                  label="price"
+                  type="number"
+                />
+              </div>
+
+              <TextareaInput
+                name="description"
+                placeholder="description"
+                label="description"
+              />
+              <SellInput
+                name="img"
+                placeholder="link to property image"
+                label="Picture URL"
+                type="url"
+              />
+              <div className={styles.flex}>
+                <SellInput
+                  name="phone_number"
+                  placeholder="phone number"
+                  label="phone number"
+                  type="tel"
+                />
+                <SellInput
+                  name="email"
+                  placeholder="email"
+                  label="email"
+                  type="email"
+                />
+              </div>
+              <SellInput name="street" placeholder="street " label="street" />
+
+              <div className={styles.flex}>
+                <SellInput name="city" placeholder="city" label="city" />
+                <SellInput name="state" placeholder="state" label="state" />
+              </div>
+              <div className={styles.flex}>
+                <SellInput name="zip" placeholder="post code" label="zip" />
+                <SellInput
+                  name="country"
+                  placeholder="country"
+                  label="country"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={styles.submit}
+                disabled={isSubmitting}
+              >
+                Submit
+              </button>
+            </Form>
+          </div>
+        )}
+      </Formik>
+    </div>
+  );
 };
 
 export default Sell;

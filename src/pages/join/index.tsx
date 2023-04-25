@@ -1,17 +1,23 @@
 import { SignUpForm } from "@/components/auth/SignupForm";
-import { PageWrapper } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/PageWrapper";
 import styles from "../../styles/Join.module.scss";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { useRouter } from "next/router";
 
 const Login = () => {
-    return (
-        <>
-              <PageWrapper title="Sign up" />
+    const {user} = useAuthContext()
+    const router = useRouter();
 
-            <div className={styles.signin_box}>
-                <SignUpForm />
-            </div>
-        </>
-    );
+    user !== null &&  router.push("/");
+  return (
+    <>
+      <SEOHead title="Sign up" />
+
+      <div className={styles.signin_box}>
+        <SignUpForm />
+      </div>
+    </>
+  );
 };
 
 export default Login;

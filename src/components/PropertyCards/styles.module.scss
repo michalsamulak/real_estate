@@ -1,11 +1,9 @@
-
 .card {
   position: relative;
   z-index: 1;
 }
 
 .remove {
-
   width: 3rem;
   height: 3rem;
   background-color: grey;
@@ -28,19 +26,16 @@
 
   cursor: pointer;
 
-    &::after {
-      content: 'X';
-    }
+  &::after {
+    content: "X";
+  }
 }
-
-
 
 .remove:hover,
 .remove:active {
   background-color: initial;
   background-position: 0 0;
   color: #ff4742;
- 
 }
 
 .remove:active {
@@ -77,19 +72,13 @@
   .card_content {
     font-size: 16px;
   }
-  // .price span:last-of-type {
-  //   color: #2fa89e;
-  //   font-size: 20px;
-  // }
 }
 
 @media screen and (min-width: 701px) and (max-width: 1000px) {
   .card {
     grid-column-end: span 6;
   }
-
 }
-
 
 .overlay,
 .img_overlay img {
@@ -219,7 +208,6 @@
   color: #7e8186;
 }
 
-
 .icons_home {
   display: flex;
   justify-content: space-between;
@@ -237,8 +225,6 @@
   color: #1a1a1a;
 }
 
-
-
 .icon {
   display: flex;
   align-items: center;
@@ -253,8 +239,6 @@
 .icon span {
   vertical-align: middle;
 }
-
-
 
 .price {
   text-transform: capitalize;
@@ -279,22 +263,19 @@
     grid-template-columns: 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 30px;
-    
   }
   .card {
     grid-column-end: span 12;
   }
-  
+
   .card_content {
     font-size: 16px;
   }
-
 }
 
 @media screen and (max-width: 750px) {
   .container {
     grid-template-columns: 20px repeat(12, minmax(auto, 1fr)) 20px;
-    // grid-template-columns: 1fr;
     grid-gap: 10px;
   }
   .cards {
@@ -307,7 +288,6 @@
   }
 
   .remove {
-    
     width: 9rem;
     height: 4rem;
     position: absolute;
@@ -317,14 +297,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     font-size: 2rem;
-  
 
     border-radius: 5px;
-    
+
     &::after {
-      content: 'Delete';
+      content: "Delete";
     }
   }
 }

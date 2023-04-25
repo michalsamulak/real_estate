@@ -1,103 +1,54 @@
 .contact_form {
     padding: 3rem 1.5rem;
 
-}
-
-.form_title {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-}
-
-.form_subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-// .form_label {
-//     display: block;
-//     // margin-bottom: 5rem;
-//     margin-top: 2rem;
-//     font-size: 1.6rem;
-//     font-weight: 700;
-// }
-
-// .form_input {
-//     padding: 1.2rem 2rem;
-//     font-size: 1rem;
-//     border-width: 5px;
-//     border-style: none;
-//     border-radius: 6px;
-//     outline: transparent;
-//     width: 100%;
-//     transition: border-color 0.2s ease;
-// }
-
-// .form_textarea {
-//     padding: 1.2px 2rem;
-//     font-size: 1rem;
-//     border-width: 5px;
-//     border-style: none;
-//     border-radius: 6px;
-//     outline: transparent;
-//     width: 100%;
-//     transition: border-color 0.2s ease;
-// }
-
-.form_submit {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    margin-top: 2rem;
-
-    cursor: pointer;
-}
-
-// .error_message {
-//  color: red;
-// }
-
-.form_submit:hover {
-    background-color: #555;
-}
-
-@media screen and (min-width: 768px) {
-
-    .section_title {
-        font-size: 4.8rem;
-    }
-
-    .section_subtitle {
-        font-size: 3.6rem;
-    }
-
-    .contact_info {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    // .contact_info-item {
-    //     margin-right: 3rem;
-    //     margin-bottom: 0;
-    // }
-
     .form_title {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
     }
 
     .form_subtitle {
-        font-size: 2rem;
-        margin-bottom: 5rem;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
     }
 
-    // .form_input,
-    // .form_textarea {
-    //     font-size: 1.8rem;
-    // }
+    .form_submit {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        margin-top: 2rem;
 
+        cursor: pointer;
 
+        &:hover {
+            background-color: #555;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .section_title {
+            font-size: 4.8rem;
+        }
+
+        .section_subtitle {
+            font-size: 3.6rem;
+        }
+
+        .contact_info {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .form_title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .form_subtitle {
+            font-size: 2rem;
+            margin-bottom: 5rem;
+        }
+    }
 }
-

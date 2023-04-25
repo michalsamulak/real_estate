@@ -1,4 +1,4 @@
-import { FormValues } from "@/types/sellFormTypes";
+import { FormValues } from "@/types/sellForm";
 
 export const initialValues: FormValues = {
     title: "",

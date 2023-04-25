@@ -1,10 +1,9 @@
-import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs, DocumentReference, SetOptions,DocumentData } from "firebase/firestore";
-import firebase_app from '@/lib/firebase/firebase'
+import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs,getDoc, DocumentReference, SetOptions,DocumentData } from "firebase/firestore";
+import firebase_app from '@/lib/firebase'
 
 
 export const db = getFirestore(firebase_app)
 
-// generyk
 export const requestHandlerSet = async <T>(collection: string, id: string, data: T) => {
     const docRef: DocumentReference<any> = doc(db, collection, id );
     return await setDoc(docRef, data, {
@@ -30,4 +29,10 @@ export const requestHandlerDelete = async (collection: string, id: string) => {
 
 }
 
+export const requestHandlerGetByID = async (dataBase: string, id: string) => {
+    
+    const docRef = doc(db, dataBase, id);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data()
 
+}

@@ -1,5 +1,5 @@
 import { IInitSearch } from "./type";
-import { IEstateData } from "../../types/estateTypes";
+import { IEstateData } from "../../types/estate";
 import { isInRange } from "./isInRange";
 
 export const filterData = (values: IInitSearch, data: IEstateData[]) => {
@@ -7,10 +7,10 @@ export const filterData = (values: IInitSearch, data: IEstateData[]) => {
 
 
 
-          const cost = record.price.toString()  
+        const cost = record.price.toString()
         const price = parseInt(cost.substring(1).replace(",", ""));
         const title = record.title.toLowerCase();
-        const roomsNum = record.num_bedrooms;
+        const bedrooms = record.num_bedrooms;
 
         if (
             values.title.length > 3 &&
@@ -19,22 +19,9 @@ export const filterData = (values: IInitSearch, data: IEstateData[]) => {
             return false;
         }
 
-    
-        if (
-            values.minPrice &&
-            values.maxPrice &&
-            (price < values.minPrice || price > values.maxPrice)
-        ) {
-            return false;
-        }
+        isInRange(price, { min: values.minPrice, max: values.maxPrice })
+        isInRange(bedrooms, { min: values.minBedrooms, max: values.maxBedrooms })
 
-        if (
-            values.minBedrooms &&
-            values.maxBedrooms &&
-            (roomsNum < values.minBedrooms || roomsNum > values.maxBedrooms)
-        ) {
-            return false;
-        }
 
         return true;
     });

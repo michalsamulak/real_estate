@@ -20,6 +20,7 @@
     "dompurify": "^3.0.1",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "eslint-config-prettier": "^8.8.0",
     "firebase": "^9.19.1",
     "formik": "^2.2.9",
     "next": "13.2.4",
@@ -32,9 +33,12 @@
     "react-modal": "^3.16.1",
     "sass": "^1.60.0",
     "typescript": "5.0.3",
+    "uuid": "^9.0.0",
     "yup": "^1.0.2"
   },
   "devDependencies": {
-    "@types/dompurify": "^3.0.1"
+    "@types/dompurify": "^3.0.1",
+    "@types/uuid": "^9.0.1",
+    "prettier": "2.8.8"
   }
 }

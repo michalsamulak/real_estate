@@ -1,12 +1,10 @@
-import { IProperty } from "./types";
+import { IProperty } from "@/components/Property/types";
 
-
-export const PropertyDetails = ({property} : {property: IProperty}) =>  {
+export const PropertyDetails = ({ property }: { property: IProperty }) => {
   return (
     <ul className="property-list-details">
       <li className="text-black">
-        Property:{" "}
-        <strong className="text-black">{property.title}</strong>
+        Property: <strong className="text-black">{property.title}</strong>
       </li>
       <li>
         Room: <strong>{property.num_bedrooms}</strong>
@@ -22,4 +20,4 @@ export const PropertyDetails = ({property} : {property: IProperty}) =>  {
       </li>
     </ul>
   );
-}
+};
