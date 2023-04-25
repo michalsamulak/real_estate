@@ -39,9 +39,8 @@ const Sell = () => {
   ) => {
     const ID = uuidv4();
 
-
-
-    const { result, error } = await addProperty(values);
+    if(user === null) return
+    const { result, error } = await addProperty({...values, email: user.email});
     toast("Wonderful you list your property");
     resetForm();
 
@@ -115,12 +114,12 @@ const Sell = () => {
                   label="phone number"
                   type="tel"
                 />
-                <SellInput
+                {/* <SellInput
                   name="email"
                   placeholder="email"
                   label="email"
                   type="email"
-                />
+                /> */}
               </div>
               <SellInput name="street" placeholder="street " label="street" />
 
