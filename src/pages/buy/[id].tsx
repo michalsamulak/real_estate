@@ -11,7 +11,6 @@ export async function getServerSideProps({
 }) {
   try {
     if (!params) throw "No params attached";
-
     const property = await getProperty(params.id);
 
     return {

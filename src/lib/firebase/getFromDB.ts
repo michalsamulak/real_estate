@@ -13,8 +13,10 @@ export default async function getProperties() {
 
 
 
-export  async function getProperty(id: string) {
+export async function getProperty(id: string) {
+
   const data = requestHandlerGetByID('properties', id)
+
   const result = await data as IEstateData
 
   if (result === null) throw Error("I'm sorry, an error occurred when attempting to get property from the database.")

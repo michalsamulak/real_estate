@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { Formik, Form } from "formik";
-import { v4 as uuidv4, v4 } from "uuid";
+import { v4 } from "uuid";
 import Link from "next/link";
 import styles from "@/styles/Sell.module.scss";
 import { SEOHead } from "@/components/PageWrapper";
@@ -11,30 +11,31 @@ import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
 import addProperty from "../../lib/firebase/addToDB";
 import { useAuthContext } from "@/contexts/AuthContext";
-// import { useImageUploader } from "@/lib/firebase/hooks/useImageUploader";
-import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
+
+import { ChangeEvent, useEffect, useState } from "react";
 import { UploadInput } from "@/components/shared/SellInput/UploadInput";
 import { storage } from "@/lib/firebase";
-import { ref, uploadBytes, getDownloadURL, listAll, StorageReference } from "firebase/storage";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  StorageReference,
+} from "firebase/storage";
 
 const Sell = () => {
+  const [imageUpload, setImageUpload] = useState<File | null>(null);
 
-const [imageUpload, setImageUpload] = useState<File | null>(null);
-const [imageUrls, setImageUrls] = useState<string[]>([]);
-const [imgLink, setImgLink] = useState('')
+  const [imgLink, setImgLink] = useState("");
 
-const imagesListRef: StorageReference = ref(storage, "images/");
+  const imagesListRef: StorageReference = ref(storage, "images/");
   const uploadFile = () => {
     if (imageUpload == null) return;
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
 
- 
-
-
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
-        setImgLink(url)
-        // setImageUrls((prev) => [...prev, url]);
+        setImgLink(url);
       });
     });
   };
@@ -43,23 +44,20 @@ const imagesListRef: StorageReference = ref(storage, "images/");
     listAll(imagesListRef).then((response) => {
       response.items.forEach((item) => {
         getDownloadURL(item).then((url) => {
-        setImgLink(url)
-
-          // setImageUrls((prev) => [...prev, url]);
+          setImgLink(url);
         });
       });
     });
   }, []);
 
-    const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) return;
     setImageUpload(e.target.files[0]);
 
     console.log(imgLink);
-
   };
 
-    const { user } = useAuthContext();
+  const { user } = useAuthContext();
 
   if (user === null) {
     return (
@@ -79,14 +77,11 @@ const imagesListRef: StorageReference = ref(storage, "images/");
     values: FormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-
-    // uploadFile();
-
     if (user === null) return;
     const { result, error } = await addProperty({
       ...values,
       email: user.email,
-      img: imgLink || ''
+      img: imgLink || "",
     });
     toast("Wonderful you list your property");
     resetForm();
@@ -147,7 +142,11 @@ const imagesListRef: StorageReference = ref(storage, "images/");
                 placeholder="description"
                 label="description"
               />
-                      <UploadInput name="img" uplander={handleImageUpload} handler={uploadFile} />
+              <UploadInput
+                name="img"
+                uplander={handleImageUpload}
+                handler={uploadFile}
+              />
               <div className={styles.flex}>
                 <SellInput
                   name="phone_number"
@@ -182,7 +181,6 @@ const imagesListRef: StorageReference = ref(storage, "images/");
           </div>
         )}
       </Formik>
-     
     </div>
   );
 };
