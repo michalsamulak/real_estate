@@ -1,4 +1,3 @@
-import {GetStaticProps} from 'next'
 import propertiesJSON from "@/data/staticData.json"
 import { PropertyPage } from "@/components/Property/PropertyPage";
 import { IProperty } from "@/components/Property/types";

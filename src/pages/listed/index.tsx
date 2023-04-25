@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { InferGetServerSidePropsType } from "next";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CardsWrapper } from "@/components/PropertyCards/CardsWrapper";
 import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
@@ -6,10 +9,7 @@ import styles from "@/styles/InfoTag.module.scss";
 import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estateTypes";
 import { useAuthContext } from "@/contexts/AuthContext";
-import Link from "next/link";
 import getDocument from "@/lib/firebase/getFromDB";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { useRouter } from "next/router";
 
 
 

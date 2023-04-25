@@ -17,7 +17,6 @@ const authProviders = {
 }
 
 export const handleAuthProviderLogin = async (
-    //e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     authProvider: IAuthProvider, redirect: () => Promise<void>
 ) => {
 

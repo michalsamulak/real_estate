@@ -1,9 +1,9 @@
-import signUp from "../../lib/firebase/firebaseSignUpWithEmail";
-import { useRouter } from "next/navigation";
-import styles from "./styles.module.scss";
-import { Formik, Form } from "formik";
-import { AuthFormInput } from "../shared/AuthInput";
 import * as Yup from "yup";
+import { useRouter } from "next/navigation";
+import { Formik, Form } from "formik";
+import signUp from "../../lib/firebase/firebaseSignUpWithEmail";
+import styles from "./styles.module.scss";
+import { AuthFormInput } from "../shared/AuthInput";
 
 const schema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is required"),

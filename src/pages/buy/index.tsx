@@ -8,15 +8,13 @@ import { IEstateData } from "@/types/estateTypes";
 import { InferGetServerSidePropsType } from "next";
 import getDocument from "@/lib/firebase/getFromDB";
 
-
-// SSG
-// getStaticProps
-// SSR
-// getServerSideProps
-
-const Buy = ({ properties }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Buy = ({
+    properties,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const [items, setItems] = useState<IEstateData[]>(properties);
-    const [visibleItems, setVisibleItems] = useState<IEstateData[]>(items.slice(0, 6));
+    const [visibleItems, setVisibleItems] = useState<IEstateData[]>(
+        items.slice(0, 6)
+    );
 
     const handleLoadMore = () => {
         setVisibleItems(items.slice(0, visibleItems.length + 6));
@@ -40,20 +38,14 @@ const Buy = ({ properties }: InferGetServerSidePropsType<typeof getServerSidePro
 
 export default Buy;
 
-
 export async function getServerSideProps() {
-
     try {
+        const { result } = await getDocument();
+        const properties = await result;
 
-    const {result } = await getDocument()
-      const properties = await result
-  
-      return { props:  {properties: properties as IEstateData[]}  };
+        return { props: { properties: properties as IEstateData[] } };
     } catch (error) {
-      console.log('Error fetching document:', error);
-      return { props:  {properties: data}  };
+        console.log("Error fetching document:", error);
+        return { props: { properties: data } };
     }
-  
-  
-   
-  }
+}

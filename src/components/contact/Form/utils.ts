@@ -1,8 +1,5 @@
 import * as Yup from 'yup';
 
-// contact_form_utils.ts
-// contact/form/utils.ts
-
 export const initialValues = {
     name: '',
     email: '',

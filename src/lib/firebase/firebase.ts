@@ -1,13 +1,8 @@
-import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import 'firebase/storage'
 import { initializeApp, getApps } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -17,15 +12,9 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// export const db = getFirestore(app);
+
 
 let firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
 export default firebase_app
 
-// export const auth = firebase.auth()
-// export const googleAuthProvider = new firebase.auth.GithubAuthProvider()
-// export const firestore = firebase.firestore()
-// export const storage = firebase.storage()

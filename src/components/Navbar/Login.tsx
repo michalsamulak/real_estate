@@ -4,8 +4,6 @@ import { useAuthContext } from "@/contexts/AuthContext";
 import { logOutHandler } from "@/lib/firebase/firebaseSignInMethod";
 
 export const LoginButton = () => {
-    // export const LoginButton = ({ isLoggedIn, logOutHandler } : {isLoggedIn: boolean, logOutHandler: () => void}) => {
-
     const userContext = useAuthContext();
 
     const isLoggedIn = userContext.user !== null;

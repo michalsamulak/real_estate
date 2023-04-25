@@ -21,8 +21,3 @@ export type IEstateData = {
   }
   
 
-// types/estates.ts
-
-// src/components
-// src/data
-// src/lib

@@ -1,13 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-
-
 import { LoginButton } from "./Login";
-
-// const navLinks = [{label: "Home", href: "/"}]
-
-// navbar -> Navbar
 
 const navLinks = [
     { label: "Home", href: "/" },
@@ -17,8 +11,6 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-
-
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -31,10 +23,7 @@ const NavBar = () => {
                 </ul>
             </div>
 
-            <LoginButton
-                           />
-
-            {/* {userAuthHandler()} */}
+            <LoginButton />
         </div>
     );
 };

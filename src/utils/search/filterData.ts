@@ -1,5 +1,6 @@
 import { IInitSearch } from "./type";
 import { IEstateData } from "../../types/estateTypes";
+import { isInRange } from "./isInRange";
 
 export const filterData = (values: IInitSearch, data: IEstateData[]) => {
     const filtered = data.filter((record) => {
@@ -18,7 +19,7 @@ export const filterData = (values: IInitSearch, data: IEstateData[]) => {
             return false;
         }
 
-        // isInRange(price, { min: values.minPrice, max: values.maxPrice })
+    
         if (
             values.minPrice &&
             values.maxPrice &&
@@ -27,7 +28,6 @@ export const filterData = (values: IInitSearch, data: IEstateData[]) => {
             return false;
         }
 
-        // isInRange(price, { min: values.minPrice, max: values.maxPrice })
         if (
             values.minBedrooms &&
             values.maxBedrooms &&

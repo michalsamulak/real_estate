@@ -1,14 +1,13 @@
 import { Formik, Form } from "formik";
 import styles from "./styles.module.scss";
-import { RangeSearch } from "../shared/SearchInputs/RangeSearch"
+import { RangeSearch } from "../shared/SearchInputs/RangeSearch";
 import { TextSearch } from "../shared/SearchInputs/TextSearch";
-import {bedroomsRange, priceRange } from "@/utils/search/dropdownRanges";
+import { bedroomsRange, priceRange } from "@/utils/search/dropdownRanges";
 import { formatPrice } from "@/utils/search/formatPrice";
 import { IInitSearch } from "@/utils/search/type";
 import { filterData } from "@/utils/search/filterData";
 import { IEstateData } from "@/types/estateTypes";
 import { validation } from "./validation";
-import data from "@/data/staticData.json"
 
 export const initialSearch = {
     title: "",
@@ -20,18 +19,15 @@ export const initialSearch = {
 
 export type ISearch = {
     setSearchItems: React.Dispatch<React.SetStateAction<IEstateData[]>>;
-    properties: IEstateData[]
-  }
+    properties: IEstateData[];
+};
 
-export const SearchBar = ({setSearchItems, properties}: ISearch) => {
-
+export const SearchBar = ({ setSearchItems, properties }: ISearch) => {
     const handleSubmit = (
         values: IInitSearch,
         { resetForm }: { resetForm: () => void }
     ) => {
-        const { title, minBedrooms, maxBedrooms, minPrice, maxPrice } = values;
-
-         const propertyQuery = filterData(values, properties);
+        const propertyQuery = filterData(values, properties);
         setSearchItems(propertyQuery);
 
         resetForm();
@@ -39,7 +35,11 @@ export const SearchBar = ({setSearchItems, properties}: ISearch) => {
 
     return (
         <div className={styles.container}>
-            <Formik initialValues={initialSearch} onSubmit={handleSubmit} validationSchema={validation}>
+            <Formik
+                initialValues={initialSearch}
+                onSubmit={handleSubmit}
+                validationSchema={validation}
+            >
                 {(formik) => (
                     <Form>
                         <div className={styles.barWrapper}>
@@ -59,7 +59,6 @@ export const SearchBar = ({setSearchItems, properties}: ISearch) => {
                                     options={priceRange}
                                     formatPrice={formatPrice}
                                     formik={formik}
-
                                 />
                                 <RangeSearch
                                     label={"Max Price"}
@@ -75,18 +74,15 @@ export const SearchBar = ({setSearchItems, properties}: ISearch) => {
                                     name={"minBedrooms"}
                                     options={bedroomsRange}
                                     formik={formik}
-
                                 />
                                 <RangeSearch
                                     label={"Max Bedrooms"}
                                     name={"maxBedrooms"}
                                     options={bedroomsRange}
                                     formik={formik}
-
                                 />
                             </div>
                         </div>
-                               {/* <ErrorMessage className={styles.error}  component={'span'} name={'maxPrice'} /> */}
                     </Form>
                 )}
             </Formik>

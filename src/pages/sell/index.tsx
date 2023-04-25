@@ -1,42 +1,37 @@
 import { Formik, Form } from "formik";
-
 import styles from "@/styles/Sell.module.scss";
-
 import addData from "../../lib/firebase/firebaseAddToDB";
-
 import { PageWrapper } from "@/components/PageWrapper";
 import { SellInput } from "@/components/shared/SellInput/SellInput";
 import { TextareaInput } from "@/components/shared/SellInput/SellTextarea";
 import { FormValues } from "@/types/sellFormTypes";
 import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
-import { useAuthContext } from "@/contexts/AuthContext";
 import { generateId } from "@/utils/helpers/generateId";
 import { formatPrice } from "@/utils/search/formatPrice";
 
 const Sell = () => {
-    const user = useAuthContext()
     const DB_TITLE = "properties";
 
-    
-    const handleSubmit = async (values: FormValues,
-        { resetForm }: { resetForm: () => void }) => {
-        const ID = generateId()
+    const handleSubmit = async (
+        values: FormValues,
+        { resetForm }: { resetForm: () => void }
+    ) => {
+        const ID = generateId();
 
-        const value = +values.price
+        const value = +values.price;
 
-       const submitForm = {...values, id: ID, price: formatPrice(value)}
- 
-       const { result, error } = await addData(DB_TITLE, ID, submitForm);
-       console.log(result);
+        const submitForm = { ...values, id: ID, price: formatPrice(value) };
 
-            resetForm()
+        const { result, error } = await addData(DB_TITLE, ID, submitForm);
+        console.log(result);
 
-       if (error) {
-        return console.log(error);
-    }
+        resetForm();
+
+        if (error) {
+            return console.log(error);
+        }
     };
-
 
     return (
         <div>
@@ -70,7 +65,7 @@ const Sell = () => {
                                     label="bedrooms"
                                     type="number"
                                 />
-           
+
                                 <SellInput
                                     name="bathrooms"
                                     placeholder="bathrooms"
@@ -105,20 +100,19 @@ const Sell = () => {
                                 type="url"
                             />
                             <div className={styles.flex}>
-
-                            <SellInput
-                                name="phone_number"
-                                placeholder="phone number"
-                                label="phone number"
-                                type="tel"
+                                <SellInput
+                                    name="phone_number"
+                                    placeholder="phone number"
+                                    label="phone number"
+                                    type="tel"
                                 />
                                 <SellInput
-                                name="email"
-                                placeholder="email"
-                                label="email"
-                                type="email"
-                            />
-                                </div>
+                                    name="email"
+                                    placeholder="email"
+                                    label="email"
+                                    type="email"
+                                />
+                            </div>
                             <SellInput
                                 name="street"
                                 placeholder="street "
@@ -161,8 +155,6 @@ const Sell = () => {
                     </div>
                 )}
             </Formik>
-
-            {/* <button onClick={handleForm}>clic</button> */}
         </div>
     );
 };

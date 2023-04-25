@@ -11,10 +11,6 @@ export const requestHandlerSet = async <T>(collection: string, id: string, data:
         merge: true,
     })
 
-
-    // return await setDoc(doc(db, collection, id), data, {
-    //     merge: true,
-    // });
 }
 
 export const requestHandlerGet = async (dataBase: string) => {
