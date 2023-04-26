@@ -29,12 +29,18 @@ Run npm install to install all the required dependencies.
 Create a Firebase project and enable authentication and Firestore.
 Create a .env.local file with the following environment variables:
 
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=your_database_url
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucker
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+
 Run npm start to start the development server.
 Open http://localhost:3000 in your browser.
 
 ```
 
 I hope you enjoy this app
+
