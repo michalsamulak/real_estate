@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { Formik, Form } from "formik";
 import Link from "next/link";
 import styles from "@/styles/Sell.module.scss";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import { SellInput } from "@/components/shared/SellInput/SellInput";
 import { TextareaInput } from "@/components/shared/SellInput/SellTextarea";
 import { FormValues } from "@/types/sellForm";

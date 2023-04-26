@@ -1,5 +1,5 @@
 import { SignUpForm } from "@/components/auth/SignupForm";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styles from "../../styles/Join.module.scss";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";

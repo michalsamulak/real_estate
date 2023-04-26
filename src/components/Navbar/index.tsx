@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-import { LoginButton } from "./Login";
+import { AuthActions } from "./AuthActions ";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -23,7 +23,7 @@ const NavBar = () => {
         </ul>
       </div>
 
-      <LoginButton />
+      <AuthActions />
     </div>
   );
 };

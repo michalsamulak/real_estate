@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { SignInForm } from "@/components/auth/SigninForm";
 import { SignInExternal } from "@/components/auth/SignInExternal";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styles from "../../styles/Login.module.scss";
 import { useAuthContext } from "@/contexts/AuthContext";
 

@@ -11,8 +11,8 @@ const schema = Yup.object().shape({
     .min(6, "Password must be at least 6 characters")
     .required("Password is required"),
   repeatedPassword: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
+    .oneOf([Yup.ref('password')], 'Passwords must match')
+    .required('Password is required'),
 });
 
 type IInitialVal = {
@@ -28,7 +28,10 @@ const initialValues: IInitialVal = {
 
 export const SignUpForm = () => {
   const router = useRouter();
+
+  
   const handleForm = async (values: IInitialVal) => {
+    
     if (values.password !== values.repeatedPassword)
       return alert("Passwords do not match! Please try again.");
 

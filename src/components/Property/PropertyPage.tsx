@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { IProperty } from "@/components/Property/types";
 import { PropertyDetails } from "./Details";
 import { ContactInfo } from "./ContactInfo";
-import { SEOHead } from "../PageWrapper";
+import { SEOHead } from "../SEOHead";
 import defaultImg from "@/../public/static/default_img.jpg";
 
 export const PropertyPage = ({ property }: { property: IProperty }) => {
@@ -54,8 +54,3 @@ export const PropertyPage = ({ property }: { property: IProperty }) => {
     </>
   );
 };
-
-{
-}
-{
-}

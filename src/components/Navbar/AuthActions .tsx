@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { logOutHandler } from "@/lib/firebase/signInMethod";
 
-export const LoginButton = () => {
+export const AuthActions = () => {
   const userContext = useAuthContext();
 
   const isLoggedIn = userContext.user !== null;

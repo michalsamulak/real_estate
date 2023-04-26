@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CardsWrapper } from "@/components/PropertyCards/CardsWrapper";
 import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styles from "@/styles/InfoTag.module.scss";
 import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estate";

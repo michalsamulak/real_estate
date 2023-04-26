@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/contact/Header";
 import ContactForm from "@/components/contact/Form";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styled from "../../styles/Contact.module.scss";
 
 const Contact = () => {

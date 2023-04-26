@@ -2,7 +2,7 @@ import { useState } from "react";
 import { InferGetServerSidePropsType } from "next";
 import { CardsWrapper } from "@/components/PropertyCards/CardsWrapper";
 import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styles from "@/styles/Cards.module.scss";
 import data from "@/data/staticData.json";
 import { IEstateData } from "@/types/estate";

@@ -2,7 +2,7 @@ import React from "react";
 
 interface ErrorBoundaryProps {
   fallback?: React.ReactNode;
-  children: any
+  children: React.ReactNode
 }
 
 interface ErrorBoundaryState {

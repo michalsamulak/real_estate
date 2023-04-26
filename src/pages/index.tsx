@@ -5,7 +5,7 @@ import data from "@/data/staticData.json";
 import { PropertyCard } from "@/components/PropertyCards/PropertyCard";
 import { SearchBar } from "@/components/Search";
 import { getRandomItems } from "@/utils/helpers/randomArrayElements";
-import { SEOHead } from "@/components/PageWrapper";
+import { SEOHead } from "@/components/SEOHead";
 import styles from "@/styles/Home.module.scss";
 import { IEstateData } from "@/types/estate";
 import getProperties from "@/lib/firebase/getFromDB";
@@ -50,7 +50,7 @@ export async function getServerSideProps() {
   try {
     const properties = await getProperties();
 
-    return { props: { properties: properties as IEstateData[] } };
+    return { props: { properties } };
   } catch (error) {
     console.log("Error fetching document:", error);
     return { props: { properties: data } };
