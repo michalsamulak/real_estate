@@ -45,3 +45,6 @@ Open http://localhost:3000 in your browser.
 I hope you enjoy this app
 
 # ![cover](public/real_estate.gif)
+# ![cover](public/capture1.png)
+# ![cover](public/capture2.png)
+# ![cover](public/capture3.png)
