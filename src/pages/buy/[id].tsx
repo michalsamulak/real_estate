@@ -1,4 +1,3 @@
-import propertiesJSON from "@/data/staticData.json";
 import { PropertyPage } from "@/components/Property/PropertyPage";
 import { IProperty } from "@/components/Property/types";
 import getProperties, { getProperty } from "@/lib/firebase/getFromDB";

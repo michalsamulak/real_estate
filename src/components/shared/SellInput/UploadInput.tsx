@@ -1,38 +1,25 @@
-import { Field, FieldProps, ErrorMessage } from "formik";
-import { ChangeEvent, useState } from "react";
+import { Field, ErrorMessage } from "formik";
+import { ChangeEvent, LegacyRef } from "react";
 import styles from "./styles.module.scss";
 
 type IUploadProps = {
   name: string;
-  handler: () => void;
   uplander: (e: ChangeEvent<HTMLInputElement>) => void;
+  fileRef: LegacyRef<HTMLInputElement>;
 };
 
-export const UploadInput = ({ name, handler, uplander }: IUploadProps) => {
-  const [actionCompleted, setActionCompleted] = useState(false);
-  const actionHandler = () => {
-    handler();
-    setActionCompleted((prev) => !prev);
-  };
-
+export const UploadInput = ({ fileRef, name, uplander }: IUploadProps) => {
   return (
     <label>
       <Field name={name}>
-        {({ field }: FieldProps) => (
+        {() => (
           <div className={styles.input}>
             <input
-              disabled={actionCompleted}
+              name={name}
               type="file"
               onChange={(e) => uplander(e)}
-            ></input>
-            <button
-              type="button"
-              disabled={actionCompleted}
-              onClick={actionHandler}
-            >
-              {" "}
-              Upload Image
-            </button>
+              ref={fileRef}
+            />
             <ErrorMessage name={name} />
           </div>
         )}

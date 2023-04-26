@@ -1,6 +1,6 @@
+import {  useRef } from "react";
 import toast from "react-hot-toast";
 import { Formik, Form } from "formik";
-import { v4 } from "uuid";
 import Link from "next/link";
 import styles from "@/styles/Sell.module.scss";
 import { SEOHead } from "@/components/PageWrapper";
@@ -11,52 +11,12 @@ import { initialValues } from "@/utils/listingProperty/initialValues";
 import { validationSchema } from "@/utils/listingProperty/validation";
 import addProperty from "../../lib/firebase/addToDB";
 import { useAuthContext } from "@/contexts/AuthContext";
-
-import { ChangeEvent, useEffect, useState } from "react";
 import { UploadInput } from "@/components/shared/SellInput/UploadInput";
-import { storage } from "@/lib/firebase";
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  listAll,
-  StorageReference,
-} from "firebase/storage";
+import useImageUpload from "@/lib/hooks/useImageUpload ";
 
 const Sell = () => {
-  const [imageUpload, setImageUpload] = useState<File | null>(null);
-
-  const [imgLink, setImgLink] = useState("");
-
-  const imagesListRef: StorageReference = ref(storage, "images/");
-  const uploadFile = () => {
-    if (imageUpload == null) return;
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImgLink(url);
-      });
-    });
-  };
-
-  useEffect(() => {
-    listAll(imagesListRef).then((response) => {
-      response.items.forEach((item) => {
-        getDownloadURL(item).then((url) => {
-          setImgLink(url);
-        });
-      });
-    });
-  }, []);
-
-  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files === null) return;
-    setImageUpload(e.target.files[0]);
-
-    console.log(imgLink);
-  };
-
+  const fileRef = useRef<HTMLInputElement>(null);
+  const { imgLink, handleImageUpload, uploadFile } = useImageUpload();
   const { user } = useAuthContext();
 
   if (user === null) {
@@ -78,6 +38,12 @@ const Sell = () => {
     { resetForm }: { resetForm: () => void }
   ) => {
     if (user === null) return;
+    uploadFile();
+
+    if (fileRef.current) {
+      fileRef.current.value = "";
+    }
+
     const { result, error } = await addProperty({
       ...values,
       email: user.email,
@@ -145,7 +111,7 @@ const Sell = () => {
               <UploadInput
                 name="img"
                 uplander={handleImageUpload}
-                handler={uploadFile}
+                fileRef={fileRef}
               />
               <div className={styles.flex}>
                 <SellInput
