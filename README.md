@@ -1,33 +1,40 @@
-<h2 align="center">HousesForSaleWebsite</h2>
+# Real Estate Website
 
-<br>
+Real Estate Website is a website where you can browse and search for properties, as well as list your own property for sale. In this project, I utilized the following technologies:
 
-## Wymagana wiedza
+## Tool & technologies I've used
 
-- React, NextJS
+- Nextjs
+- TypeScript
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Storage
 
-## Technologie potrzebne do zadania
+## App functionalities
+Real Estate Website includes several functionalities, such as:
 
-- React, NextJS
+Sign up and login using Firebase Authentication
+Browse properties by searching and filtering by title, price, and other features
+View detailed information about each property, including images, title, description, location, and contact information for the seller
+Add new properties for sale by filling out a form, including upload images
+Edit and delete properties that you have listed for sale
+View a dashboard with all properties that you have listed for sale
 
-## Cele główne
+## How to use it
 
-- [ ] Stwórz stronę ze sprzedażą mieszkań/domów
-- [ ] Autoryzacje wykonaj przy pomocy Firebase'a (logowanie ma być przez: email, Google, Facebook oraz Github)
-- [ ] Do bazy danych użyj również Firebase'a
-- [ ] Każdy użytkownik może dodać mieszkanie/dom na sprzedarz przy pomocy formularza (musi być zalogowany)
-- [ ] Oferta sprzedaży musi mieć:
-  - Zdjęcie
-  - Tytuł
-  - Opis
-  - Lokalizacje
-  - Numer telefonu/Email do właściciela
-- [ ] Użytkownik w każdej chwili może usunąć wystawioną przez siebie ofertę
+```
+Use command git clonehttps://github.com/michalsamulak/real_estate.git
 
-## Cele opcjonalne do wykonania
+Run npm install to install all the required dependencies.
+Create a Firebase project and enable authentication and Firestore.
+Create a .env.local file with the following environment variables:
 
-- [ ] Na podstornie "/map" dodaj mapę, gdzie dodasz przy pomocy markerów lokalizacje poszczególnych ofert.
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+Run npm start to start the development server.
+Open http://localhost:3000 in your browser.
 
-## Przydatne linki
+```
 
-Dokumentacja Firebase'a - https://firebase.google.com/docs
+I hope you enjoy this app
