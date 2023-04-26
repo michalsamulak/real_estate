@@ -23,7 +23,7 @@ View a dashboard with all properties that you have listed for sale
 ## How to use it
 
 ```
-Use command git clonehttps://github.com/michalsamulak/real_estate.git
+Use command git clone https://github.com/michalsamulak/real_estate.git
 
 Run npm install to install all the required dependencies.
 Create a Firebase project and enable authentication and Firestore.
@@ -44,3 +44,4 @@ Open http://localhost:3000 in your browser.
 
 I hope you enjoy this app
 
+# ![cover](public/real_estate.gif)
